@@ -63,7 +63,7 @@ var app = express();
 app.get('/youtubeExtra', function (req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', '*');
-  fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+  fs.readFile( __dirname + "/" + "seriesSubscriptions.json", 'utf8', function (err, data) {
 	if(err){
 		console.log(err);
 		res.end('{}');

@@ -11,7 +11,7 @@ define('Navigation' , ['react' , 'NavigationItem' ] , function(React , Navigatio
 		render : function(){
 			return (
 				<div className="Navigation" style={{position: 'relative'}} >
-					<NavigationItem selected={ this.props.selected == 'subscribtions' } function={ this.props.subscribtions } text='Inscrições' />
+					<NavigationItem selected={ this.props.selected == 'subscriptions' } function={ this.props.subscriptions } text='Inscrições' />
 					<NavigationItem selected={ this.props.selected == 'US' } function={ this.topUS } text='Top World' />
 					<NavigationItem selected={ this.props.selected == 'BR' } function={ this.topBR } text='Top Br' />
 					{ this.props.user ?

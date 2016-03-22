@@ -4,7 +4,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 	var YoutubeContent = React.createClass({
 		// Middle click ou drag'n drop?? pensar na usabilidade
 		getInitialState: function(){
-			return ({videos: Youtube.subscribtionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscribtions' , authorized : Youtube.authorized});
+			return ({videos: Youtube.subscriptionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscriptions' , authorized : Youtube.authorized});
 		},
 		addVideoToPlaylist: function(index, event){
 			event.preventDefault();
@@ -82,9 +82,9 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 			newPlaylist = newPlaylist.concat(playlist.slice(toPosition, playlist.length));
 			this.setState({playlist: newPlaylist});
 		},
-		subscribtions: function(){
-			var videos = Youtube.subscribtionsVideos;
-			this.setState({videos: videos, first: 0, selectedMenu: 'subscribtions' , search: false});
+		subscriptions: function(){
+			var videos = Youtube.subscriptionsVideos;
+			this.setState({videos: videos, first: 0, selectedMenu: 'subscriptions' , search: false});
 		},
 		top: function(regionCode){
 			var promise = Youtube.categories(regionCode);
@@ -138,7 +138,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 					null
 				}
 				<div style={{ flex : 1 , marginRight : '5px' }}>
-					<Navigation selected={this.state.selectedMenu} subscribtions={ this.subscribtions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top}/>
+					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top}/>
 					{this.state.search ?
 						<form onSubmit={this.doSearch} style={{ marginBottom : '10px' }} className='input-group' >
 							<span className='input-group-addon' onClick={this.doSearch} style={{ cursor : 'pointer' }} >
