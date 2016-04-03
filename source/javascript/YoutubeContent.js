@@ -8,9 +8,9 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		},
 		addVideoToPlaylist: function(index, event){
 			event.preventDefault();
-			if(event.button == 1){
+			if(event.button == 0){
 				var newPlaylist = this.state.playlist;
-				var video = this.state.videos[index];
+				var video = this.state.videos[index+this.state.first];
 				if(newPlaylist.indexOf(video) === -1){
 					newPlaylist.push(video);
 				}else{

@@ -1,6 +1,6 @@
-var clientId = 'xxxxx';
-var apiKey = 'xxxxx';
 var scopes = 'https://www.googleapis.com/auth/youtube.readonly';
+var apiKey = require('config').apiKey;
+var oAuthID = require('config').oAuthID;
 
 
 
@@ -21,7 +21,7 @@ var mock = function(){
 }
 
 function checkAuth() {
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+  gapi.auth.authorize({client_id: oAuthID, scope: scopes, immediate: true}, handleAuthResult);
 }
 
 function handleAuthResult( authResult , callBack ) {
@@ -38,7 +38,7 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("Youtube",
-        ['https://apis.google.com/js/client.js?onload=mock', 'jquery' , 'structure/Channel' , 'structure/Video'],
+        ['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , 'structure/Channel' , 'structure/Video'],
         function(t , $ , Channel , Video) {
 			var Youtube = {
 				subscriptions: {}, //channels by Id
@@ -196,8 +196,8 @@ define("Youtube",
 				loadRecommendations: function(pageToken){
 					var request = gapi.client.youtube.activities.list({
 						part: 'snippet , contentDetails',
-            			home: 'true',
-            			maxResults : 50,
+            			home: true,
+						maxResults: 50,
 						pageToken : pageToken
 					});
 					var videos = [];
@@ -213,7 +213,7 @@ define("Youtube",
 									}
 								}
 							}
-							if(response.result.nextPageToken){
+							if(response.result.nextPageToken && videos.length <= 16){
 								Youtube.loadRecommendations(response.result.nextPageToken).then(function(results){
 									videos = videos.concat(results);
 									resolve(videos)
@@ -237,7 +237,7 @@ define("Youtube",
 					var handle = function( authResult ){
 						handleAuthResult( authResult , callBack );
 					};
-					gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handle );
+					gapi.auth.authorize({client_id: oAuthID, scope: scopes, immediate: false}, handle );
 				},
 				loadExtra: function(){
 					var request = $.get("http://localhost:8082/youtubeExtra");

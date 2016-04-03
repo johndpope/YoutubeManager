@@ -10,12 +10,13 @@ requirejs.config({
         react: '../node_modules/react/dist/react',
         'react-dom': '../node_modules/react-dom/dist/react-dom',
         jquery: '../node_modules/jquery/dist/jquery',
+		config: '../config'
     }
 });
 
 // Start the main app logic.
-requirejs([ 'react' , 'react-dom' , 'Youtube' , 'YoutubePlayer' , 'Loading' , 'Erro' , 'YoutubePage' ],
-	function   ( React , ReactDOM , Youtube , YoutubePlayer , Loading , Erro , YoutubePage ) {
+requirejs([ 'react' , 'react-dom' , 'config' , 'Youtube' , 'YoutubePlayer' , 'Loading' , 'Erro' , 'YoutubePage' ],
+	function   ( React , ReactDOM , config , Youtube , YoutubePlayer , Loading , Erro , YoutubePage ) {
 		//Garantir a API 100% carregada apenas para renderizar a aplicação e não para carregar
 		//Garantir a API do frame carregada
 		var p = Promise.all([YoutubePlayer.loading,Youtube.loading])
