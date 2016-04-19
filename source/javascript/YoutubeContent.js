@@ -19,6 +19,11 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 				this.setState({playlist: newPlaylist});
 			}
 		},
+		removeVideoPlaylist: function(index){
+			var newPlaylist = this.state.playlist;
+			newPlaylist.splice(index, 1);
+			this.setState({playlist: newPlaylist});
+		},
 		componentDidMount: function(){
 			$(document).on('keypress',this.showSearchField);
 		},
@@ -170,7 +175,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
 					</button>
 
-					<YoutubePlayList videos={this.state.playlist} changePosition={this.changePosition}/>
+					<YoutubePlayList videos={this.state.playlist} changePosition={this.changePosition} removeVideoPlaylist={this.removeVideoPlaylist} />
 				</div>
 			</div>
 			)
