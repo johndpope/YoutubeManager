@@ -129,7 +129,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 			var videos = this.state.videos.slice( this.state.first , (this.state.first + 16) ).map(function(item, index){
 				return(
 				<div key={item.id} onClick={this.addVideoToPlaylist.bind(this, index)} style={{'border': '1px solid black', 'padding': '4px', 'width' : '50%', 'display': 'inline-block'}} >
-					<YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} user={this.state.authorized} />
+					<YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} />
 				</div>
 				)
 			}, this);
@@ -143,7 +143,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 					null
 				}
 				<div style={{ flex : 1 , marginRight : '5px' }}>
-					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top}/>
+					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.props.addPlaylist}/>
 					{this.state.search ?
 						<form onSubmit={this.doSearch} style={{ marginBottom : '10px' }} className='input-group' >
 							<span className='input-group-addon' onClick={this.doSearch} style={{ cursor : 'pointer' }} >
