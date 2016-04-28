@@ -2,6 +2,10 @@
 	display: flex;
 }
 
+.disabled{
+	opacity: 0.65;
+}
+
 /*
 YOUTUBE
 */

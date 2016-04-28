@@ -99,6 +99,10 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 				self.changeCategory(0);
 			});
 		},
+		addPlaylist: function(){
+			this.props.addPlaylist();
+			this.setState({selectedMenu: 'addPlaylist'});
+		},
 		changeCategory: function(id){
 			this.setState({loading: true});
 			var promise = Youtube.topList(this.state.selectedMenu , id);
@@ -137,13 +141,13 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 			<div className="YoutubeContent">
 				{this.state.loading ? 
 					<div className="Loading">
-						<span>Loading...</span>
+						<span>Loading... <img src="../assets/loading.gif" style={{ width : '1em' }}/></span>
 					</div>
 					:
 					null
 				}
 				<div style={{ flex : 1 , marginRight : '5px' }}>
-					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.props.addPlaylist}/>
+					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist}/>
 					{this.state.search ?
 						<form onSubmit={this.doSearch} style={{ marginBottom : '10px' }} className='input-group' >
 							<span className='input-group-addon' onClick={this.doSearch} style={{ cursor : 'pointer' }} >

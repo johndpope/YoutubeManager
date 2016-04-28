@@ -5,7 +5,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 		getInitialState: function(){
 			return {videos : [], initialLoad : false , loading : false, playlist : []}
 		},
-		submit: function(event){
+		submitURL: function(event){
 			var self = this;
 			console.log(this.refs.inputURL.value);
 			var match = this.refs.inputURL.value.match(/list=[^&]+/);
@@ -27,21 +27,33 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			}
 			event.preventDefault();
 		},
-		add: function(index){
+		add: function(item){
 			var playlist = this.state.playlist;
-			playlist.push(this.state.videos[index]);
+			if(playlist.indexOf(item) == -1){
+				playlist.push(item);
+			}
 			this.setState({ playlist : playlist});
 		},
 		addAfter: function(index){
 			var playlist = this.state.playlist;
 			var videos = this.state.videos.slice(index);
-			playlist = playlist.concat(videos);
+			videos.forEach(this.add);
+			this.setState({ playlist : playlist});
+		},
+		removeVideoPlaylist: function(index){
+			var playlist = this.state.playlist;
+			playlist.splice(index, 1);
 			this.setState({ playlist : playlist});
 		},
 		remove: function(index){
 			var videos = this.state.videos;
 			videos.splice(index, 1);
 			this.setState({ videos : videos });
+		},
+		removeAll: function(){
+			var playlist = this.state.playlist;
+			playlist.splice(0, playlist.length);
+			this.setState({playlist : playlist});
 		},
 		invert: function(){
 			var videos = this.state.videos;
@@ -53,7 +65,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				return(
 				<div key={item.id} style={{ marginBottom: '10px' , padding: '5px' , border: (this.state.playlist.indexOf(item) != -1? '2px gold solid' : '2px darkred solid')}} className="flex" >
 					<div style={{ marginRight: '2px' }} >
-						<button type="button" onClick={()=>this.add(index)} style={{ marginBottom: '6px'}} >
+						<button type="button" onClick={()=>this.add(item)} style={{ marginBottom: '6px'}} >
 							<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 						<button type="button" onClick={()=>this.remove(index)} style={{ marginBottom: '6px'}} >
@@ -69,10 +81,10 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			}, this);
 			return (
 				<div>
-					<button type="button" onClick={()=>this.props.back()} style={{ marginBottom: '15px'}} >
+					<button type="button" onClick={()=>this.props.back(this.state.playlist)} style={{ marginBottom: '15px'}} >
 						<span className="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</button>
-					<form onSubmit={(event)=>this.submit(event)} className="" style={{ marginBottom: '10px'}} >
+					<form onSubmit={(event)=>this.submitURL(event)} className="" style={{ marginBottom: '10px'}} >
 						<div className="flex">
 							<label style={{flex: 1, display: 'inline-flex', marginRight: '5px'}} className="">
 								URL:
@@ -85,7 +97,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 					{this.state.initialLoad ?
 						(
 						<div>
-							LOADING!
+							LOADING! <img src="../assets/loading.gif" style={{ width : '1em' }}/>
 						</div>
 						)
 						:
@@ -95,18 +107,18 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 						(
 						<div>
 							<div style={{ marginBottom : '15px' }} >
-								<button type="button" onClick={()=>this.addAfter(0)} style={{ marginRight : '5px' }} >
+								<button type="button" onClick={()=>this.addAfter(0)} style={{ marginRight : '5px' }} disabled={this.state.loading} className={this.state.loading? 'disabled' : ''} >
 									<span className="glyphicon glyphicon-plus" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
 									Adicionar Todos
 								</button>
-								<button type="button" onClick={()=>this.invert()} style={{ marginRight : '5px' }} >
+								<button type="button" onClick={()=>this.invert()} style={{ marginRight : '5px' }} disabled={this.state.loading} className={this.state.loading? 'disabled' : ''} >
 									<span className="glyphicon glyphicon-sort" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
 									Inverter
 								</button>
 								<span> {this.state.playlist.length} - {this.state.videos.length} </span>
 								{
 								this.state.loading ? 
-									<span>( {this.state.total} ) loading </span>
+									<span>( total {this.state.total} ) <img src="../assets/loading.gif" style={{ width : '1em' }}/></span>
 								:
 									null
 								}
@@ -115,10 +127,22 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 								<div style={{ overflowY : 'auto' , maxHeight : '82vh' , flex : 1 }} >
 									{videos}
 								</div>
-								<div style={{ overflowY : 'auto' , maxHeight : '82vh' , textAlign : 'center' }}>
-									<YoutubePlayList videos={this.state.playlist} />
+								{ this.state.playlist.length != 0 ?
+									<div style={{ maxHeight : '82vh' , textAlign : 'center' }}>
+										<div>
+											<button type="button" onClick={()=>this.removeAll()} style={{ marginLeft : '5px' , marginBottom : '10px' }} >
+												<span className="glyphicon glyphicon-minus" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
+												Remover Todos
+											</button>
+										</div>
+										<div style={{ overflowY : 'auto' , maxHeight : '78vh' }}>
+											<YoutubePlayList videos={this.state.playlist} removeVideoPlaylist={this.removeVideoPlaylist} />
+										</div>
+									</div>
+								:
+									null
+								}
 								</div>
-							</div>
 						</div>
 						)
 						:

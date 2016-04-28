@@ -12,6 +12,15 @@ define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeConten
 			//Youtube.loadRecommendations();
 			if(!videos){
 				videos = this.state.videos;
+			}else{
+				var original = this.state.videos;
+				var add = function(item){
+					if(!original.some(function(item2){return item.id == item2.id})){
+						original.push(item);
+					}
+				}
+				videos.forEach(add);
+				videos = original;
 			}
 			this.setState({component: '' , videos: videos});
 		},

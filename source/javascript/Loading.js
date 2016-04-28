@@ -5,7 +5,7 @@ define('Loading' , ['react'] , function(React){
 		render: function(){
 			return (
 				<div className="Loading">
-					<h1 >LOADING ...</h1>
+					<h1 >LOADING ... <img src="../assets/loading.gif" style={{ width : '1em' }}/></h1> 
 				</div>
 			)
 		}
