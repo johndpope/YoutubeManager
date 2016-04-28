@@ -3,14 +3,14 @@
 define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'YoutubePlayList' ] , function( React, Youtube , YoutubeItem , YoutubePlayList ){
 	var YoutubePlaylistManager = React.createClass({
 		getInitialState: function(){
-			return {videos : [], initialLoad : false , loading : false, playlist : []}
+			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false}
 		},
 		submitURL: function(event){
 			var self = this;
-			console.log(this.refs.inputURL.value);
+			//console.log(this.refs.inputURL.value);
 			var match = this.refs.inputURL.value.match(/list=[^&]+/);
-			match = ['list=PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH']
 			if(match){
+				this.setState({erroURL : false})
 				console.log("URL válida");
 				var id = match[0].slice(5);
 				this.setState({initialLoad : true, loading : true});
@@ -19,11 +19,13 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				});
 				Youtube.Playlist.then(function(videos){
 					console.log('loaded playlist');
-					console.log(videos);
+					//console.log(videos);
 					videos.splice(0,50);
 					var allVideos = self.state.videos.concat(videos);
 					self.setState({videos : allVideos , loading : false});
 				});
+			}else{
+				this.setState({erroURL : true})
 			}
 			event.preventDefault();
 		},
@@ -88,7 +90,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 						<div className="flex">
 							<label style={{flex: 1, display: 'inline-flex', marginRight: '5px'}} className="">
 								URL:
-								<input ref="inputURL" className="" style={{flex: 1, marginLeft: '5px'}} disabled={this.state.loading} />
+								<input ref="inputURL" className="" style={{flex: 1, marginLeft: '5px', outlineColor : (this.state.erroURL ? 'darkred' : '' ) }} disabled={this.state.loading} />
 									{/*success outline CSS */}
 							</label>
 							<input type="submit" style={{marginBottom: '5px'}} />

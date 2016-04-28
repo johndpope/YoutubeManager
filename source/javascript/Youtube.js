@@ -38,7 +38,7 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("Youtube",
-        ['https://apis.google.com/js/client.js?onload=mock', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
+        ['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
 			var Youtube = {
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate
@@ -296,7 +296,7 @@ define("Youtube",
 							}
 							Promise.all(requests).then(function(){
 								console.log("Séries carregadas");
-								console.log(Youtube.subscriptionsVideos);
+								//console.log(Youtube.subscriptionsVideos);
 								resolve();
 							})
 						})
@@ -339,7 +339,7 @@ define("Youtube",
 							videoRequest.then((function(response){
 								var y;
 								var videos = response.videos.slice(0, 16) //take only 15 videos
-								for(y in response.videos){
+								for(y in videos){
 									Youtube.subscriptions[videos[y].authorId].videos.push(videos[y]);
 								}
 							}),
@@ -389,9 +389,9 @@ define("Youtube",
 				// https://www.youtube.com/watch?v=P9IJtwyM8NA&list=PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH //WanShow
 				// /list=[^&]+/
 				Youtube.loadFullPlaylist('PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH').then(function(result){
-					console.log(result.videos);
+					//console.log(result.videos);
 					Youtube.Playlist.then(function(allVideos){
-						console.log(allVideos);
+						//console.log(allVideos);
 					})
 				});
 				
