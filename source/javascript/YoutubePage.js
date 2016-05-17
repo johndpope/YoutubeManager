@@ -1,6 +1,6 @@
 'use strict'
 
-define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeContent' , 'YoutubePlaylistManager' ] , function( React , Youtube , YoutubePlayer , YoutubeContent , YoutubePlaylistManager ){
+define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeContent' , 'YoutubePlaylistManager' , 'YoutubeSeriesPage' ] , function( React , Youtube , YoutubePlayer , YoutubeContent , YoutubePlaylistManager , YoutubeSeriesPage ){
 	var YoutubePage = React.createClass({
 		getInitialState: function(){
 			return {component : '', videos: []};
@@ -27,11 +27,15 @@ define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeConten
 		addPlaylist: function(){
 			this.setState({component: 'addPlaylist'});
 		},
+		series: function(){
+			this.setState({component: 'series'});
+		},
 		chooseComponent: function(){
 			switch(this.state.component){
 				case 'player': return <YoutubePlayer videos={this.state.videos} fimVideo={this.base}/>
 				case 'addPlaylist': return <YoutubePlaylistManager back={this.base} />
-				default: return <YoutubeContent openPlayer={this.openPlayer} playlist={this.state.videos} addPlaylist={this.addPlaylist} />
+				case 'series': return <YoutubeSeriesPage back={this.base} />
+				default: return <YoutubeContent openPlayer={this.openPlayer} playlist={this.state.videos} addPlaylist={this.addPlaylist} series={this.series} />
 			};
 		},
 		render: function(){

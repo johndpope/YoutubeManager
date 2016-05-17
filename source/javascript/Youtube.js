@@ -38,7 +38,7 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("Youtube",
-        ['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
+        ['https://apis.google.com/js/client.js?onload=mock', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
 			var Youtube = {
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate

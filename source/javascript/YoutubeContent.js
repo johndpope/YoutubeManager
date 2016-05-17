@@ -147,7 +147,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 					null
 				}
 				<div style={{ flex : 1 , marginRight : '5px' }}>
-					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist}/>
+					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist} series={this.props.series} />
 					{this.state.search ?
 						<form onSubmit={this.doSearch} style={{ marginBottom : '10px' }} className='input-group' >
 							<span className='input-group-addon' onClick={this.doSearch} style={{ cursor : 'pointer' }} >
