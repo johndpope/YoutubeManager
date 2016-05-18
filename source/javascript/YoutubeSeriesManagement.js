@@ -3,10 +3,22 @@
 define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem' , 'YoutubeSeries' ] , function(React, $ , Youtube , YoutubeItem , YoutubeSeries ){
 	var YoutubeSeriesManagement = React.createClass({
 		getInitialState: function(){
-            var newSerie = {title: ''};
-            var series = [{title : 'Dark Souls III'}];
-			return { series : series , newSerie : newSerie }
+            var series = [];
+            if(Youtube.series[this.props.channel.id]){
+                series = Youtube.series[this.props.channel.id].series
+            }
+			return { series : series , newSerie : {} }
 		},
+        componentWillReceiveProps: function( nextProps ){
+            if(nextProps.channel.id !== this.props.channel.id){
+                //this.setState({series : [] , newSerie : {} });
+                var series = [];
+                if(Youtube.series[nextProps.channel.id]){
+                    series = Youtube.series[nextProps.channel.id].series
+                }
+                this.setState({series : series , newSerie : {}});
+            }
+        },
         addSerie: function(){
             var series = this.state.series;
             var newSerie = this.state.newSerie;
@@ -30,6 +42,7 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
         },
         save: function(){
             console.log('intern save');
+            Youtube.saveSeries(this.state.series, this.props.channel);
         },
 		render: function(){
 			var boxStyle = { border : '1px solid black' , margin : '5px' , padding : '5px' , flex : 1  , textAlign : 'center' };

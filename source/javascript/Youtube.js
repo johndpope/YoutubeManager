@@ -43,6 +43,7 @@ define("Youtube",
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate
 				recommendations: [], //recommendations for the logged User
+                series: [], //array of channels with the series
 				topList: function(regionCode , videoCategory){
 					var request = gapi.client.youtube.videos.list({
 						part: 'snippet',
@@ -278,6 +279,7 @@ define("Youtube",
 						request.done(function(data){
 							var k;
 							var requests = [];
+                            Youtube.series = data.subscriptions;
 							for(k in data.subscriptions){
 								var series = data.subscriptions[k].series;
 								var playlistId = k.slice(2);
@@ -308,6 +310,10 @@ define("Youtube",
 					});
 					return promise;
 				},
+                saveSeries : function(series, channel){
+                    console.log("save series");
+                    //save on server 2? remove already?
+                },
 				init: function(){
 					var subscriptionsListLoaded = new Promise(function(resolve, reject){
 						var extra = Youtube.loadExtra();

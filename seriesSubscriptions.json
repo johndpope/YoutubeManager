@@ -2,7 +2,7 @@
 	"subscriptions" : {
 		"UC9CuvdOVfMPvKCiwdGKL3cQ" : {
 			"channel" : "GameGrumps",
-			"series" : ["Zelda Ocarina of Time" , "Super Mario Maker"]
+			"series" : [ { "title" : "Zelda Ocarina of Time" } , { "title" : "Super Mario Maker" } ]
 		}
 	}
 }

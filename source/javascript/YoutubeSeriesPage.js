@@ -71,7 +71,7 @@ define('YoutubeSeriesPage', ['react' , 'YoutubeSeriesManagement' , 'YoutubeItem'
 								{videos}
 							</div>
 						</div>
-						<YoutubeSeriesManagement ref='seriesManagement'/>
+						<YoutubeSeriesManagement ref='seriesManagement' channel={{}}/>
 					</div>
                 </div>
             )
