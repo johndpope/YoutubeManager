@@ -38,7 +38,7 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("Youtube",
-        ['https://apis.google.com/js/client.js?onload=mock', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
+        ['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , 'structure/Channel' , 'structure/Video'],function(t , $ , Channel , Video) {
 			var Youtube = {
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate
@@ -196,6 +196,38 @@ define("Youtube",
 					})
 					return promise;
 				},
+                loadChannel: function(channelId, loadVideos){
+                    var self = this;
+                    var request = gapi.client.youtube.channels.list({
+                        part: 'snippet',
+                        id: channelId
+                    });
+                    var promise = new Promise(function(resolve , reject){
+                        request.then(function(response){
+                            if(response.result.items.length > 0 ){
+                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.default.url , response.result.items[0].id.slice(2) , [] );
+								channel.uploadId = "UU".concat(channel.uploadId);
+                                if(loadVideos){
+                                    var videosRequest = Youtube.playlistItems(channel.uploadId);
+                                    videosRequest.then(function(response){
+                                        var videos = response.videos.slice(0, 16); //take only 16 videos
+                                        channel.videos = videos;
+                                        resolve( { channel : channel } );
+                                    });
+                                }else{
+                                    resolve( { channel : channel } );
+                                }
+                            }else{
+                                resolve( { channel : null } );
+                            }
+                        }, function(response){
+                            console.log("Erro na chamada de carregar o canal do Id fornecido");
+                            console.log(response);
+                            resolve( { channel : null , erro: response });
+                        });
+                    });
+                    return promise;
+                },
 				loadFullPlaylist: function(playlistId){
 					var self = this;
 					var initialLoad = this.playlistItems(playlistId);
@@ -287,7 +319,7 @@ define("Youtube",
 								var uploadRequest = Youtube.playlistItems(playlistId);
 								uploadRequest.then(function(response){
 									var y;
-									var videos = response.videos.slice(0, 16); //take only 15 videos
+									var videos = response.videos.slice(0, 16); //take only 16 videos
 									for(y in videos){
 										if(series.some(function(title){ return videos[y].title.indexOf(title) != -1 }) ){
 											Youtube.subscriptionsVideos.push(videos[y]);
@@ -344,7 +376,7 @@ define("Youtube",
 							var videoRequest = Youtube.playlistItems(channel.uploadId);
 							videoRequest.then((function(response){
 								var y;
-								var videos = response.videos.slice(0, 16) //take only 15 videos
+								var videos = response.videos.slice(0, 16) //take only 16 videos
 								for(y in videos){
 									Youtube.subscriptions[videos[y].authorId].videos.push(videos[y]);
 								}

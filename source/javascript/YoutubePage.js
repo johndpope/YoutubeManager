@@ -8,19 +8,21 @@ define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeConten
 		openPlayer: function(videos){
 			this.setState({component: 'player' , videos: videos});
 		},
-		base: function(videos){
+		base: function(videos, concat){
 			//Youtube.loadRecommendations();
 			if(!videos){
 				videos = this.state.videos;
 			}else{
-				var original = this.state.videos;
-				var add = function(item){
-					if(!original.some(function(item2){return item.id == item2.id})){
-						original.push(item);
-					}
-				}
-				videos.forEach(add);
-				videos = original;
+                if(concat){
+                    var original = this.state.videos;
+                    var add = function(item){
+                        if(!original.some(function(item2){return item.id == item2.id})){
+                            original.push(item);
+                        }
+                    }
+                    videos.forEach(add);
+                    videos = original;
+                }
 			}
 			this.setState({component: '' , videos: videos});
 		},

@@ -66,7 +66,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			var videos = this.state.videos.map(function(item, index){
 				return(
 				<div key={item.id} style={{ marginBottom: '10px' , padding: '5px' , border: (this.state.playlist.indexOf(item) != -1? '2px gold solid' : '2px darkred solid')}} className="flex" >
-					<div style={{ marginRight: '2px' }} >
+					<div style={{ marginRight: '2px' , width : '33px'  }} >
 						<button type="button" onClick={()=>this.add(item)} style={{ marginBottom: '6px'}} >
 							<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
@@ -83,7 +83,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			}, this);
 			return (
 				<div>
-					<button type="button" onClick={()=>this.props.back(this.state.playlist)} style={{ marginBottom: '15px'}} >
+					<button type="button" onClick={()=>this.props.back(this.state.playlist, true)} style={{ marginBottom: '15px'}} >
 						<span className="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</button>
 					<form onSubmit={(event)=>this.submitURL(event)} className="" style={{ marginBottom: '10px'}} >

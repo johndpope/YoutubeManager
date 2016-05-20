@@ -57,7 +57,6 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		doSearch: function(event){
 			this.setState({loading: true});
 			event.preventDefault();
-			console.log(this.refs.searchInput.value);
 			var result = Youtube.search(this.refs.searchInput.value);
 			var self = this;
 			result.then(function(videos){

@@ -7,7 +7,7 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
             if(Youtube.series[this.props.channel.id]){
                 series = Youtube.series[this.props.channel.id].series
             }
-			return { series : series , newSerie : {} }
+			return { series : series , newSerie : { title : this.props.title } }
 		},
         componentWillReceiveProps: function( nextProps ){
             if(nextProps.channel.id !== this.props.channel.id){
@@ -16,8 +16,13 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
                 if(Youtube.series[nextProps.channel.id]){
                     series = Youtube.series[nextProps.channel.id].series
                 }
-                this.setState({series : series , newSerie : {}});
+                this.setState({series : series});
+                // se mudou o canal, já foi mudada a newSerie
+                //this.setState({series : series , newSerie : {}});
             }
+        },
+        componentWillUnmount: function(){
+            this.save();
         },
         addSerie: function(){
             var series = this.state.series;
@@ -41,7 +46,6 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
             this.setState({ series : series });
         },
         save: function(){
-            console.log('intern save');
             Youtube.saveSeries(this.state.series, this.props.channel);
         },
 		render: function(){

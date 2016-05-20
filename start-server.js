@@ -72,6 +72,12 @@ app.get('/youtubeExtra', function (req, res) {
     res.end( data );
   });
 })
+
+app.post('/youtubeExtra', function(req, res) {
+    console.log(req.body);
+   res.end('ok');
+});
+
 var server = app.listen(8082, function () {
 
   var host = server.address().address

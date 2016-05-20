@@ -68,7 +68,7 @@ define('YoutubePlayer' , ['react' , 'https://www.youtube.com/iframe_api' , 'Yout
 		render: function(){
 			return(
 			<div>
-				<div onClick={()=>this.props.fimVideo(this.props.videos.slice(this.state.playing))} >
+				<div onClick={()=>this.props.fimVideo(this.props.videos.slice(this.state.playing.index + 1, this.props.videos.length))} >
 					Close
 					<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
 				</div>
