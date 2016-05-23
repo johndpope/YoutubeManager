@@ -75,7 +75,7 @@ YOUTUBE
 	margin : -2px;
 }
 
-.YoutubeContent .side{
+.YoutubeContent .Side{
 	min-width: 150px;
 	background-color: gray;
 	text-align: center;
@@ -83,7 +83,7 @@ YOUTUBE
 	overflow-y: scroll;
 }
 
-.YoutubeContent .side .YoutubePlayList{
+.YoutubeContent .Side .YoutubePlayList{
 	margin: 5px;
 }
 

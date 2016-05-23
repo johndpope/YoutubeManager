@@ -172,7 +172,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 						</button>
 					</div>
 				</div>
-				<div className="side">
+				<div className="Side">
 					<button onClick={this.play}>
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
