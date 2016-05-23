@@ -151,7 +151,7 @@ define("Youtube",
 						request.then(function(response){
 							var k;
 							for(k in response.result.items){
-								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.resourceId.channelId.slice(2) , [] );
+								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.resourceId.channelId.slice(2) , [] , response.result.items[k].snippet.description );
 								channel.uploadId = "UU".concat(channel.uploadId);
 								channels[channel.id] = channel;
 							}
@@ -205,7 +205,7 @@ define("Youtube",
                     var promise = new Promise(function(resolve , reject){
                         request.then(function(response){
                             if(response.result.items.length > 0 ){
-                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.default.url , response.result.items[0].id.slice(2) , [] );
+                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.default.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
 								channel.uploadId = "UU".concat(channel.uploadId);
                                 if(loadVideos){
                                     var videosRequest = Youtube.playlistItems(channel.uploadId);
@@ -321,7 +321,7 @@ define("Youtube",
 									var y;
 									var videos = response.videos.slice(0, 16); //take only 16 videos
 									for(y in videos){
-										if(series.some(function(title){ return videos[y].title.indexOf(title) != -1 }) ){
+										if(series.some(function(serie){ return videos[y].title.toLowerCase().indexOf(serie.title.toLowerCase()) != -1 }) ){
 											Youtube.subscriptionsVideos.push(videos[y]);
 										}
 									}
@@ -343,8 +343,11 @@ define("Youtube",
 					return promise;
 				},
                 saveSeries : function(series, channel){
-                    console.log("save series");
-                    //save on server 2? remove already?
+                    var request = $.post('http://localhost:8082/youtubeExtra', { id : channel.id, 'channel' : channel.name , series: series });
+                    request.fail(function(response){
+                    	console.log("Não foi possível salvar Séries");
+                    	console.log(response);
+                    })
                 },
 				init: function(){
 					var subscriptionsListLoaded = new Promise(function(resolve, reject){

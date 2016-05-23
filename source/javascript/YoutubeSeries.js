@@ -23,10 +23,12 @@ define('YoutubeSeries', [ 'react' , 'jquery' ] , function ( React , $ ){
                         Nome
                         <input ref="inputTitle" defaultValue={this.props.title} style={{ marginLeft : '2px' , width : '515px' }} onBlur={(event)=>this.props.blur(event)}/>
                     </label>
+                    {/*
                     <label style={{display: 'inline-block', marginLeft : '5px' }} >
                         Número #
                         <input style={{width : '40px' , marginLeft : '2px' }} type="number" />
                     </label>
+                    */}
                 </span>
             )
         }

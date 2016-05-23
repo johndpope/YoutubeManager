@@ -1,8 +1,18 @@
 {
-	"subscriptions" : {
-		"UC9CuvdOVfMPvKCiwdGKL3cQ" : {
-			"channel" : "GameGrumps",
-			"series" : [ { "title" : "Zelda Ocarina of Time" } , { "title" : "Super Mario Maker" } ]
+	"subscriptions": {
+		"UC9CuvdOVfMPvKCiwdGKL3cQ": {
+			"channel": "GameGrumps",
+			"series": [
+				{
+					"title": "Zelda Ocarina of Time"
+				},
+				{
+					"title": "Super Mario Maker"
+				},
+				{
+					"title": "Dark Souls III"
+				}
+			]
 		}
 	}
 }

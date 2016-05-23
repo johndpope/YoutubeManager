@@ -1,20 +1,22 @@
 {
   "name": "youtube-manager",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "react" : "^0.14.0",
-	"react-dom" : "^0.14.0",
-    "jquery" : "^1.9.1",
-    "requirejs" : "^2.1.22",
-    "babel-cli" : "^6.6.5",
-	"babel-plugin-transform-react-jsx" : "v6.5.0",
-	"express" : "^4.13.4",
-	"bootstrap" : "^3.3.6"
+    "body-parser": "^1.15.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "jquery": "^1.9.1",
+    "requirejs": "^2.1.22",
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-react-jsx": "v6.5.0",
+    "express": "^4.13.4",
+    "bootstrap": "^3.3.6"
   },
   "scripts": {
-	  "build": "./node_modules/.bin/babel source/javascript --out-dir build",
-	  "server": "node start-server.js",
-	  "start": "npm run build && npm run server"
-	}
+    "build": "./node_modules/.bin/babel source/javascript --out-dir build",
+    "server": "node start-server.js",
+    "start": "npm run build && npm run server"
+  }
 }

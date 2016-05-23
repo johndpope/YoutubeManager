@@ -10,15 +10,16 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
 			return { series : series , newSerie : { title : this.props.title } }
 		},
         componentWillReceiveProps: function( nextProps ){
+            if(nextProps.title !== this.props.title){
+                this.setState( {newSerie : { title : nextProps.title } } );
+            }
             if(nextProps.channel.id !== this.props.channel.id){
-                //this.setState({series : [] , newSerie : {} });
+                this.save();
                 var series = [];
                 if(Youtube.series[nextProps.channel.id]){
                     series = Youtube.series[nextProps.channel.id].series
                 }
-                this.setState({series : series});
-                // se mudou o canal, já foi mudada a newSerie
-                //this.setState({series : series , newSerie : {}});
+                this.setState( { series: series });
             }
         },
         componentWillUnmount: function(){
@@ -48,14 +49,20 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
         save: function(){
             Youtube.saveSeries(this.state.series, this.props.channel);
         },
+        preview: function(title){
+            this.props.openPreview(title);
+        },
 		render: function(){
 			var boxStyle = { border : '1px solid black' , margin : '5px' , padding : '5px' , flex : 1  , textAlign : 'center' };
             var series = this.state.series.map(function(item, index){
                 return(
                     <div style={{ marginTop : '5px' }} key={index}>
                         <YoutubeSeries blur={this.renameSerie.bind(this, index)} title={item.title} />
-                        <button style={{ marginLeft : '10px' }} onClick={()=>this.removeSerie(index)}>
+                        <button style={{ margin : '0px 10px' }} onClick={()=>this.removeSerie(index)}>
                             <span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                        </button>
+                        <button type="button" data-toggle="modal" data-target="#myModal" onClick={()=>this.preview(item.title)}>
+                            <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </button>
                     </div>
                 )
@@ -65,9 +72,12 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
                     <div style={{borderBottom : '1px solid black'}} >
                         <h4 style={{ marginRight : '5px' }} >Series</h4>
                         <YoutubeSeries blur={(event)=>this.nameSerie(event.target.value)} title={this.state.newSerie.title} />
-                        <button onClick={()=>this.addSerie()}>
+                        <button onClick={()=>this.addSerie()} style={{ margin : '0px 10px' }} >
                             <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             Adicionar
+                        </button>
+                        <button type="button" data-toggle="modal" data-target="#myModal" onClick={()=>this.preview(this.state.newSerie.title)}>
+                            <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </button>
                     </div>
                     {series}

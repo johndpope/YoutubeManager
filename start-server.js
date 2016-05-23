@@ -60,6 +60,19 @@ console.log('Server running at http://127.0.0.1:8081/');
 var express = require('express');
 var app = express();
 
+/*
+  post body data
+*/
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+/*
+  end post middleware
+*/
+
 app.get('/youtubeExtra', function (req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -67,15 +80,41 @@ app.get('/youtubeExtra', function (req, res) {
 	if(err){
 		console.log(err);
 		res.end('{}');
-	}
-    console.log( data );
+	}else{
     res.end( data );
+  }
   });
 })
 
 app.post('/youtubeExtra', function(req, res) {
-    console.log(req.body);
-   res.end('ok');
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  fs.readFile( __dirname + "/" + "seriesSubscriptions.json", 'utf8', function (err, data) {
+    if(err){
+      console.log(err);
+      res.end('{}');
+    }else{
+      d = JSON.parse(data);
+      if(d.subscriptions[req.body.id]){
+        if(req.body.series){
+          d.subscriptions[req.body.id].series = req.body.series;
+        }else{
+          delete d.subscriptions[req.body.id];
+        }
+      }else{
+        if(req.body.series){
+          d.subscriptions[req.body.id] = { channel : req.body.channel , series : req.body.series }
+        }
+      }
+      var newSeries = JSON.stringify(d, null , '\t')
+      fs.writeFile( __dirname + "/" + "seriesSubscriptions.json", newSeries , function(err, data){
+        if(err){
+          console.log(err);
+        }
+      })
+      res.end( newSeries );
+    }
+  });
 });
 
 var server = app.listen(8082, function () {

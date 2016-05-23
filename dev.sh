@@ -9,4 +9,5 @@ function_node(){
 	npm run server
 }
 
+trap 'kill %1;' SIGINT;
 function_babel & function_node
