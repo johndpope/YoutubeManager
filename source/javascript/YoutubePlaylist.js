@@ -41,7 +41,7 @@ define( 'YoutubePlayList' , [ 'react' , 'YoutubeItem' ] , function( React , Yout
 						}
 						<div onMouseEnter={(event)=>this.mouseEnter(event, index)} onMouseLeave={this.mouseLeave}
 						  className={(this.props.highlightIndex == index ? 'highlight' : '') + (this.state.over == index ? ' over' : '') }
-						  onDragStart={(event)=>this.dragStart(event , index)} onDragOver={this.dragOver} onDrop={(event)=>this.drop(event , index)} draggable={this.props.changePosition}
+						  onDragStart={(event)=>this.dragStart(event , index)} onDragOver={this.dragOver} onDrop={(event)=>this.drop(event , index)} draggable={this.props.changePosition? true : false}
 						  onDragEnter={(event)=>this.dragEnter(event , index)} onClick={(event)=>this.props.click(event, index)}>
 							<YoutubeItem title={item.title} description={item.description} thumbnail={item.thumbnail} length={item.length} author={item.author} showDescription={false}/>
 						</div>
