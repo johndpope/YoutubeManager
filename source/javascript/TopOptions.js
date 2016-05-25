@@ -6,7 +6,7 @@ define( 'TopOptions' , [ 'react' ] , function( React ) {
 			var self = this;
 			var options = this.props.options.map(function( item , index ){
 				return(
-					<div onClick={()=>self.props.changeCategory(item.id)} className={(self.props.selectedId == item.id) ? 'selected' : ''}  key={item.id} >{item.text}</div>
+					<div onClick={()=>self.props.changeCategory(item.id)} className={(self.props.selectedId == item.id) ? 'TopOptionSelected' : 'TopOption'}  key={item.id} >{item.text}</div>
 				)
 			})
 			return (

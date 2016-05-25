@@ -4,7 +4,7 @@ define('Erro' , ['react'] , function(React){
 	var Erro = React.createClass({
 		render: function(){
 			return (
-				<div className="Erro">
+				<div className="ErroPage">
 					<h1 >LOADING ...</h1>
 				</div>
 			)
