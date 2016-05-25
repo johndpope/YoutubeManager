@@ -89,9 +89,9 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 						<div className="Flex">
 							<label className="PlaylistLabel">
 								<span className="VerticalText" > URL: </span>
-								<input ref="inputURL" className={'PlaylistInput'+ ' ' + (this.state.erroURL? 'Erro' : '')} disabled={this.state.loading} autoFocus='true' />
+								<input ref="inputURL" className={'PlaylistInput'+ ' ' + (this.state.erroURL? 'Error' : '')} disabled={this.state.loading} autoFocus='true' />
 							</label>
-							<button type="submit" className="PlaylistButton" > Enviar </button>
+							<button type="submit" className="PlaylistButton" > Send </button>
 						</div>
 					</form>
 					{this.state.initialLoad ?
@@ -110,11 +110,11 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 								<div className="ItemsOptions" >
 									<button type="button" onClick={()=>this.addAfter(0)} disabled={this.state.loading} className={this.state.loading? 'Disabled' : ''} >
 										<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
-										<span className="TextAfterIcon" > Adicionar Todos </span>
+										<span className="TextAfterIcon" > Add all </span>
 									</button>
 									<button type="button" onClick={()=>this.invert()} disabled={this.state.loading} className={'ItemsOption' + ' ' + (this.state.loading? 'Disabled' : '')} >
 										<span className="glyphicon glyphicon-sort" aria-hidden="true"></span>
-										<span className="TextAfterIcon" > Inverter </span>
+										<span className="TextAfterIcon" > Reverse </span>
 									</button>
 									<span className="ItemsOption" > {this.state.playlist.length} - {this.state.videos.length} </span>
 									{
@@ -132,7 +132,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 								<div className="Playlist" >
 									<button type="button" onClick={()=>this.removeAll()} >
 										<span className="glyphicon glyphicon-minus" aria-hidden="true" ></span>
-										<span className="TextAfterIcon"> Remover Todos </span>
+										<span className="TextAfterIcon"> Remove All </span>
 									</button>
 									<YoutubePlayList videos={this.state.playlist} removeVideoPlaylist={this.removeVideoPlaylist} />
 								</div>

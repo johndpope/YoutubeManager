@@ -155,7 +155,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 							<span className='Clickable input-group-addon' onClick={this.doSearch} >
 								<span className='glyphicon glyphicon-search' aria-hidden={true} />
 							</span>
-							<input className='form-control' ref="searchInput" autoFocus={true} onChange={this.checkSearchField} type="text" placeholder='Pesquisa' />
+							<input className='form-control' ref="searchInput" autoFocus={true} onChange={this.checkSearchField} type="text" placeholder='Search' />
 						</form>
 					: null}
 					{this.state.selectedMenu == 'US' || this.state.selectedMenu == 'BR' ? 

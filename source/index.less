@@ -139,7 +139,7 @@
 /*
 	Erro
 */
-.ErroPage{
+.ErrorPage{
 	background-color: darkred;
 	width: 100vw;
 	height: 100vh;
@@ -357,7 +357,7 @@
 				/* END YoutubePage -> YoutubePlaylistManager -> PlaylistForm -> PlaylistLabel -> PlaylistInput */
 
 				/* YoutubePage -> YoutubePlaylistManager -> PlaylistForm -> PlaylistLabel -> PlaylistInput Erro */
-				.PlaylistInput.Erro{
+				.PlaylistInput.Error{
 					outline-color: darkred;
 				}
 				/* END YoutubePage -> YoutubePlaylistManager -> PlaylistForm -> PlaylistLabel -> PlaylistInput Erro */
@@ -435,18 +435,24 @@
 					}
 					/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected */
 				}
+				/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items */
 			}
+			/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result */
 
+			/* YoutubePage -> YoutubePlaylistManager -> Content -> Playlist */
 			.Playlist{
 				margin-left: 5px;
 				text-align: center;
 
+				/* YoutubePage -> YoutubePlaylistManager -> Content -> Playlist -> YoutubePlaylist */
 				.YoutubePlaylist{
 					overflow-y: overlay;
 					max-height: @contentHeight;
 					margin-top: 5px;
 				}
+				/* END YoutubePage -> YoutubePlaylistManager -> Content -> Playlist -> YoutubePlaylist */
 			}
+			/* END YoutubePage -> YoutubePlaylistManager -> Content -> Playlist */
 		}
 		/* END YoutubePage -> YoutubePlaylistManager -> Content */
 	}
