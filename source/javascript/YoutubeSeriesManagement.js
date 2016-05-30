@@ -74,7 +74,7 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
                         <YoutubeSeries blur={(event)=>this.nameSerie(event.target.value)} title={this.state.newSerie.title} />
                         <button onClick={()=>this.addSerie()} style={{ margin : '0px 10px' }} >
                             <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            Adicionar
+                            Add
                         </button>
                         <button type="button" data-toggle="modal" data-target="#myModal" onClick={()=>this.preview(this.state.newSerie.title)}>
                             <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>

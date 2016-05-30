@@ -3,11 +3,10 @@
 define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'YoutubePlayList' ] , function( React, Youtube , YoutubeItem , YoutubePlayList ){
 	var YoutubePlaylistManager = React.createClass({
 		getInitialState: function(){
-			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false}
+			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false, filteredVideos: [], filterIndex: 0, filter: ''}
 		},
 		submitURL: function(event){
 			var self = this;
-			//console.log(this.refs.inputURL.value);
 			var match = this.refs.inputURL.value.match(/list=[^&]+/);
 			if(match){
 				this.setState({erroURL : false})
@@ -19,7 +18,6 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				});
 				Youtube.Playlist.then(function(videos){
 					console.log('loaded playlist');
-					//console.log(videos);
 					videos.splice(0,50);
 					var allVideos = self.state.videos.concat(videos);
 					self.setState({videos : allVideos , loading : false});
@@ -28,6 +26,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				this.setState({erroURL : true})
 			}
 			event.preventDefault();
+			this.refs.inputURL.focus();
 		},
 		add: function(item){
 			var playlist = this.state.playlist;
@@ -62,18 +61,47 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			videos.reverse();
 			this.setState({ videos : videos});
 		},
+		search: function(event){
+			var value = event.target[0].value;
+			event.preventDefault();
+			if(event.target[0].value.trim() !== ''){
+				if(this.state.videosFilter !== value){
+					var filteredVideos = this.state.videos.filter(function(item, index){
+						return item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1
+					});
+					var filterIndex = 0;
+					if(filteredVideos.length <= 0){
+						filterIndex = -1;
+					}else{
+						$(".Item[data-reactid$="+filteredVideos[filterIndex].id+"]")[0].scrollIntoView()
+					}
+					this.setState({ videosFilter: value , filteredVideos: filteredVideos , filterIndex : filterIndex });
+				}else{
+					if(this.state.filteredVideos){
+						var filterIndex = this.state.filterIndex + 1;
+						if(filterIndex >= this.state.filteredVideos.length){
+							filterIndex = -1;
+						}else{
+							$(".Item[data-reactid$="+this.state.filteredVideos[filterIndex].id+"]")[0].scrollIntoView();
+						}
+						this.setState({ filterIndex : filterIndex });
+					}
+				}
+			}
+			//$('.Item:nth-child(40)')[0].scrollIntoView()
+		},
 		render: function(){
 			var videos = this.state.videos.map(function(item, index){
 				return(
-				<div key={item.id} style={{ marginBottom: '10px' , padding: '5px' , border: (this.state.playlist.indexOf(item) != -1? '2px gold solid' : '2px darkred solid')}} className="flex" >
-					<div style={{ marginRight: '2px' , width : '33px'  }} >
-						<button type="button" onClick={()=>this.add(item)} style={{ marginBottom: '6px'}} >
+				<div key={item.id} className={(this.state.playlist.indexOf(item) != -1? 'ItemSelected' : 'Item')} >
+					<div >
+						<button type="button" onClick={()=>this.add(item)} >
 							<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
-						<button type="button" onClick={()=>this.remove(index)} style={{ marginBottom: '6px'}} >
+						<button type="button" onClick={()=>this.remove(index)} className="ItemButton" >
 							<span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
 						</button>
-						<button type="button" onClick={()=>this.addAfter(index)} >
+						<button type="button" onClick={()=>this.addAfter(index)} className="ItemButton" >
 							<span className="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
 						</button>
 					</div>
@@ -82,18 +110,17 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				)
 			}, this);
 			return (
-				<div>
-					<button type="button" onClick={()=>this.props.back(this.state.playlist, true)} style={{ marginBottom: '15px'}} >
+				<div className="YoutubePlaylistManager" >
+					<button type="button" onClick={()=>this.props.back(this.state.playlist, true)} >
 						<span className="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 					</button>
-					<form onSubmit={(event)=>this.submitURL(event)} className="" style={{ marginBottom: '10px'}} >
-						<div className="flex">
-							<label style={{flex: 1, display: 'inline-flex', marginRight: '5px'}} className="">
-								URL:
-								<input ref="inputURL" className="" style={{flex: 1, marginLeft: '5px', outlineColor : (this.state.erroURL ? 'darkred' : '' ) }} disabled={this.state.loading} />
-									{/*success outline CSS */}
+					<form onSubmit={(event)=>this.submitURL(event)} className="PlaylistForm" >
+						<div className="Flex">
+							<label className="PlaylistLabel">
+								<span className="VerticalText" > URL: </span>
+								<input ref="inputURL" className={'PlaylistInput'+ ' ' + (this.state.erroURL? 'Error' : '')} disabled={this.state.loading} autoFocus='true' />
 							</label>
-							<input type="submit" style={{marginBottom: '5px'}} />
+							<button type="submit" className="PlaylistButton" > Send </button>
 						</div>
 					</form>
 					{this.state.initialLoad ?
@@ -107,44 +134,43 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 					}
 					{this.state.videos.length !== 0 ? 
 						(
-						<div>
-							<div style={{ marginBottom : '15px' }} >
-								<button type="button" onClick={()=>this.addAfter(0)} style={{ marginRight : '5px' }} disabled={this.state.loading} className={this.state.loading? 'disabled' : ''} >
-									<span className="glyphicon glyphicon-plus" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
-									Adicionar Todos
-								</button>
-								<button type="button" onClick={()=>this.invert()} style={{ marginRight : '5px' }} disabled={this.state.loading} className={this.state.loading? 'disabled' : ''} >
-									<span className="glyphicon glyphicon-sort" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
-									Inverter
-								</button>
-								<span> {this.state.playlist.length} - {this.state.videos.length} </span>
-								{
-								this.state.loading ? 
-									<span>( total {this.state.total} ) <img src="../assets/loading.gif" style={{ width : '1em' }}/></span>
-								:
-									null
-								}
-							</div>
-							<div style={{ display : 'flex' }} >
-								<div style={{ overflowY : 'auto' , maxHeight : '82vh' , flex : 1 }} >
+						<div className="Content" >
+							<div className="Result" >
+								<div className="ItemsOptions" >
+									<button type="button" onClick={()=>this.addAfter(0)} disabled={this.state.loading} className={this.state.loading? 'Disabled' : ''} >
+										<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+										<span className="TextAfterIcon" > Add all </span>
+									</button>
+									<button type="button" onClick={()=>this.invert()} disabled={this.state.loading} className={'ItemsOption' + ' ' + (this.state.loading? 'Disabled' : '')} >
+										<span className="glyphicon glyphicon-sort" aria-hidden="true"></span>
+										<span className="TextAfterIcon" > Reverse </span>
+									</button>
+									<form onSubmit={(event)=>this.search(event)} className='ItemsOption Inline' >
+										<input className={(this.state.loading? 'Disabled' : '')} placeholder='Search' />
+									</form>
+									<span className='ItemsOption' > {this.state.playlist.length} - {this.state.videos.length} </span>
+									{
+									this.state.loading ? 
+										<span className='ItemsOption' >( total {this.state.total} ) <img src='../assets/loading.gif' /></span>
+									:
+										null
+									}
+								</div>
+								<div className="Items" >
 									{videos}
 								</div>
-								{ this.state.playlist.length != 0 ?
-									<div style={{ maxHeight : '82vh' , textAlign : 'center' }}>
-										<div>
-											<button type="button" onClick={()=>this.removeAll()} style={{ marginLeft : '5px' , marginBottom : '10px' }} >
-												<span className="glyphicon glyphicon-minus" aria-hidden="true" style={{ marginRight : '2px' }} ></span>
-												Remover Todos
-											</button>
-										</div>
-										<div style={{ overflowY : 'auto' , maxHeight : '78vh' }}>
-											<YoutubePlayList videos={this.state.playlist} removeVideoPlaylist={this.removeVideoPlaylist} />
-										</div>
-									</div>
-								:
-									null
-								}
+							</div>
+							{ this.state.playlist.length != 0 ?
+								<div className="Playlist" >
+									<button type="button" onClick={()=>this.removeAll()} >
+										<span className="glyphicon glyphicon-minus" aria-hidden="true" ></span>
+										<span className="TextAfterIcon"> Remove All </span>
+									</button>
+									<YoutubePlayList videos={this.state.playlist} removeVideoPlaylist={this.removeVideoPlaylist} />
 								</div>
+							:
+								null
+							}
 						</div>
 						)
 						:

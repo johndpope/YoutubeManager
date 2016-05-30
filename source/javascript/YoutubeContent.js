@@ -131,7 +131,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		render: function(){
 			var videos = this.state.videos.slice( this.state.first , (this.state.first + 16) ).map(function(item, index){
 				return(
-				<div key={item.id} onClick={this.addVideoToPlaylist.bind(this, index)} style={{'border': '1px solid black', 'padding': '4px', 'width' : '50%', 'display': 'inline-block'}} >
+				<div key={item.id} onClick={this.addVideoToPlaylist.bind(this, index)} className="Item" >
 					<YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} />
 				</div>
 				)
@@ -140,19 +140,22 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 			<div className="YoutubeContent">
 				{this.state.loading ? 
 					<div className="Loading">
-						<span>Loading... <img src="../assets/loading.gif" style={{ width : '1em' }}/></span>
+						<div className="LoadingContent">
+							Loading... 
+							<img src="../assets/loading.gif"/>
+						</div>
 					</div>
 					:
 					null
 				}
-				<div style={{ flex : 1 , marginRight : '5px' }}>
+				<div className="Center" >
 					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist} series={this.props.series} />
 					{this.state.search ?
-						<form onSubmit={this.doSearch} style={{ marginBottom : '10px' }} className='input-group' >
-							<span className='input-group-addon' onClick={this.doSearch} style={{ cursor : 'pointer' }} >
+						<form onSubmit={this.doSearch} className='Search input-group' >
+							<span className='Clickable input-group-addon' onClick={this.doSearch} >
 								<span className='glyphicon glyphicon-search' aria-hidden={true} />
 							</span>
-							<input className='form-control' ref="searchInput" autoFocus={true} onChange={this.checkSearchField} type="text" placeholder='Pesquisa' />
+							<input className='form-control' ref="searchInput" autoFocus={true} onChange={this.checkSearchField} type="text" placeholder='Search' />
 						</form>
 					: null}
 					{this.state.selectedMenu == 'US' || this.state.selectedMenu == 'BR' ? 
@@ -160,19 +163,23 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 					:
 						null
 					}
-					{videos}
-					<div style={{position: 'relative'}} >
-						<button type="button" onClick={this.previousPage}>
-							<span className="glyphicon glyphicon-chevron-left" aria-hidden={true}></span>
-							Previous Page
-						</button>
-						<button style={{position: 'absolute', right: '0px', bottom: '0px'}} type="button" onClick={this.nextPage}>
-							Next Page
-							<span className="glyphicon glyphicon-chevron-right" aria-hidden={true}></span>
-						</button>
+					<div className="Content" >
+						<div className="Items" >
+							{videos}
+						</div>
+						<div className="ItemsNavigation" >
+							<button type="button" onClick={this.previousPage}>
+								<span className="glyphicon glyphicon-chevron-left" aria-hidden={true}></span>
+								Previous Page
+							</button>
+							<button className="Right" type="button" onClick={this.nextPage}>
+								Next Page
+								<span className="glyphicon glyphicon-chevron-right" aria-hidden={true}></span>
+							</button>
+						</div>
 					</div>
 				</div>
-				<div className="side">
+				<div className="Side">
 					<button onClick={this.play}>
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>

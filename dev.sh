@@ -9,5 +9,9 @@ function_node(){
 	npm run server
 }
 
-trap 'kill %1;' SIGINT;
-function_babel & function_node
+function_less(){
+	./node_modules/.bin/lessc source/index.less build/index.css;
+}
+
+trap 'kill %1; kill %2;' SIGINT;
+function_less & function_babel & function_node

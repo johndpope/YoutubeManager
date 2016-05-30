@@ -25,14 +25,14 @@ define( 'YoutubeItem' , [ 'react' ] , function( React ){
 		},
 		render: function(){
 			return (
-			<div className="flex YoutubeItem">
-				<img src={this.props.thumbnail} style={{'width': '120px', 'height' : '90px'}} draggable="false"/>
+			<div className="YoutubeItem">
+				<img src={this.props.thumbnail} className="Thumbnail" draggable="false"/>
 				{ this.props.showDescription ?
-				<div className="description">
-					<div style={{'height':'1.3em', 'fontWeight' : 'bolder', 'overflow' : 'hidden'}}>
-						{this.props.title + ' - ' +  this.props.author}
+				<div className="Text">
+					<div className="Title" >
+						{this.props.title + ' -- ' +  this.props.author}
 					</div>
-					<span style={{'fontSize' : 'smaller', 'marginTop': '2px', 'textOverflow': 'ellipsis'}}>{this.props.description}</span>
+					<div className="Description" >{this.props.description}</div>
 				</div>
 				: null }
 			</div>
