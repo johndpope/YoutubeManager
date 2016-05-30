@@ -1,7 +1,7 @@
 /* Variables */
 
 @baseThumbnailHeight: 90px;
-@baseThumbnailWidth: 120px;
+@baseThumbnailWidth: 160px;
 
 @playlistVerticalThumbnailHeight: 90px;
 @playlistVerticalThumbnailWidth: 120px;
@@ -9,8 +9,8 @@
 @playlistHorizontalThumbnailHeight: 90px;
 @playlistHorizontalThumbnailWidth: 120px;
 
-@centerContentThumbnailHeight: 90px;
-@centerContentThumbnailWidth: 120px;
+@playlistManagerThumbnailHeight: 126px;
+@playlistManagerThumbnailWidth: 224px;
 
 /* END Variables */
 
@@ -287,24 +287,6 @@
 						padding: 5px;
 						width: 50%;
 						display: inline-block;
-
-						/* YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem */
-						.YoutubeItem{
-
-							/* YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem -> Thumbnail */
-							.Thumbnail{
-								height: @centerContentThumbnailHeight;
-								width: @centerContentThumbnailWidth;
-							}
-							/* END YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem -> Thumbnail */
-
-							/* YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem -> Text */
-							.Text{
-								height: @centerContentThumbnailHeight;
-							}
-							/* END YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem -> Text */
-						}
-						/* END YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item -> YoutubeItem */
 					}
 					/* END YoutubePage -> YoutubeContent -> Center -> Content -> Items -> Item */
 				}
@@ -414,18 +396,38 @@
 						padding: 5px;
 						border: 2px solid darkred;
 
-						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButton */
-						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButton */
-						.ItemButton{
-							margin-top: 5px;
+						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButtons */
+						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButtons */
+						.ItemButtons{
+							width: 30px;
+							display: flex;
+    						flex-direction: column;
+    						justify-content: space-between;
+							
+							/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButtons -> ItemButton */
+							/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButtons -> ItemButton */
+							.ItemButton{
+								margin-top: 5px;
+							}
+							/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButtons -> ItemButton */
+							/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButtons -> ItemButton */
 						}
-						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButton */
-						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButton */
+						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> ItemButtons */
+						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> ItemButtons */
 
 						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> YoutubeItem */
 						/* YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> YoutubeItem */
 						.YoutubeItem{
 							margin-left: 5px;
+
+							.Thumbnail{
+								height: @playlistManagerThumbnailHeight;
+								width: @playlistManagerThumbnailWidth;
+							}
+
+							.Text{
+								height: @playlistManagerThumbnailHeight;
+							}
 						}
 						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> Item -> YoutubeItem */
 						/* END YoutubePage -> YoutubePlaylistManager -> Content -> Result -> ItemsOptions -> Items -> ItemSelected -> YoutubeItem */
@@ -447,6 +449,7 @@
 			.Playlist{
 				margin-left: 5px;
 				text-align: center;
+				flex-basis: auto;
 
 				/* YoutubePage -> YoutubePlaylistManager -> Content -> Playlist -> YoutubePlaylist */
 				.YoutubePlaylist{

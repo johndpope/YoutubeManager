@@ -35,6 +35,13 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			}
 			this.setState({ playlist : playlist});
 		},
+		addBefore: function(index){
+			var playlist = this.state.playlist;
+			var videos = this.state.videos.slice(0,index+1);
+			videos.reverse();
+			videos.forEach(this.add);
+			this.setState({ playlist : playlist});
+		},
 		addAfter: function(index){
 			var playlist = this.state.playlist;
 			var videos = this.state.videos.slice(index);
@@ -94,8 +101,11 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			var videos = this.state.videos.map(function(item, index){
 				return(
 				<div key={item.id} className={(this.state.playlist.indexOf(item) != -1? 'ItemSelected' : 'Item')} >
-					<div >
-						<button type="button" onClick={()=>this.add(item)} >
+					<div className="ItemButtons">
+						<button type="button" onClick={()=>this.addBefore(index)} >
+							<span className="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+						</button>
+						<button type="button" onClick={()=>this.add(item)} className="ItemButton" >
 							<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 						<button type="button" onClick={()=>this.remove(index)} className="ItemButton" >
