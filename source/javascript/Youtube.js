@@ -58,7 +58,7 @@ define("Youtube",
 							var k;
 							for(k in response.result.items){
 								var video = new Video()
-								video = new Video( response.result.items[k].id , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt) , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId);
+								video = new Video( response.result.items[k].id , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId);
 								videos.push(video);
 							}
 							resolve(videos);
@@ -105,7 +105,7 @@ define("Youtube",
 							var video;
 							for(var v in videos){
 								if(videos[v].id.kind == 'youtube#video'){
-									video = new Video( videos[v].id.videoId , videos[v].snippet.title , videos[v].snippet.description , new Date(videos[v].snippet.publishedAt) , videos[v].snippet.thumbnails.default.url , videos[v].snippet.channelTitle , videos[v].snippet.channelId);
+									video = new Video( videos[v].id.videoId , videos[v].snippet.title , videos[v].snippet.description , new Date(videos[v].snippet.publishedAt) , videos[v].snippet.thumbnails.medium.url , videos[v].snippet.channelTitle , videos[v].snippet.channelId);
 									newVideos.push(video);
 								}
 							}
@@ -151,7 +151,7 @@ define("Youtube",
 						request.then(function(response){
 							var k;
 							for(k in response.result.items){
-								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.resourceId.channelId.slice(2) , [] , response.result.items[k].snippet.description );
+								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.resourceId.channelId.slice(2) , [] , response.result.items[k].snippet.description );
 								channel.uploadId = "UU".concat(channel.uploadId);
 								channels[channel.id] = channel;
 							}
@@ -184,7 +184,7 @@ define("Youtube",
 						request.then(function(response){
 							var y;
 							for(y in response.result.items){
-								var video =  new Video( response.result.items[y].snippet.resourceId.videoId , response.result.items[y].snippet.title , response.result.items[y].snippet.description , new Date(response.result.items[y].snippet.publishedAt ) , response.result.items[y].snippet.thumbnails.default.url , response.result.items[y].snippet.channelTitle , response.result.items[y].snippet.channelId );
+								var video =  new Video( response.result.items[y].snippet.resourceId.videoId , response.result.items[y].snippet.title , response.result.items[y].snippet.description , new Date(response.result.items[y].snippet.publishedAt ) , response.result.items[y].snippet.thumbnails.medium.url , response.result.items[y].snippet.channelTitle , response.result.items[y].snippet.channelId );
 								videos.push(video)
 							}
 							resolve( { videos : videos , nextPageToken : response.result.nextPageToken , total : response.result.pageInfo.totalResults } );
@@ -205,7 +205,7 @@ define("Youtube",
                     var promise = new Promise(function(resolve , reject){
                         request.then(function(response){
                             if(response.result.items.length > 0 ){
-                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.default.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
+                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.medium.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
 								channel.uploadId = "UU".concat(channel.uploadId);
                                 if(loadVideos){
                                     var videosRequest = Youtube.playlistItems(channel.uploadId);
@@ -269,14 +269,14 @@ define("Youtube",
 							var k;
 							for(k in response.result.items){
 								if(response.result.items[k].snippet.type == "recommendation"){
-									var video = new Video( response.result.items[k].contentDetails.recommendation.resourceId.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
+									var video = new Video( response.result.items[k].contentDetails.recommendation.resourceId.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
 									videos.push(video);
 									if(response.result.items[k].contentDetails.recommendation.reason != "videoWatched"){
 										console.log(response);
 									}
 								}
 								if(response.result.items[k].snippet.type == "upload"){
-									var video = new Video( response.result.items[k].contentDetails.upload.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.default.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
+									var video = new Video( response.result.items[k].contentDetails.upload.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
 									videos.push(video);
 								}
 							}

@@ -3,7 +3,7 @@
 define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'YoutubePlayList' ] , function( React, Youtube , YoutubeItem , YoutubePlayList ){
 	var YoutubePlaylistManager = React.createClass({
 		getInitialState: function(){
-			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false}
+			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false, filteredVideos: [], filterIndex: 0, filter: ''}
 		},
 		submitURL: function(event){
 			var self = this;
@@ -61,6 +61,35 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 			videos.reverse();
 			this.setState({ videos : videos});
 		},
+		search: function(event){
+			var value = event.target[0].value;
+			event.preventDefault();
+			if(event.target[0].value.trim() !== ''){
+				if(this.state.videosFilter !== value){
+					var filteredVideos = this.state.videos.filter(function(item, index){
+						return item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1
+					});
+					var filterIndex = 0;
+					if(filteredVideos.length <= 0){
+						filterIndex = -1;
+					}else{
+						$(".Item[data-reactid$="+filteredVideos[filterIndex].id+"]")[0].scrollIntoView()
+					}
+					this.setState({ videosFilter: value , filteredVideos: filteredVideos , filterIndex : filterIndex });
+				}else{
+					if(this.state.filteredVideos){
+						var filterIndex = this.state.filterIndex + 1;
+						if(filterIndex >= this.state.filteredVideos.length){
+							filterIndex = -1;
+						}else{
+							$(".Item[data-reactid$="+this.state.filteredVideos[filterIndex].id+"]")[0].scrollIntoView();
+						}
+						this.setState({ filterIndex : filterIndex });
+					}
+				}
+			}
+			//$('.Item:nth-child(40)')[0].scrollIntoView()
+		},
 		render: function(){
 			var videos = this.state.videos.map(function(item, index){
 				return(
@@ -116,10 +145,13 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 										<span className="glyphicon glyphicon-sort" aria-hidden="true"></span>
 										<span className="TextAfterIcon" > Reverse </span>
 									</button>
-									<span className="ItemsOption" > {this.state.playlist.length} - {this.state.videos.length} </span>
+									<form onSubmit={(event)=>this.search(event)} className='ItemsOption Inline' >
+										<input className={(this.state.loading? 'Disabled' : '')} placeholder='Search' />
+									</form>
+									<span className='ItemsOption' > {this.state.playlist.length} - {this.state.videos.length} </span>
 									{
 									this.state.loading ? 
-										<span className="ItemsOption" >( total {this.state.total} ) <img src="../assets/loading.gif" /></span>
+										<span className='ItemsOption' >( total {this.state.total} ) <img src='../assets/loading.gif' /></span>
 									:
 										null
 									}
