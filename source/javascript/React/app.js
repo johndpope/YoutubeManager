@@ -1,17 +1,18 @@
 requirejs.config({
     //By default load any module IDs from js/lib
-    baseUrl: '../build',
+    //baseUrl: '../build',
     //except, if the module ID starts with "app",
     //load it from the js/app directory. paths
     //config is relative to the baseUrl, and
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        react: '../node_modules/react/dist/react',
-        'react-dom': '../node_modules/react-dom/dist/react-dom',
-        jquery: '../node_modules/jquery/dist/jquery',
-        bootstrap: '../node_modules/bootstrap/dist/js/bootstrap',
-		config: '../config'
+        react: '../libs/react/react',
+        'react-dom': '../libs/react/react-dom',
+        jquery: '../libs/jquery/jquery',
+        bootstrap: '../libs/bootstrap/bootstrap',
+		config: '../config',
+		YoutubeService: '../YoutubeService'
     },
     shim : {
         "bootstrap" : { "deps" :['jquery'] }
@@ -19,11 +20,11 @@ requirejs.config({
 });
 
 // Start the main app logic.
-requirejs([ 'react' , 'react-dom' , 'bootstrap' , 'config' , 'Youtube' , 'YoutubePlayer' , 'Loading' , 'Erro' , 'YoutubePage' ],
-	function   ( React , ReactDOM , bootstrap , config , Youtube , YoutubePlayer , Loading , Erro , YoutubePage ) {
+requirejs([ 'react' , 'react-dom' , 'bootstrap' , 'config' , 'YoutubeService' , 'YoutubePlayer' , 'Loading' , 'Erro' , 'YoutubePage' ],
+	function   ( React , ReactDOM , bootstrap , config , YoutubeService , YoutubePlayer , Loading , Erro , YoutubePage ) {
 		//Garantir a API 100% carregada apenas para renderizar a aplicação e não para carregar
 		//Garantir a API do frame carregada
-		var p = Promise.all([YoutubePlayer.loading,Youtube.loading])
+		var p = Promise.all([YoutubePlayer.loading,YoutubeService.loading])
 		ReactDOM.render(
 				<Loading />, document.getElementById('content')
 			);

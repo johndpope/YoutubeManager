@@ -1,10 +1,10 @@
 'use strict'
 
-define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'YoutubeItem' , 'YoutubePlayList' , 'TopOptions' ] , function( React , $ , Youtube , Navigation , YoutubeItem , YoutubePlayList , TopOptions ){
+define('YoutubeContent', [ 'react' , 'jquery' , 'YoutubeService' , 'Navigation' , 'YoutubeItem' , 'YoutubePlayList' , 'TopOptions' ] , function( React , $ , YoutubeService , Navigation , YoutubeItem , YoutubePlayList , TopOptions ){
 	var YoutubeContent = React.createClass({
 		// Middle click ou drag'n drop?? pensar na usabilidade
 		getInitialState: function(){
-			return ({videos: Youtube.subscriptionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscriptions' , authorized : Youtube.authorized});
+			return ({videos: YoutubeService.subscriptionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscriptions' , authorized : YoutubeService.authorized});
 		},
 		addVideoToPlaylist: function(index, event){
 			event.preventDefault();
@@ -57,7 +57,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		doSearch: function(event){
 			this.setState({loading: true});
 			event.preventDefault();
-			var result = Youtube.search(this.refs.searchInput.value);
+			var result = YoutubeService.search(this.refs.searchInput.value);
 			var self = this;
 			result.then(function(videos){
 				var newVideos = [];
@@ -87,11 +87,11 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 			this.setState({playlist: newPlaylist});
 		},
 		subscriptions: function(){
-			var videos = Youtube.subscriptionsVideos;
+			var videos = YoutubeService.subscriptionsVideos;
 			this.setState({videos: videos, first: 0, selectedMenu: 'subscriptions' , search: false});
 		},
 		top: function(regionCode){
-			var promise = Youtube.categories(regionCode);
+			var promise = YoutubeService.categories(regionCode);
 			var self = this;
 			promise.then(function(response){
 				self.setState({selectedMenu: regionCode , search: false , categories: response});
@@ -104,14 +104,14 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		},
 		changeCategory: function(id){
 			this.setState({loading: true});
-			var promise = Youtube.topList(this.state.selectedMenu , id);
+			var promise = YoutubeService.topList(this.state.selectedMenu , id);
 			var self = this;
 			promise.then(function(response){
 				self.setState({videos: response, first: 0 , categorieId: id , loading : false});
 			});
 		},
 		recommendations: function(){
-			var videos = Youtube.recommendations;
+			var videos = YoutubeService.recommendations;
 			this.setState({videos: videos, first: 0 , selectedMenu: 'recommendations' , search: false});
 		},
 		search: function(){
@@ -124,9 +124,9 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'Youtube' , 'Navigation' , 'Yout
 		logIn: function(){
 			var self = this;
 			var after = function(){
-				self.setState({authorized : Youtube.authorized});
+				self.setState({authorized : YoutubeService.authorized});
 			}
-			Youtube.authorize(after);
+			YoutubeService.authorize(after);
 		},
 		render: function(){
 			var videos = this.state.videos.slice( this.state.first , (this.state.first + 16) ).map(function(item, index){

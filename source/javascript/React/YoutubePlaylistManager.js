@@ -1,6 +1,6 @@
 'use strict'
 
-define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'YoutubePlayList' ] , function( React, Youtube , YoutubeItem , YoutubePlayList ){
+define('YoutubePlaylistManager', [ 'react' , 'YoutubeService' , 'YoutubeItem' , 'YoutubePlayList' ] , function( React, YoutubeService , YoutubeItem , YoutubePlayList ){
 	var YoutubePlaylistManager = React.createClass({
 		getInitialState: function(){
 			return {videos : [], initialLoad : false , loading : false, playlist : [], erroURL: false, filteredVideos: [], filterIndex: 0, filter: ''}
@@ -13,10 +13,10 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				console.log("URL válida");
 				var id = match[0].slice(5);
 				this.setState({initialLoad : true, loading : true});
-				Youtube.loadFullPlaylist(id).then(function(result){
+				YoutubeService.loadFullPlaylist(id).then(function(result){
 					self.setState({videos : result.videos, initialLoad : false, total : result.total});
 				});
-				Youtube.Playlist.then(function(videos){
+				YoutubeService.Playlist.then(function(videos){
 					console.log('loaded playlist');
 					videos.splice(0,50);
 					var allVideos = self.state.videos.concat(videos);

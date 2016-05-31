@@ -1,6 +1,6 @@
 'use strict'
 
-define('YoutubeSearch', ['react', 'Youtube' , 'YoutubeItem' ] , function( React , Youtube , YoutubeItem ){
+define('YoutubeSearch', ['react', 'YoutubeService' , 'YoutubeItem' ] , function( React , YoutubeService , YoutubeItem ){
     var YoutubeSearch = React.createClass({
         getDefaultProps: function(){
             return { selectVideo : function(){} , hideVideos : false }
@@ -15,7 +15,7 @@ define('YoutubeSearch', ['react', 'Youtube' , 'YoutubeItem' ] , function( React 
             this.props.unselectChannel();
             event.preventDefault();
             this.setState({loading : true});
-            var result = Youtube.search(this.refs.searchInput.value);
+            var result = YoutubeService.search(this.refs.searchInput.value);
             var self = this;
             result.then(function(videos){
                 var newVideos = [];

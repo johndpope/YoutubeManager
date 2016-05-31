@@ -13,5 +13,5 @@ function_less(){
 	./node_modules/.bin/lessc source/index.less build/index.css;
 }
 
-trap 'kill %1; kill %2;' SIGINT;
-function_less & function_babel & function_node
+trap 'kill %1;' SIGINT;
+grunt dev & npm run server

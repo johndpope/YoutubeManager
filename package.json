@@ -1,24 +1,25 @@
 {
   "name": "youtube-manager",
   "version": "0.0.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-plugin-transform-react-jsx": "v6.5.0",
     "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^1.9.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "jquery": "^1.9.1",
-    "requirejs": "^2.1.22",
-    "babel-cli": "^6.6.5",
-    "babel-plugin-transform-react-jsx": "v6.5.0",
-    "express": "^4.13.4",
-    "bootstrap": "^3.3.6",
-    "less": "^2.7.1"
+    "requirejs": "^2.1.22"
   },
   "scripts": {
-    "babel": "./node_modules/.bin/babel source/javascript --out-dir build",
-    "less": "./node_modules/.bin/lessc source/index.html build/index.css",
-    "build": "npm run less && npm run babel",
+    "build": "grunt build",
     "server": "node start-server.js",
     "start": "npm run build && npm run server"
   }

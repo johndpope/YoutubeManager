@@ -1,6 +1,6 @@
 'use strict'
 
-define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeContent' , 'YoutubePlaylistManager' , 'YoutubeSeriesPage' ] , function( React , Youtube , YoutubePlayer , YoutubeContent , YoutubePlaylistManager , YoutubeSeriesPage ){
+define( 'YoutubePage' , [ 'react' , 'YoutubePlayer' , 'YoutubeContent' , 'YoutubePlaylistManager' , 'YoutubeSeriesPage' ] , function( React , YoutubePlayer , YoutubeContent , YoutubePlaylistManager , YoutubeSeriesPage ){
 	var YoutubePage = React.createClass({
 		getInitialState: function(){
 			return {component : '', videos: []};
@@ -9,7 +9,6 @@ define( 'YoutubePage' , [ 'react' , 'Youtube' , 'YoutubePlayer' , 'YoutubeConten
 			this.setState({component: 'player' , videos: videos});
 		},
 		base: function(videos, concat){
-			//Youtube.loadRecommendations();
 			if(!videos){
 				videos = this.state.videos;
 			}else{

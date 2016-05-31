@@ -1,11 +1,11 @@
 'use strict'
 
-define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem' , 'YoutubeSeries' ] , function(React, $ , Youtube , YoutubeItem , YoutubeSeries ){
+define('YoutubeSeriesManagement', ['react' , 'jquery' , 'YoutubeService' , 'YoutubeItem' , 'YoutubeSeries' ] , function(React, $ , YoutubeService , YoutubeItem , YoutubeSeries ){
 	var YoutubeSeriesManagement = React.createClass({
 		getInitialState: function(){
             var series = [];
-            if(Youtube.series[this.props.channel.id]){
-                series = Youtube.series[this.props.channel.id].series
+            if(YoutubeService.series[this.props.channel.id]){
+                series = YoutubeService.series[this.props.channel.id].series
             }
 			return { series : series , newSerie : { title : this.props.title } }
 		},
@@ -16,8 +16,8 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
             if(nextProps.channel.id !== this.props.channel.id){
                 this.save();
                 var series = [];
-                if(Youtube.series[nextProps.channel.id]){
-                    series = Youtube.series[nextProps.channel.id].series
+                if(YoutubeService.series[nextProps.channel.id]){
+                    series = YoutubeService.series[nextProps.channel.id].series
                 }
                 this.setState( { series: series });
             }
@@ -47,7 +47,7 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'Youtube' , 'YoutubeItem
             this.setState({ series : series });
         },
         save: function(){
-            Youtube.saveSeries(this.state.series, this.props.channel);
+            YoutubeService.saveSeries(this.state.series, this.props.channel);
         },
         preview: function(title){
             this.props.openPreview(title);

@@ -33,7 +33,7 @@ define( 'YoutubePlayList' , [ 'react' , 'YoutubeItem' ] , function( React , Yout
 		render: function(){
 			var videos = this.props.videos.map(function(item, index){
 				return(
-					<div key={item.id} className={(this.props.horizontal ? 'horizontal ' : 'Vertical ')}>
+					<div key={item.id} className={(this.props.horizontal ? 'Horizontal ' : 'Vertical ')}>
 						{this.props.horizontal ? null : 
 						<button type='button' className='RemoveButton' onClick={()=>this.remove(index)} >
 							<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>

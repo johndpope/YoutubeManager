@@ -12,6 +12,7 @@ http.createServer( function (request, response) {
    if(pathname === '/'){
     pathname = '/index.html';
    }
+   pathname = '/build' + pathname;
    // Read the requested file content from file system
    fs.readFile(pathname.substr(1), function (err, data) {
       if (err) {

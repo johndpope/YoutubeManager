@@ -1,6 +1,6 @@
 'use strict'
 
-define('YoutubeSeriesPage', ['react' , 'Youtube',  'YoutubeSeriesManagement' , 'YoutubeItem' , 'YoutubeSearch' ] , function( React , Youtube ,  YoutubeSeriesManagement , YoutubeItem , YoutubeSearch ){
+define('YoutubeSeriesPage', ['react' , 'YoutubeService',  'YoutubeSeriesManagement' , 'YoutubeItem' , 'YoutubeSearch' ] , function( React , YoutubeService ,  YoutubeSeriesManagement , YoutubeItem , YoutubeSearch ){
     var YoutubeSeriesPage = React.createClass({
         getInitialState: function(){
             var arrayVideos = [{"id":"TLFfYHUb9Ps","title":"Dangerous Woman - Ariana Grande (Rock Cover Music Video by TeraBrite)","description":"","uploadDate":"2016-03-14T17:15:35.000Z","thumnail":"https://i.ytimg.com/vi/TLFfYHUb9Ps/default.jpg","author":"TeraBrite","authorId":"UCvq0BbsWrF0OP4q_q2X1M3w"},{"id":"12mq4jNDKZQ","title":"Calculated Dong","description":"","uploadDate":"2016-03-14T16:32:41.000Z","thumnail":"https://i.ytimg.com/vi/12mq4jNDKZQ/default.jpg","author":"AdmiralBulldog","authorId":"UCk8ZIMJxSO9-pUg7xyrnaFQ"},{"id":"EoVEQireZJM","title":"Aprendendo a andar de patins #SouLuna | Gabbie Fadel","description":"","uploadDate":"2016-03-14T18:00:00.000Z","thumnail":"https://i.ytimg.com/vi/EoVEQireZJM/default.jpg","author":"Gabbie Fadel","authorId":"UCS9K27KW782vvAwTHJpVePQ"}];
@@ -23,14 +23,14 @@ define('YoutubeSeriesPage', ['react' , 'Youtube',  'YoutubeSeriesManagement' , '
         },
         selectChannel: function(channelId){
             this.refs.YoutubeSearch.hideVideos(true);
-            this.setState({ selected : null , channel : { name : Youtube.series[channelId].title , id : channelId , thumbnail : '../assets/loading.gif' } , title : null });
+            this.setState({ selected : null , channel : { name : YoutubeService.series[channelId].title , id : channelId , thumbnail : '../assets/loading.gif' } , title : null });
             this.loadChannel(channelId);
         },
         unselectChannel: function(){
             this.setState({ selected : null , channel : null , title : null });
         },
         loadChannel: function(channelId){
-            var promise = Youtube.loadChannel(channelId , true);
+            var promise = YoutubeService.loadChannel(channelId , true);
             promise.then(function(response){
                 if(response.erro){
                     console.log(response.erro);
@@ -78,10 +78,10 @@ define('YoutubeSeriesPage', ['react' , 'Youtube',  'YoutubeSeriesManagement' , '
                     </div>
                 )
             }, this);
-            var series = Object.keys(Youtube.series).map(function(key){
+            var series = Object.keys(YoutubeService.series).map(function(key){
                 return(
                     <button key={key} onClick={()=>this.selectChannel(key) } style={{ display : 'inline-block', marginRight : '5px' }} >
-                        {Youtube.series[key].channel}
+                        {YoutubeService.series[key].channel}
                     </button>
                 )
             }, this);
