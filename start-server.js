@@ -9,7 +9,9 @@ http.createServer( function (request, response) {
    
    // Print the name of the file for which request is made.
    console.log("Request for " + pathname + " received.");
-   
+   if(pathname === '/'){
+    pathname = '/index.html';
+   }
    // Read the requested file content from file system
    fs.readFile(pathname.substr(1), function (err, data) {
       if (err) {
