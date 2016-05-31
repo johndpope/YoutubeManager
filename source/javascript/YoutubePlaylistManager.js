@@ -103,7 +103,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 				<div key={item.id} className={(this.state.playlist.indexOf(item) != -1? 'ItemSelected' : 'Item')} >
 					<div className="ItemButtons">
 						<button type="button" onClick={()=>this.addBefore(index)} >
-							<span className="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+							<span className="glyphicon glyphicon-open" aria-hidden="true"></span>
 						</button>
 						<button type="button" onClick={()=>this.add(item)} className="ItemButton" >
 							<span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -112,7 +112,7 @@ define('YoutubePlaylistManager', [ 'react' , 'Youtube' , 'YoutubeItem' , 'Youtub
 							<span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
 						</button>
 						<button type="button" onClick={()=>this.addAfter(index)} className="ItemButton" >
-							<span className="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+							<span className="glyphicon glyphicon-open Rotate" aria-hidden="true"></span>
 						</button>
 					</div>
 					<YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} />
