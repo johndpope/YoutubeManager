@@ -1,18 +1,17 @@
 'use strict'
 
-define( 'YoutubePlayList' , [ 'react' , 'YoutubeItem' ] , function( React , YoutubeItem){
+define( 'YoutubePlayList' , [ 'react' , 'jquery', 'YoutubeItem' ] , function( React , $ , YoutubeItem){
 	var YoutubePlayList = React.createClass({
 		getDefaultProps: function(){
 			return {horizontal: false , highlightIndex : -1 , click:function(event,index){} }
 		},
 		getInitialState: function(){
-			return ({videoIndexInfo : -1 , over : -1})
+			return ({ over : -1 })
 		},
-		mouseEnter: function(event, index){
-			this.setState({videoIndexInfo: index, positionY : event.screenY });
-		},
-		mouseLeave: function(event){
-			this.setState({videoIndexInfo: -1});
+		componentDidMount: function(){
+			$('.YoutubePlaylist').tooltip({
+  				selector: '.has-tooltip'
+			});
 		},
 		dragStart: function(event , index){
 			this.item = index;
@@ -39,10 +38,9 @@ define( 'YoutubePlayList' , [ 'react' , 'YoutubeItem' ] , function( React , Yout
 							<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
 						</button>
 						}
-						<div onMouseEnter={(event)=>this.mouseEnter(event, index)} onMouseLeave={this.mouseLeave}
-						  className={(this.props.highlightIndex == index ? 'Highlight' : '') + (this.state.over == index ? ' Over' : '') }
+						<div className={(this.props.highlightIndex == index ? 'Highlight' : '') + ' ' + (this.state.over == index ? ' Over' : '') + ' ' + 'has-tooltip' }
 						  onDragStart={(event)=>this.dragStart(event , index)} onDragOver={this.dragOver} onDrop={(event)=>this.drop(event , index)} draggable={this.props.changePosition? true : false}
-						  onDragEnter={(event)=>this.dragEnter(event , index)} onClick={(event)=>this.props.click(event, index)}>
+						  onDragEnter={(event)=>this.dragEnter(event , index)} onClick={(event)=>this.props.click(event, index)} data-toggle="tooltip" data-placement={this.props.horizontal ? 'bottom' : 'left'} title={item.title + ' - ' + item.author}>
 							<YoutubeItem title={item.title} description={item.description} thumbnail={item.thumbnail} length={item.length} author={item.author} showDescription={false}/>
 						</div>
 					</div>
@@ -50,13 +48,6 @@ define( 'YoutubePlayList' , [ 'react' , 'YoutubeItem' ] , function( React , Yout
 			}, this);
 			return (
 			<div className="YoutubePlaylist">
-				{this.state.videoIndexInfo >= 0 ?
-					<div className="tooltip" style={ this.props.horizontal ? {top : '720px' , left : this.state.videoIndexInfo * 135 , width : '360px' } : { right : '140px' , top : this.state.positionY - 70 , width : '200px'} } >
-						{this.props.videos[this.state.videoIndexInfo].title}
-					</div>
-				:
-					null
-				}
 				{videos}
 			</div>
 			)

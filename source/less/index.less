@@ -107,6 +107,8 @@
 /* YoutubePlaylist */
 .YoutubePlaylist{
 	min-width: 140px;
+	white-space: nowrap;
+    overflow-x: hidden;
 
 	/* YoutubePlaylist -> Vertical */
 	.Vertical{
@@ -143,6 +145,10 @@
 	/* YoutubePlaylist -> Horizontal */
 	.Horizontal{
 		display: inline-block;
+
+		&:nth-child(n+1){
+			margin-left: 5px;
+		}
 	}
 	/* END YoutubePlaylist -> Horizontal */
 
