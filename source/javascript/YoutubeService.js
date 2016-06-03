@@ -343,11 +343,22 @@ define("YoutubeService",
 					return promise;
 				},
                 saveSeries : function(series, channel){
+                	if(series.length == 0){
+                		delete YoutubeService.series[channel.id];
+                	}else{
+	                	YoutubeService.series[channel.id] = {
+	                		channel: channel.name,
+	                		series: series
+	                	};
+                	}
                     var request = $.post('http://localhost:8082/youtubeExtra', { id : channel.id, 'channel' : channel.name , series: series });
+                    request.done(function(response){
+                    	YoutubeService.series = response.subscriptions;
+                    });
                     request.fail(function(response){
                     	console.log("Não foi possível salvar Séries");
                     	console.log(response);
-                    })
+                    });
                 },
 				init: function(){
 					var subscriptionsListLoaded = new Promise(function(resolve, reject){

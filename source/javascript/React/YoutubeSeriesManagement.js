@@ -7,7 +7,7 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'YoutubeService' , 'Yout
             if(YoutubeService.series[this.props.channel.id]){
                 series = YoutubeService.series[this.props.channel.id].series
             }
-			return { series : series , newSerie : { title : this.props.title } }
+			return { series : series , newSerie : { title : this.props.title } , previewTitle : '' , previewVideos: [] }
 		},
         componentWillReceiveProps: function( nextProps ){
             if(nextProps.title !== this.props.title){
@@ -49,38 +49,68 @@ define('YoutubeSeriesManagement', ['react' , 'jquery' , 'YoutubeService' , 'Yout
         save: function(){
             YoutubeService.saveSeries(this.state.series, this.props.channel);
         },
-        preview: function(title){
-            this.props.openPreview(title);
+        openPreview: function(title){
+            var match = [];
+            var videos = this.props.channel.videos;
+            for(var y in videos){
+                if( videos[y].title.toLowerCase().indexOf(title.toLowerCase()) != -1 ){
+                    match.push(videos[y]);
+                }
+            }
+            $('#previewVideosModal').modal();
+            this.setState({previewTitle: title, previewVideos: match});
         },
 		render: function(){
-			var boxStyle = { border : '1px solid black' , margin : '5px' , padding : '5px' , flex : 1  , textAlign : 'center' };
             var series = this.state.series.map(function(item, index){
                 return(
-                    <div style={{ marginTop : '5px' }} key={index}>
+                    <div className="Series" key={index}>
                         <YoutubeSeries blur={this.renameSerie.bind(this, index)} title={item.title} />
-                        <button style={{ margin : '0px 10px' }} onClick={()=>this.removeSerie(index)}>
+                        <button className="Button" onClick={()=>this.removeSerie(index)}>
                             <span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
                         </button>
-                        <button type="button" data-toggle="modal" data-target="#myModal" onClick={()=>this.preview(item.title)}>
+                        <button className="Button" onClick={()=>this.openPreview(item.title)}>
                             <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </button>
                     </div>
                 )
             },this);
+            var previewVideos = this.state.previewVideos.map(function(item, index){
+                return(
+                    <div key={item.id} className="VideoPreview">
+                        <YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} />
+                    </div>
+                )
+            }, this);
 			return(
-                <div style={boxStyle} >
-                    <div style={{borderBottom : '1px solid black'}} >
-                        <h4 style={{ marginRight : '5px' }} >Series</h4>
+                <div className="YoutubeSeriesManagement" >
+                    <div className="NewSeries" >
+                        <h4 >New Series</h4>
                         <YoutubeSeries blur={(event)=>this.nameSerie(event.target.value)} title={this.state.newSerie.title} />
-                        <button onClick={()=>this.addSerie()} style={{ margin : '0px 10px' }} >
+                        <button className="Button" onClick={()=>this.addSerie()} >
                             <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            Add
+                            <span className="TextAfterIcon"> Add </span>
                         </button>
-                        <button type="button" data-toggle="modal" data-target="#myModal" onClick={()=>this.preview(this.state.newSerie.title)}>
+                        <button className="Button" onClick={()=>this.openPreview(this.state.newSerie.title)}>
                             <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                         </button>
                     </div>
                     {series}
+                    <div className="modal fade" id="previewVideosModal" tabIndex="-1" role="dialog" aria-labelledby="previewVideosModalLabel">
+                      <div className="modal-dialog modal-lg" role="document">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> &times; </span></button>
+                            <h4 className="modal-title" id="previewVideosModalLabel">'{this.state.previewTitle}' search on last 16 videos</h4>
+                          </div>
+                          <div className="modal-body" >
+                            {previewVideos}
+                          </div>
+                          <div className="modal-footer">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
 			)
 		}

@@ -61,11 +61,13 @@
 /* YoutubeItem */
 .YoutubeItem{
 	display: flex;
+	text-align: initial;
 
 	/* YoutubeItem -> Thumbnail */
 	.Thumbnail{
 		height: @baseThumbnailHeight;
 		width: @baseThumbnailWidth;
+		flex: 0 0 auto;
 	}
 	/* END YoutubeItem -> Thumbnail */
 
@@ -155,10 +157,23 @@
 }
 /* END YoutubePlaylist */
 
+/* YoutubeSeries */
+.YoutubeSeries{
+	display: inline-block;
+
+	/* YoutubeSeries -> InputTitle */
+	.InputTitle{
+		margin-left: 5px;
+		min-width: 240px;
+	}
+	/* END YoutubeSeries -> InputTitle */
+}
+/* END YoutubeSeries */
+
 /* END Base CSS*/
 
 /*
-	Erro
+	ErroPage
 */
 .ErrorPage{
 	background-color: darkred;
@@ -169,7 +184,7 @@
 	}
 }
 /*
-	END Erro
+	END ErroPage
 */
 
 /*
@@ -482,18 +497,144 @@
 	}
 	/* END YoutubePage -> YoutubePlaylistManager */
 
+	/* YoutubePage -> YoutubeSeriesPage */
+	.YoutubeSeriesPage{
 
-	/*display: flex;
-	flex: 1;
-	max-height: 100%;
-	> div{
-		background-color: rgba(211, 211, 211, 0.68);
-		margin-bottom: 6px;
-		border: 2px darkred solid;
-		border-radius: 5px;
-		padding: 5px;
-		flex: 1;
-	}*/
+		/* YoutubePage -> YoutubeSeriesPage -> Series */
+		.Series{
+			display: inline-block;
+			margin-left: 5px;
+
+			/* YoutubePage -> YoutubeSeriesPage -> Series -> button Space */
+			button:nth-child(n+2){
+				margin-left: 5px;
+			}
+			/* END YoutubePage -> YoutubeSeriesPage -> Series -> button Space */
+		}
+		/* END YoutubePage -> YoutubeSeriesPage -> Series */
+
+		/* YoutubePage -> YoutubeSeriesPage -> Selected */
+		.Selected{
+			display: flex;
+			margin-top: 5px;
+
+			/* YoutubePage -> YoutubeSeriesPage -> Selected -> Channel */
+			.Channel{
+				border: 1px solid black;
+				padding: 5px;
+				text-align: center;
+				width: 160px;
+				flex: 0 0 auto;
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Channel -> Image */
+				.Image{
+					width: 98px;
+					height: 98px;
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Channel -> Image */
+			}
+			/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Channel */
+
+			/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos */
+			.Videos{
+				margin-left: 5px;
+				border: 1px solid black;
+				padding: 5px;
+				flex: 1;
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideoSelected */
+				.VideoSelected{
+					border-bottom: 1px solid black;
+					padding-bottom: 5px;
+					text-align: center;
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideoSelected */
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideosList */
+				.VideosList{
+					max-height: 85vh;
+					overflow-y: auto;
+					text-align: center;
+
+					/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideosList -> Video Space */
+					.Video:nth-child(n+2){
+						margin-top: 5px;
+					}
+					/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideosList -> Video Space */
+				}
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> VideosList */
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> div Space */
+				div:nth-child(2){
+					margin-top: 5px;
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Videos -> div Space */
+			}
+			/* END YoutubePage -> YoutubeSeriesPage -> Selected -> Videos */
+
+			/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement */
+			.YoutubeSeriesManagement{
+				margin-left: 5px;
+				border: 1px solid black;
+				padding: 5px;
+				text-align: center;
+				width: 400px;
+				flex: 0 0 auto;
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> NewSeries */
+				.NewSeries{
+					border-bottom: 1px solid black;
+					padding-bottom: 5px;
+
+					/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> NewSeries -> Button */
+					.Button{
+						margin-left: 5px;
+					}
+					/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> NewSeries -> Button */
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> NewSeries */
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> Series */
+				.Series{
+					margin-top: 5px;
+
+					/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> Series -> Button */
+					.Button{
+						margin-left: 5px;
+					}
+					/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> Series -> Button */
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> Series */
+
+				/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal */
+				.modal .modal-dialog .modal-content{
+
+					/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> title */
+					.modal-header .modal-title{
+						text-align: center;
+					}
+					/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> title */
+
+					/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> body */
+					.modal-body{
+						max-height: 80vh;
+						overflow-y: auto;
+
+						/* YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> body -> VideoPreview Space */
+						.VideoPreview:nth-child(n+2){
+							margin-top: 5px;
+						}
+						/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> body -> VideoPreview Space */
+					}
+					/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal -> body */
+				}
+				/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement -> modal */
+			}
+			/* END YoutubePage -> YoutubeSeriesPage -> Selected -> YoutubeSeriesManagement */
+		}
+		/* END YoutubePage -> YoutubeSeriesPage -> Selected */
+	}
+	/* END YoutubePage -> YoutubeSeriesPage */
 
 	/*
 		YoutubePage -> YoutubePlayer

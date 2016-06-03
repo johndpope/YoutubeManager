@@ -18,10 +18,10 @@ define('YoutubeSeries', [ 'react' , 'jquery' ] , function ( React , $ ){
         },
         render: function(){
             return(
-                <span>
-                    <label style={{display: 'inline-block'}}>
+                <div className="YoutubeSeries" >
+                    <label>
                         Nome
-                        <input ref="inputTitle" defaultValue={this.props.title} style={{ marginLeft : '2px' , width : '515px' }} onBlur={(event)=>this.props.blur(event)}/>
+                        <input className="InputTitle" ref="inputTitle" defaultValue={this.props.title} onBlur={(event)=>this.props.blur(event)}/>
                     </label>
                     {/*
                     <label style={{display: 'inline-block', marginLeft : '5px' }} >
@@ -29,7 +29,7 @@ define('YoutubeSeries', [ 'react' , 'jquery' ] , function ( React , $ ){
                         <input style={{width : '40px' , marginLeft : '2px' }} type="number" />
                     </label>
                     */}
-                </span>
+                </div>
             )
         }
     })
