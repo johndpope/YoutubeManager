@@ -10,7 +10,7 @@ define( 'YoutubePlayList' , [ 'react' , 'jquery', 'YoutubeItem' ] , function( Re
 		},
 		componentDidMount: function(){
 			$('.YoutubePlaylist').tooltip({
-  				selector: '.has-tooltip'
+  				selector: '.HasTooltip'
 			});
 		},
 		dragStart: function(event , index){
@@ -38,7 +38,7 @@ define( 'YoutubePlayList' , [ 'react' , 'jquery', 'YoutubeItem' ] , function( Re
 							<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
 						</button>
 						}
-						<div className={(this.props.highlightIndex == index ? 'Highlight' : '') + ' ' + (this.state.over == index ? ' Over' : '') + ' ' + 'has-tooltip' }
+						<div className={(this.props.highlightIndex == index ? 'Highlight' : '') + ' ' + (this.state.over == index ? ' Over' : '') + ' ' + 'HasTooltip' }
 						  onDragStart={(event)=>this.dragStart(event , index)} onDragOver={this.dragOver} onDrop={(event)=>this.drop(event , index)} draggable={this.props.changePosition? true : false}
 						  onDragEnter={(event)=>this.dragEnter(event , index)} onClick={(event)=>this.props.click(event, index)} data-toggle="tooltip" data-placement={this.props.horizontal ? 'bottom' : 'left'} title={item.title + ' - ' + item.author}>
 							<YoutubeItem title={item.title} description={item.description} thumbnail={item.thumbnail} length={item.length} author={item.author} showDescription={false}/>

@@ -7,7 +7,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'YoutubeService' , 'Navigation' 
 			return ({videos: YoutubeService.subscriptionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscriptions' , authorized : YoutubeService.authorized});
 		},
 		reload: function(){
-			var promise = YoutubeService.reloadSubscriptionsVideos();
+			var promise = YoutubeService.fullReload();
 			promise.then(function(){
 				console.log('fim do reload');
 				this.setState({videos : YoutubeService.subscriptionsVideos});

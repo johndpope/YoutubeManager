@@ -363,9 +363,9 @@ define("YoutubeService",
 							promises.push(videoRequest);
 							videoRequest.then((function(response){
 								var y;
-								var videos = response.videos.slice(0, 16) //take only 16 videos
-								for(y in videos){
-									YoutubeService.subscriptions[videos[y].authorId].videos.push(videos[y]);
+								if(response.total > 0){
+									var videos = response.videos.slice(0, 16) //take only 16 videos
+									YoutubeService.subscriptions[videos[0].authorId].videos = videos;
 								}
 							}),
 								(function(response){
@@ -380,6 +380,29 @@ define("YoutubeService",
 						})
 					});
 					return promise;
+				},
+				fullReload: function(){
+					var reload = new Promise(function(resolve, reject){
+						YoutubeService.subscriptionsVideos = [];
+						var subscriptions = YoutubeService.reloadSubscriptionsVideos();
+						var series = YoutubeService.loadExtra();
+						var recommendations = YoutubeService.loadRecommendations();
+						Promise.all([series, subscriptions, recommendations]).then(function(){
+							var videos = YoutubeService.subscriptionsVideos;
+							for(z in YoutubeService.subscriptions){
+								var check1MonthOld = function(value){
+									return new Date() - value.uploadDate <= 2592000000;
+								}
+								videos = videos.concat(YoutubeService.subscriptions[z].videos.filter(check1MonthOld));
+							}
+							videos = videos.sort(function(a,b){
+								return (a.uploadDate - b.uploadDate)*(-1);
+							});
+							YoutubeService.subscriptionsVideos = videos;
+							resolve()
+						})
+					})
+					return reload;
 				},
 				init: function(){
 					var subscriptionsListLoaded = new Promise(function(resolve, reject){
