@@ -52,19 +52,8 @@ app2.post('/youtubeExtra', function(req, res) {
       console.log(err);
       res.end('{}');
     }else{
-      d = JSON.parse(data);
-      if(d.subscriptions[req.body.id]){
-        if(req.body.series){
-          d.subscriptions[req.body.id].series = req.body.series;
-        }else{
-          delete d.subscriptions[req.body.id];
-        }
-      }else{
-        if(req.body.series){
-          d.subscriptions[req.body.id] = { channel : req.body.channel , series : req.body.series }
-        }
-      }
-      var newSeries = JSON.stringify(d, null , '\t')
+      console.log(req.body);
+      var newSeries = JSON.stringify(req.body, null , '\t')
       fs.writeFile( __dirname + "/" + "seriesSubscriptions.json", newSeries , function(err, data){
         if(err){
           console.log(err);

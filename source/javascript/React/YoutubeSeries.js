@@ -4,7 +4,6 @@ define('YoutubeSeries', [ 'react' , 'jquery' ] , function ( React , $ ){
     var YoutubeSeries = React.createClass({
         getDefaultProps: function(){
             return {
-                'blur' : function(){},
                 'title' : ''
             }
         },
@@ -21,7 +20,7 @@ define('YoutubeSeries', [ 'react' , 'jquery' ] , function ( React , $ ){
                 <div className="YoutubeSeries" >
                     <label>
                         Nome
-                        <input className="InputTitle" ref="inputTitle" defaultValue={this.props.title} onBlur={(event)=>this.props.blur(event)}/>
+                        <input className="InputTitle" disabled={this.props.blur? false : true} ref="inputTitle" defaultValue={this.props.title} onBlur={(event)=>this.props.blur(event)}/>
                     </label>
                     {/*
                     <label style={{display: 'inline-block', marginLeft : '5px' }} >

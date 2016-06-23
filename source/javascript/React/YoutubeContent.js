@@ -6,6 +6,13 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'YoutubeService' , 'Navigation' 
 		getInitialState: function(){
 			return ({videos: YoutubeService.subscriptionsVideos, playlist: this.props.playlist, search: false, first: 0 , selectedMenu : 'subscriptions' , authorized : YoutubeService.authorized});
 		},
+		reload: function(){
+			var promise = YoutubeService.reloadSubscriptionsVideos();
+			promise.then(function(){
+				console.log('fim do reload');
+				this.setState({videos : YoutubeService.subscriptionsVideos});
+			}.bind(this))
+		},
 		addVideoToPlaylist: function(index, event){
 			event.preventDefault();
 			if(event.button == 0){
@@ -149,7 +156,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'YoutubeService' , 'Navigation' 
 					null
 				}
 				<div className="Center" >
-					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist} series={this.props.series} />
+					<Navigation selected={this.state.selectedMenu} subscriptions={ this.subscriptions } recommendations={ this.recommendations } logIn={ this.logIn } user={this.state.authorized} search={this.search} top={this.top} addPlaylist={this.addPlaylist} series={this.props.series} reload={this.reload} />
 					{this.state.search ?
 						<form onSubmit={this.doSearch} className='Search input-group' >
 							<span className='Clickable input-group-addon' onClick={this.doSearch} >

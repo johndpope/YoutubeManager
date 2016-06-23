@@ -1,6 +1,7 @@
 var scopes = 'https://www.googleapis.com/auth/youtube.readonly';
 var apiKey = require('config').apiKey;
 var oAuthID = require('config').oAuthID;
+var userId = require('config').userId
 
 
 
@@ -38,12 +39,12 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("YoutubeService",
-        ['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , '../structure/Channel' , '../structure/Video'],function(t , $ , Channel , Video) {
+		['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , '../structure/Channel' , '../structure/Video'],function(t , $ , Channel , Video) {
 			var YoutubeService = {
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate
 				recommendations: [], //recommendations for the logged User
-                series: [], //array of channels with the series
+				series: [], //array of channels with the series
 				topList: function(regionCode , videoCategory){
 					var request = gapi.client.youtube.videos.list({
 						part: 'snippet',
@@ -196,38 +197,38 @@ define("YoutubeService",
 					})
 					return promise;
 				},
-                loadChannel: function(channelId, loadVideos){
-                    var self = this;
-                    var request = gapi.client.youtube.channels.list({
-                        part: 'snippet',
-                        id: channelId
-                    });
-                    var promise = new Promise(function(resolve , reject){
-                        request.then(function(response){
-                            if(response.result.items.length > 0 ){
-                                var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.medium.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
+				loadChannel: function(channelId, loadVideos){
+					var self = this;
+					var request = gapi.client.youtube.channels.list({
+						part: 'snippet',
+						id: channelId
+					});
+					var promise = new Promise(function(resolve , reject){
+						request.then(function(response){
+							if(response.result.items.length > 0 ){
+								var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.medium.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
 								channel.uploadId = "UU".concat(channel.uploadId);
-                                if(loadVideos){
-                                    var videosRequest = YoutubeService.playlistItems(channel.uploadId);
-                                    videosRequest.then(function(response){
-                                        var videos = response.videos.slice(0, 16); //take only 16 videos
-                                        channel.videos = videos;
-                                        resolve( { channel : channel } );
-                                    });
-                                }else{
-                                    resolve( { channel : channel } );
-                                }
-                            }else{
-                                resolve( { channel : null } );
-                            }
-                        }, function(response){
-                            console.log("Erro na chamada de carregar o canal do Id fornecido");
-                            console.log(response);
-                            resolve( { channel : null , erro: response });
-                        });
-                    });
-                    return promise;
-                },
+								if(loadVideos){
+									var videosRequest = YoutubeService.playlistItems(channel.uploadId);
+									videosRequest.then(function(response){
+										var videos = response.videos.slice(0, 16); //take only 16 videos
+										channel.videos = videos;
+										resolve( { channel : channel } );
+									});
+								}else{
+									resolve( { channel : channel } );
+								}
+							}else{
+								resolve( { channel : null } );
+							}
+						}, function(response){
+							console.log("Erro na chamada de carregar o canal do Id fornecido");
+							console.log(response);
+							resolve( { channel : null , erro: response });
+						});
+					});
+					return promise;
+				},
 				loadFullPlaylist: function(playlistId){
 					var self = this;
 					var initialLoad = this.playlistItems(playlistId);
@@ -259,7 +260,7 @@ define("YoutubeService",
 				loadRecommendations: function(pageToken){
 					var request = gapi.client.youtube.activities.list({
 						part: 'snippet , contentDetails',
-            			home: true,
+						home: true,
 						maxResults: 50,
 						pageToken : pageToken
 					});
@@ -311,7 +312,7 @@ define("YoutubeService",
 						request.done(function(data){
 							var k;
 							var requests = [];
-                            YoutubeService.series = data.subscriptions;
+							YoutubeService.series = data.subscriptions;
 							for(k in data.subscriptions){
 								var series = data.subscriptions[k].series;
 								var playlistId = k.slice(2);
@@ -342,30 +343,50 @@ define("YoutubeService",
 					});
 					return promise;
 				},
-                saveSeries : function(series, channel){
-                	if(series.length == 0){
-                		delete YoutubeService.series[channel.id];
-                	}else{
-	                	YoutubeService.series[channel.id] = {
-	                		channel: channel.name,
-	                		series: series
-	                	};
-                	}
-                    var request = $.post('http://localhost:8082/youtubeExtra', { id : channel.id, 'channel' : channel.name , series: series });
-                    request.done(function(response){
-                    	YoutubeService.series = response.subscriptions;
-                    });
-                    request.fail(function(response){
-                    	console.log("Não foi possível salvar Séries");
-                    	console.log(response);
-                    });
-                },
+				saveSeries : function(series){
+					// YoutubeService.series = series;
+					var request = $.post('http://localhost:8082/youtubeExtra', { subscriptions : series});
+					request.done(function(response){
+						YoutubeService.series = response.subscriptions;
+					});
+					request.fail(function(response){
+						console.log("Não foi possível salvar Séries");
+						console.log(response);
+					});
+				},
+				reloadSubscriptionsVideos: function(){
+					var promise = new Promise(function(resolve, reject){
+						var promises = []
+						for(c in YoutubeService.subscriptions){
+							var channel = YoutubeService.subscriptions[c];
+							var videoRequest = YoutubeService.playlistItems(channel.uploadId);
+							promises.push(videoRequest);
+							videoRequest.then((function(response){
+								var y;
+								var videos = response.videos.slice(0, 16) //take only 16 videos
+								for(y in videos){
+									YoutubeService.subscriptions[videos[y].authorId].videos.push(videos[y]);
+								}
+							}),
+								(function(response){
+									console.log('Erro ao recarregar videos');
+									console.log(response);
+								})
+							);
+						}
+						Promise.all(promises).then(function(value){
+							console.log(value);
+							resolve();
+						})
+					});
+					return promise;
+				},
 				init: function(){
 					var subscriptionsListLoaded = new Promise(function(resolve, reject){
 						var extra = YoutubeService.loadExtra();
 						var channels = [extra];
 						var addSubscriptions = function(pageToken){
-							var request = YoutubeService.subscriptionsList('UC8Msirgsqr-iDIzcqLQHgmw', pageToken);
+							var request = YoutubeService.subscriptionsList(userId, pageToken);
 							request.then(function(response){
 								var k;
 								for(k in response.channels){
@@ -450,5 +471,5 @@ define("YoutubeService",
 				finishLoading();
 			}
 			return YoutubeService;
-       }
-    );
+	   }
+	);

@@ -84,6 +84,7 @@
 		.Description{
 			word-wrap: break-word;
 			overflow: hidden;
+			word-break: break-all; // ajustar tamanho
 		}
 		/* END YoutubeItem -> Text -> Description */
 		/* END YoutubeItem -> Text -> Title */
@@ -91,7 +92,7 @@
 		/* YoutubeItem -> Text -> Title */
 		.Title{
 			font-weight: bolder;
-			white-space: nowrap;
+			//white-space: nowrap;
 		}
 		/* END YoutubeItem -> Text -> Title */
 
@@ -525,6 +526,7 @@
 				text-align: center;
 				width: 160px;
 				flex: 0 0 auto;
+				word-wrap: break-word;
 
 				/* YoutubePage -> YoutubeSeriesPage -> Selected -> Channel -> Image */
 				.Image{

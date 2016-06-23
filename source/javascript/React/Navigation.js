@@ -22,6 +22,7 @@ define('Navigation' , ['react' , 'NavigationItem' ] , function(React , Navigatio
 						<NavigationItem right={true} function={this.props.logIn} text='Log in' />
 					}
 					<NavigationItem selected={ this.props.selected == 'search' } function={ this.props.search } text='Search' />
+					<NavigationItem selected={ this.props.selected == 'reload' } function={ this.props.reload } text='Reload Videos' />
 				</div>
 			)
 		}
