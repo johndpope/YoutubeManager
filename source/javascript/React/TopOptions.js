@@ -2,6 +2,11 @@
 
 define( 'TopOptions' , [ 'react' ] , function( React ) {
 	var TopOptions = React.createClass({
+		animate: function(event){
+			console.log(event.target);
+			// $(this.refs.options).animate({scrollLeft:this.refs.options.scrollLeft + event.deltaY});
+			event.currentTarget.scrollLeft += event.deltaY;
+		},
 		render: function(){
 			var self = this;
 			var options = this.props.options.map(function( item , index ){
@@ -10,7 +15,7 @@ define( 'TopOptions' , [ 'react' ] , function( React ) {
 				)
 			})
 			return (
-				<div className='TopOptions'>
+				<div className='TopOptions' onWheel={(event)=>this.animate(event)} style={{whiteSpace: 'nowrap', overflowX: 'hidden' }}>
 					{options}
 				</div>
 			)
