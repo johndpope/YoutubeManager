@@ -1,5 +1,6 @@
 {
   "name": "youtube-manager",
+  "main" : "./start-server.js",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {

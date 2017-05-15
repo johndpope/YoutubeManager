@@ -1,7 +1,6 @@
 var fs = require('fs');
 
-var seriesJSONFile = __dirname + '/seriesSubscriptions.json';
-console.log(process.env.NODE_PATH)
+var serverConfig = require('../serverConfig');
 
 var SeriesAPI = {
     /**
@@ -10,9 +9,7 @@ var SeriesAPI = {
      */
     getSeries: function () {
         return new Promise(function (resolve, reject) {
-            console.log(process.env.NODE_PATH)
-            console.log(__dirname)
-            fs.readFile(seriesJSONFile, 'utf8', function (err, data) {
+            fs.readFile(serverConfig.seriesJSONFile, 'utf8', function (err, data) {
                 if (err) {
                     console.error(err);
                     resolve({});
@@ -30,7 +27,7 @@ var SeriesAPI = {
     saveSeries: function (seriesJSON) {
         return new Promise(function (resolve, reject) {
             var seriesString = JSON.stringify(seriesJSON, null, '\t');
-            fs.writeFile(seriesJSONFile, seriesString, function (err) {
+            fs.writeFile(serverConfig.seriesJSONFile, seriesString, function (err) {
                 if (err) {
                     console.error(err);
                     reject(err);

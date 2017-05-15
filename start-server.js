@@ -11,6 +11,9 @@ app.listen(8081, function(){
   console.log('server running at http://localhost:8081');
 })
 
+var path = require('path');
+global.appRoot = path.resolve(__dirname);
+
 
 // require('./build/javascript/server/api-server')
 var app2 = require('./build/javascript/server/api-server')
