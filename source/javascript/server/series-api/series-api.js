@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var serverConfig = require('../serverConfig');
+var serverConfig = require('../server-config');
 
 var SeriesAPI = {
     /**
