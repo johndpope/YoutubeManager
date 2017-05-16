@@ -1,6 +1,6 @@
 var express = require('express');
 
-var SeriesApi = require('./series-api');
+var SeriesAPI = require('./series-api');
 
 var router = express.Router();
 
@@ -11,7 +11,7 @@ router.use(function(req, res, next) {
 })
 
 router.get('/' , function(req, res) {
-    SeriesApi.getSeries().then(function(seriesJSON) {
+    SeriesAPI.getSeries().then(function(seriesJSON) {
         res.end( JSON.stringify(seriesJSON) );
     }, function(error) {
         res.end( JSON.stringify({}) );
@@ -20,7 +20,7 @@ router.get('/' , function(req, res) {
 
 router.post('/', function(req, res) {
     var seriesJSON = req.body;
-    SeriesApi.saveSeries(seriesJSON).then(function(){
+    SeriesAPI.saveSeries(seriesJSON).then(function(){
         res.end()
     }, function(error){
         res.status(500).send({error: error})

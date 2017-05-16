@@ -11,19 +11,12 @@ var SeriesAPI = {
         return new Promise(function (resolve, reject) {
             fs.readFile(serverConfig.seriesJSONFile, 'utf8', function (error, data) {
                 if (error) {
-                    console.error(error.message);
                     reject(error);
                 } else {
                     try {
                         resolve(JSON.parse(data));
                     } catch (error) {
-                        if (error instanceof SyntaxError){
-                            console.error(error.message);
-                            reject(error);
-                        }else {
-                            console.error(error);
-                            reject(error);
-                        }
+                        reject(error);
                     }
                 }
             })
@@ -39,7 +32,6 @@ var SeriesAPI = {
             var seriesString = JSON.stringify(seriesJSON, null, '\t');
             fs.writeFile(serverConfig.seriesJSONFile, seriesString, function (err) {
                 if (err) {
-                    console.error(err);
                     reject(err);
                 } else {
                     resolve();
@@ -48,5 +40,11 @@ var SeriesAPI = {
         })
     }
 }
+
+/* API checks */
+SeriesAPI.getSeries().catch(function(error) {
+    console.log(error);
+})
+/* API checks */
 
 module.exports = SeriesAPI;
