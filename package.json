@@ -2,8 +2,7 @@
   "name": "youtube-manager",
   "main" : "./start-server.js",
   "version": "0.0.0",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "babel-plugin-transform-react-jsx": "^6.5.0",
     "body-parser": "^1.15.1",
     "bootstrap": "^3.3.6",
@@ -18,6 +17,8 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "requirejs": "^2.1.22"
+  },
+  "devDependencies": {
   },
   "scripts": {
     "build": "grunt build",
