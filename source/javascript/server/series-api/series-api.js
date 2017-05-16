@@ -5,16 +5,26 @@ var serverConfig = require('../server-config');
 var SeriesAPI = {
     /**
      * Method that returns series JSON from seriesFile by Promise
-     * @returns {Promise<JSON>} JSON of series obtained from seriesFile
+     * @returns {Promise<JSON|Error>} JSON of series obtained from seriesFile
      */
     getSeries: function () {
         return new Promise(function (resolve, reject) {
-            fs.readFile(serverConfig.seriesJSONFile, 'utf8', function (err, data) {
-                if (err) {
-                    console.error(err);
-                    resolve({});
+            fs.readFile(serverConfig.seriesJSONFile, 'utf8', function (error, data) {
+                if (error) {
+                    console.error(error.message);
+                    reject(error);
                 } else {
-                    resolve(JSON.parse(data));
+                    try {
+                        resolve(JSON.parse(data));
+                    } catch (error) {
+                        if (error instanceof SyntaxError){
+                            console.error(error.message);
+                            reject(error);
+                        }else {
+                            console.error(error);
+                            reject(error);
+                        }
+                    }
                 }
             })
         })

@@ -13,6 +13,8 @@ router.use(function(req, res, next) {
 router.get('/' , function(req, res) {
     SeriesApi.getSeries().then(function(seriesJSON) {
         res.end( JSON.stringify(seriesJSON) );
+    }, function(error) {
+        res.end( JSON.stringify({}) );
     })
 })
 
