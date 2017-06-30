@@ -47,8 +47,11 @@
 // 	baseUrl: 'javascript'
 // })
 
-import { Channel } from '../structure/channel'
+import { ServerPlaylist } from '../structure/ServerPlaylist';
+import { Video } from '../structure/video';
 
-var t = new Channel('1', 'first', 'thumb', 'channel sample');
+var v = new Video('1', 'title', 'descp', 'thumb', 'author', '1', new Date());
 
-console.log(t.name);
+var t = new ServerPlaylist('sample', [v], {remove_watched_video: false});
+
+console.log(t.videos);

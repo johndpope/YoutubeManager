@@ -21,7 +21,7 @@ module.exports = function(grunt) {
               expand: true,
               cwd: 'source/javascript/',
               // src: ['**/*.js'],
-              src: ['structure/Channel.js', 'React/app.js'],
+              src: ['structure/*.js', 'React/app.js'],
               dest: 'build/javascript/'
           }
         ]

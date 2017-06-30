@@ -7,7 +7,7 @@ class Video {
 	 * @param {string} thumbnail 
 	 * @param {string} authorName 
 	 * @param {string} authorId 
-	 * @param {string} uploadDate 
+	 * @param {date} uploadDate 
 	 * @memberof Video
 	 */
 	constructor(id, title, description, thumbnail, authorName, authorId, uploadDate) {
