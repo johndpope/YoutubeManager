@@ -46,10 +46,4 @@ class Video {
 	}
 }
 
-if(typeof module !== 'undefined') {
-	module.exports = Video;
-}else {
-	define(function(){
-		return Video;
-	});
-}
+export { Video }

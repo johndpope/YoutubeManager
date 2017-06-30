@@ -33,10 +33,4 @@ class Channel {
 	}
 }
 
-if( typeof module !== 'undefined') {
-	module.exports = Channel;
-}else {
-	define(function (){
-		return Channel;
-	});	
-}
+export { Channel }

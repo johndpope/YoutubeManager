@@ -13,15 +13,16 @@ module.exports = function(grunt) {
     },
     babel: {
       options: {
-        plugins: ["transform-react-jsx"]
+        plugins: ["transform-react-jsx", "transform-es2015-modules-amd"]
       },
       dist: {
         files: [
           {
               expand: true,
-              cwd: 'source/javascript/React/',
-              src: ['**/*.js'],
-              dest: 'build/javascript/React/'
+              cwd: 'source/javascript/',
+              // src: ['**/*.js'],
+              src: ['structure/Channel.js', 'React/app.js'],
+              dest: 'build/javascript/'
           }
         ]
       }
@@ -32,7 +33,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'source/javascript',
-            src: ['**/*.js' , '!React/**/*.js'],
+            src: ['server/**/*.js'],
             dest: 'build/javascript/'
           },
           { 'build/index.html' : 'source/index.html'},
