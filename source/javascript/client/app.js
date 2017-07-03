@@ -55,6 +55,9 @@ import defaultMember from 'https://apis.google.com/js/client.js?onload=apiOnLoad
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Erro from 'React/Erro';
+import SeriesService from 'series/series-service';
+
+//console.log(SeriesService.getSeries());
 
 ReactDOM.render(<Erro/>, document.getElementById('content'))
 

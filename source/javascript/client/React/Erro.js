@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import SeriesService from 'series/series-service';
+
+console.log(SeriesService.getSeries());
 
 class Erro extends Component {
 	render() {

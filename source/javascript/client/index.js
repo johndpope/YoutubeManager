@@ -12,7 +12,8 @@ requirejs.config({
         jquery: './libs/jquery/jquery',
         bootstrap: './libs/bootstrap/bootstrap',
 		config: './config',
-		YoutubeService: './YoutubeService'
+		YoutubeService: './youtube/YoutubeService',
+        //SeriesService: './series/series-service'
     },
     shim : {
         "bootstrap" : { "deps" :['jquery'] }

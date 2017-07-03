@@ -21,7 +21,7 @@ module.exports = function(grunt) {
               expand: true,
               cwd: 'source/javascript/client/',
               // src: ['**/*.js'],
-              src: ['app.js', 'React/Erro.js'],
+              src: ['app.js', 'React/Erro.js', 'series/series-service.js'],
               dest: 'build/client/javascript/'
           },
           {
