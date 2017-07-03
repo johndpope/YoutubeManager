@@ -5,7 +5,7 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('build'));
+app.use(express.static('build/client'));
 
 app.listen(8081, function(){
   console.log('server running at http://localhost:8081');
@@ -16,7 +16,7 @@ global.appRoot = path.resolve(__dirname);
 
 
 // require('./build/javascript/server/api-server')
-var app2 = require('./build/javascript/server/api-server')
+var app2 = require('./build/server/javascript/api-server')
 
 var server = app2.listen(8082, function() {
     var host = server.address().address;

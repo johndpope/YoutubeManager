@@ -7,12 +7,12 @@
 //     //never includes a ".js" extension since
 //     //the paths config could be for a directory.
 //     paths: {
-//         react: '../libs/react/react',
-//         'react-dom': '../libs/react/react-dom',
-//         jquery: '../libs/jquery/jquery',
-//         bootstrap: '../libs/bootstrap/bootstrap',
-// 		config: '../config',
-// 		YoutubeService: '../YoutubeService'
+//         react: './libs/react/react',
+//         'react-dom': './libs/react/react-dom',
+//         jquery: './libs/jquery/jquery',
+//         bootstrap: './libs/bootstrap/bootstrap',
+// 		config: './config',
+// 		YoutubeService: './YoutubeService'
 //     },
 //     shim : {
 //         "bootstrap" : { "deps" :['jquery'] }
@@ -44,14 +44,20 @@
 // );
 
 // requirejs.config({
-// 	baseUrl: 'javascript'
+// 	baseUrl: '/javascript'
 // })
 
-import { ServerPlaylist } from '../structure/ServerPlaylist';
-import { Video } from '../structure/video';
 
-var v = new Video('1', 'title', 'descp', 'thumb', 'author', '1', new Date());
 
-var t = new ServerPlaylist('sample', [v], {remove_watched_video: false});
+import { Video } from 'structure/video';
+import { ServerPlaylist } from 'structure/ServerPlaylist';
+import defaultMember from 'https://apis.google.com/js/client.js?onload=apiOnLoad';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Erro from 'React/Erro';
 
-console.log(t.videos);
+ReactDOM.render(<Erro/>, document.getElementById('content'))
+
+console.log(gapi);
+
+
