@@ -307,7 +307,7 @@ define("YoutubeService",
 					gapi.auth.authorize({client_id: oAuthID, scope: scopes, immediate: false}, handle );
 				},
 				loadExtra: function(){
-					var request = $.get("http://localhost:8082/youtubeExtra");
+					var request = $.get("http://localhost:8082/series");
 					var promise = new Promise(function(resolve, reject){
 						request.done(function(data){
 							var k;
@@ -345,7 +345,7 @@ define("YoutubeService",
 				},
 				saveSeries : function(series){
 					// YoutubeService.series = series;
-					var request = $.post('http://localhost:8082/youtubeExtra', { subscriptions : series});
+					var request = $.post('http://localhost:8082/series', { subscriptions : series});
 					request.done(function(response){
 						YoutubeService.series = response.subscriptions;
 					});
