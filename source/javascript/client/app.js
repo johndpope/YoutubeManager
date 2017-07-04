@@ -56,6 +56,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Erro from 'React/Erro';
 import SeriesService from 'series/series-service';
+import youtubeService from 'youtube/youtube-service';
+
+//youtubeService.getChannel('sample');
 
 //console.log(SeriesService.getSeries());
 

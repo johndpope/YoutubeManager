@@ -39,4 +39,4 @@ class YoutubePlaylist {
 	}
 }
 
-export { YoutubePlaylist }
+export default YoutubePlaylist;

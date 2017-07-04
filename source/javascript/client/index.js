@@ -12,7 +12,7 @@ requirejs.config({
         jquery: './libs/jquery/jquery',
         bootstrap: './libs/bootstrap/bootstrap',
 		config: './config',
-		YoutubeService: './youtube/YoutubeService',
+		//youtubeService: './youtube/youtube-service',
         //SeriesService: './series/series-service'
     },
     shim : {
@@ -21,9 +21,12 @@ requirejs.config({
 });
 
 var apiOnLoad = function(){
-    console.log('gapi load')
+	console.log('gapi load');
+	gapi.client.load('youtube', 'v3').then(function(){
+		require('youtube/youtube-service').getChannel('22');
+	});
 }
 
-requirejs(['./app'], function(app) {
-    console.log('app load');
+requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', './app'], function(gapi, app) {
+	console.log('app load');
 })

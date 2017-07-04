@@ -33,4 +33,4 @@ class Channel {
 	}
 }
 
-export { Channel }
+export default Channel;

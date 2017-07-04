@@ -38,4 +38,4 @@ class ServerPlaylist {
 	}
 }
 
-export { ServerPlaylist }
+export default ServerPlaylist;
