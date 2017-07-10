@@ -4,10 +4,10 @@ import config from 'config';
 
 const youtubeService = {
 	/**
+	 * Requests channel if not in cache.
 	 * 
-	 * 
-	 * @param {any} channelId 
-	 * @returns 
+	 * @param {string} channelId
+	 * @returns {Promise<Channel|string>} resolves Channel object or rejects string error message.
 	 */
 	getChannel(channelId) {
 		let promise;
@@ -23,10 +23,10 @@ const youtubeService = {
 		return promise;
 	},
 	/**
+	 * Requests channel and channel uploads if not in cache.
 	 * 
-	 * 
-	 * @param {any} channelId 
-	 * @returns 
+	 * @param {string} channelId
+	 * @returns  {Promise<Channel|string>} resolves Channel object with videos or rejects string error message.
 	 */
 	getChannelWithUploads(channelId) {
 		return Promise.all([
@@ -38,9 +38,9 @@ const youtubeService = {
 		} )
 	},
 	/**
+	 * Requests all channels that user is subscribed if not in cache. User is defined by 'userChannelId' in config.
 	 * 
-	 * 
-	 * @returns 
+	 * @returns {Promise<Channel[]|string} resolves Channel object list or rejects string error message.
 	 */
 	listMySubscribedChannels() {
 		return new Promise( (resolve, reject) => {
@@ -78,20 +78,20 @@ const youtubeService = {
 		})
 	},
 	/**
+	 * Requests channel uploads if not in cache.
 	 * 
-	 * 
-	 * @param {any} channelId 
-	 * @param {any} [pageToken=undefined] 
-	 * @returns 
+	 * @param {string} channelId 
+	 * @param {string} [pageToken=undefined] 
+	 * @returns {Promise<Videos[]|string>} resolves list of videos or rejects string error message.
 	 */
 	listChannelUploads(channelId, pageToken=undefined) {
 		const uploadPlaylistId = "UU".concat(channelId.slice(2))
 		return this.getPlaylist(uploadPlaylistId, pageToken);
 	},
 	/**
+	 * Requests last videos from subscribed channels if not in cache;
 	 * 
-	 * 
-	 * @returns 
+	 * @returns {Promise<Videos[]|string} resolves list of videos or rejects string error message.
 	 */
 	listLastSubscribedVideos() {
 		let promise;
@@ -142,11 +142,11 @@ const youtubeService = {
 		return promise;
 	},
 	/**
+	 * Requests videos from playlist if not in cache.
 	 * 
-	 * 
-	 * @param {any} playlistId 
-	 * @param {any} [pageToken=undefined] 
-	 * @returns 
+	 * @param {string} playlistId 
+	 * @param {string} [pageToken=undefined] 
+	 * @returns {Promise<Videos[]|string>} resolves with list of videos or rejects with string error message.
 	 */
 	getPlaylist(playlistId, pageToken=undefined){
 		let playlist;
@@ -165,6 +165,53 @@ const youtubeService = {
 			promise = Promise.resolve(playlist);
 		}
 		return promise;
+	},
+	/**
+	 * 
+	 * 
+	 * @param {any} regionCode 
+	 * @returns 
+	 */
+	listCategories(regionCode){
+		const categories = cacheService.load(cacheService.type.categories, 'list');
+		let promise;
+		if (categories == undefined) {
+			promise = youtubeAPI.listCategories.then((categories) => {
+				cacheService.save(cacheService.type.categories, 'list', categories);
+			})
+		}else {
+			promise = Promise.resolve(categories);
+		}
+		return promise;
+	},
+	/**
+	 * 
+	 * 
+	 * @param {any} videoCategory 
+	 * @param {any} regionCode 
+	 * @returns 
+	 */
+	listTopVideos(videoCategory, regionCode){
+		let promise;
+		const videos = cacheService.load(cacheService.type.topPlaylist, regionCode+videoCategory);
+		if (videos == undefined) {
+			promise = youtubeAPI.listTopVideos(videoCategory, regionCode).then((videos) => {
+				cacheService.save(cacheService.type.topPlaylist, regionCode+videoCategory, videos);
+			})
+		}else {
+			promise = Promise.resolve(videos);
+		}
+		return promise;
+	},
+	/**
+	 * 
+	 * 
+	 * @param {any} text 
+	 * @param {any} [pageToken=undefined] 
+	 * @returns 
+	 */
+	searchVideo(text, pageToken=undefined){
+		return youtubeAPI.searchVideo(text, pageToken);
 	}
 }
 

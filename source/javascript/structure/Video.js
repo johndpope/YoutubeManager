@@ -1,3 +1,8 @@
+/**
+ * 
+ * 
+ * @class Video
+ */
 class Video {
 	/**
 	 * Creates an instance of Video.

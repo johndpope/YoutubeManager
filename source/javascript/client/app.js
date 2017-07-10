@@ -47,23 +47,34 @@
 // 	baseUrl: '/javascript'
 // })
 
-
-
-import { Video } from 'structure/video';
-import { ServerPlaylist } from 'structure/ServerPlaylist';
-import defaultMember from 'https://apis.google.com/js/client.js?onload=apiOnLoad';
-import React from 'react';
 import ReactDOM from 'react-dom';
-import Erro from 'React/Erro';
-import SeriesService from 'series/series-service';
-import youtubeService from 'youtube/youtube-service';
+import React from 'react';
 
-//youtubeService.getChannel('sample');
+import LoadingErrorPage from 'view/page/loading-error-page';
+import LoadingPage from 'view/page/loading-page';
+import PlayerPage from 'view/page/player-page';
 
-//console.log(SeriesService.getSeries());
+import Video from 'structure/Video';
 
-ReactDOM.render(<Erro/>, document.getElementById('content'))
+ReactDOM.render(<LoadingPage/>, document.getElementById('content'))
 
-console.log(gapi);
+const app = {
+	apiLoaded() {
+		console.log('all loaded');
+		var video = new Video(
+			'12mq4jNDKZQ','Calculated Dong',
+			'',
+			'https://i.ytimg.com/vi/12mq4jNDKZQ/default.jpg',
+			'AdmiralBulldog',
+			'UCk8ZIMJxSO9-pUg7xyrnaFQ',
+			new Date('2016-03-14T16:32:41.000Z')
+		)
+		var videos = [
+			video
+		];
+		//ReactDOM.render(<LoadingErrorPage/>, document.getElementById('content'))
+		ReactDOM.render(<PlayerPage videos={videos} />, document.getElementById('content'));
+	}
+}
 
-
+export default app;

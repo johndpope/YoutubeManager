@@ -23,10 +23,15 @@ requirejs.config({
 var apiOnLoad = function(){
 	console.log('gapi load');
 	gapi.client.load('youtube', 'v3').then(function(){
-		require('youtube/youtube-service').getChannel('22');
+		//require('youtube/youtube-service').getChannel('22');
+		require('./app').default.apiLoaded();
 	});
+};
+
+var onYouTubeIframeAPIReady= function() {
+	console.log('Youtube frame API loaded');
 }
 
-requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', './app'], function(gapi, app) {
+requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', 'https://www.youtube.com/iframe_api', './app'], function(gapi, app) {
 	console.log('app load');
 })

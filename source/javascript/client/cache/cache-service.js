@@ -2,9 +2,11 @@ const cacheMaps = new Map();
 
 const cacheService = {
 	type: {
+		categories: 'categories',
 		channel: 'channel',
 		channelListId: 'channelListId',
 		playlist: 'playlist',
+		topPlaylist: 'topPlaylist',
 	},
 	/**
 	 * 
