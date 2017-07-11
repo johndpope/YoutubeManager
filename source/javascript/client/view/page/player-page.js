@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Video from 'structure/Video';
+
+import VideoListComponent from 'view/component/video-list-component';
 
 /**
  * 
  * 
  * @class PlayerPage
- * @augments {Component<{x: string, y: number, store: store}, {}>}
+ * @augments {Component<{videos: Video[], horizontal: boolean}, {}>}
  */
 class PlayerPage extends Component {
 	/**
@@ -17,12 +20,11 @@ class PlayerPage extends Component {
 	 */  
 	constructor(props) {
 		super(props);
-		// this.state = {
-		// 	playingIndex: 0
-		// };
+		this.state = {
+			playingIndex: 0
+		};
 	}
 	componentDidMount() {
-		this.state.
 		this.player = new YT.Player('player', {
 			height: '720',
 			width: '1280',
@@ -36,8 +38,8 @@ class PlayerPage extends Component {
 				onStateChange: this.videoStateChange
 			}
 		});
-		document.addEventListener('keydown', this.keyboardControl);
-		document.addEventListener('wheel', this.wheelControl);
+		document.addEventListener('keydown', this.keyboardControl.bind(this));
+		document.addEventListener('wheel', this.wheelControl.bind(this), {passive: true});
 	}
 	componentWillUpdate(nextProps, nextState) {
 		if( nextState.playingIndex != this.state.playingIndex ) {
@@ -49,8 +51,8 @@ class PlayerPage extends Component {
 	}
 	componentWillUnmount() {
 		this.player.destroy();
-		document.removeEventListener('keydown', this.keyboardControl);
-		document.removeEventListener('wheel', this.wheelControl, {passive: true});
+		document.removeEventListener('keydown', this);
+		document.removeEventListener('wheel', this, {passive: true});
 		/*
 		TODO CHECK
 		document.removeEventListener('wheel', this.wheelControl);
@@ -69,6 +71,7 @@ class PlayerPage extends Component {
 				</div>
 				<div>
 					{/*<YoutubePlayList videos={this.props.videos} horizontal={true} highlightIndex={this.state.playingIndex} click={this.changeVideo} />*/}
+					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={this.changeVideo} />
 				</div>
 			</div>
 		)
@@ -113,11 +116,11 @@ class PlayerPage extends Component {
 		}
 	}
 	wheelControl(event) {
-		const deltaY = event.wheelDeltaU;
+		const deltaY = event.wheelDeltaY;
 		if (deltaY > 0) {
-			this.player.setVolue(this.player.getVolume() + 10);
+			this.player.setVolume(this.player.getVolume() + 10);
 		}else if (deltaY < 0) {
-			this.player.setVolue(this.player.getVolume() - 10);
+			this.player.setVolume(this.player.getVolume() - 10);
 		}
 	}
 }

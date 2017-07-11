@@ -61,19 +61,22 @@ ReactDOM.render(<LoadingPage/>, document.getElementById('content'))
 const app = {
 	apiLoaded() {
 		console.log('all loaded');
-		var video = new Video(
-			'12mq4jNDKZQ','Calculated Dong',
+		const video = new Video(
+			'12mq4jNDKZQ',
+			'Calculated Dong',
 			'',
 			'https://i.ytimg.com/vi/12mq4jNDKZQ/default.jpg',
 			'AdmiralBulldog',
 			'UCk8ZIMJxSO9-pUg7xyrnaFQ',
 			new Date('2016-03-14T16:32:41.000Z')
 		)
-		var videos = [
+		const videos = [
 			video
 		];
-		//ReactDOM.render(<LoadingErrorPage/>, document.getElementById('content'))
 		ReactDOM.render(<PlayerPage videos={videos} />, document.getElementById('content'));
+	},
+	apiErrorLoaded() {
+		ReactDOM.render(<LoadingErrorPage/>, document.getElementById('content'))
 	}
 }
 

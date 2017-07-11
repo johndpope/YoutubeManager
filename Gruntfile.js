@@ -21,7 +21,7 @@ module.exports = function(grunt) {
               expand: true,
               cwd: 'source/javascript/client/',
               // src: ['**/*.js'],
-              src: ['app.js', 'view/page/*.js', 'youtube/youtube-api.js', 'youtube/youtube-service.js', 'series/*.js', 'cache/*.js'],
+              src: ['app.js', 'view/page/*.js', 'view/component/*.js', 'youtube/youtube-api.js', 'youtube/youtube-service.js', 'series/*.js', 'cache/*.js'],
               dest: 'build/client/javascript/'
           },
           {

@@ -20,18 +20,41 @@ requirejs.config({
     },
 });
 
+var resolveGApiPromise;
+var rejectGApiPromise;
+var gapiPromise = new Promise(function(resolve,reject){
+	resolveGApiPromise = resolve;
+	rejectGApiPromise = reject;
+});
+
 var apiOnLoad = function(){
-	console.log('gapi load');
+	console.log('gapi loaded');
 	gapi.client.load('youtube', 'v3').then(function(){
-		//require('youtube/youtube-service').getChannel('22');
-		require('./app').default.apiLoaded();
+		console.log('gapi youtube loaded');
+		resolveGApiPromise();
 	});
 };
 
-var onYouTubeIframeAPIReady= function() {
+var resolveYoutubeIframePromise;
+var rejectYoutubeIframePromise;
+var youtubeIframePromise = new Promise(function(resolve,reject){
+	resolveYoutubeIframePromise = resolve;
+	rejectYoutubeIframePromise = reject;
+});
+
+var onYouTubeIframeAPIReady = function() {
 	console.log('Youtube frame API loaded');
+	resolveYoutubeIframePromise();
 }
 
-requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', 'https://www.youtube.com/iframe_api', './app'], function(gapi, app) {
+Promise.all([gapiPromise,youtubeIframePromise]).then(function(){
+	require('app').default.apiLoaded();
+}).catch(function(e){
+	console.log('error');
+	console.log(e);
+	require('app').default.apiErrorLoaded();
+});
+
+requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', 'https://www.youtube.com/iframe_api', './app'], function(gapi, YT, app) {
 	console.log('app load');
 })
