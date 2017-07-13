@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Video from 'structure/Video';
 
 import VideoListComponent from 'view/component/video-list-component';
 
 /**
- * 
- * 
  * @class PlayerPage
- * @augments {Component<{videos: Video[], horizontal: boolean}, {}>}
+ * @augments {Component<{videos: Video[], fimVideo: function}, {}>}
  */
 class PlayerPage extends Component {
-	/**
-	 * The complete Triforce, or one or more components of the Triforce.
-	 * @typedef {Object} SampleDef - example
-	 * @property {boolean} hasCourage - Indicates whether the Courage component is present.
-	 * @property {boolean} hasPower - Indicates whether the Power component is present.
-	 * @property {boolean} hasWisdom - Indicates whether the Wisdom component is present.
-	 * @param {SampleDef} props wheater
-	 */  
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -53,28 +43,6 @@ class PlayerPage extends Component {
 		this.player.destroy();
 		document.removeEventListener('keydown', this);
 		document.removeEventListener('wheel', this, {passive: true});
-		/*
-		TODO CHECK
-		document.removeEventListener('wheel', this.wheelControl);
-		*/
-	}
-	render() {
-		return (
-			<div>
-				<button onClick={()=>this.props.fimVideo(this.props.videos.slice(this.state.playingIndex + 1, this.props.videos.length))} >
-					<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
-					<span className="TextAfterIcon">Close</span>
-				</button>
-				<div className="YoutubePlayer">
-					<div id="player">
-					</div>
-				</div>
-				<div>
-					{/*<YoutubePlayList videos={this.props.videos} horizontal={true} highlightIndex={this.state.playingIndex} click={this.changeVideo} />*/}
-					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={this.changeVideo} />
-				</div>
-			</div>
-		)
 	}
 	videoStateChange(event) {
 		// Fim do Video
@@ -123,10 +91,23 @@ class PlayerPage extends Component {
 			this.player.setVolume(this.player.getVolume() - 10);
 		}
 	}
-}
-
-PlayerPage.defaultProps = {
-	horizontal: false
+	render() {
+		return (
+			<div>
+				<button onClick={()=>this.props.fimVideo(this.props.videos.slice(this.state.playingIndex + 1, this.props.videos.length))} >
+					<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
+					<span className="TextAfterIcon">Close</span>
+				</button>
+				<div className="YoutubePlayer">
+					<div id="player">
+					</div>
+				</div>
+				<div>
+					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={this.changeVideo} />
+				</div>
+			</div>
+		)
+	}
 }
 
 export default PlayerPage;

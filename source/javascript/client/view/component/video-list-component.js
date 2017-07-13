@@ -1,26 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Video from 'structure/Video';
 
 import VideoComponent from 'view/component/video-component';
 
 /**
- * 
- *
- * 
+ * The VideoComponent props.
+ * @typedef {object} VideoListComponentProps
+ * @property {Video[]} videos
+ * @property {boolean} horizontal
+ * @property {number} highlightIndex
+ * @property {function} click
+ * @property {function} [changePosition]
+ * @property {function} [removeVideoPlaylist]
+ */
+/**
  * @class VideoListComponent
  * @extends {Component}
+ * @augments {Component<VideoListComponentProps, {}>}
  */
 class VideoListComponent extends Component {
-	/**
-	 * Creates an instance of VideoListComponent.
-	 * @param {object} props - props
-	 * @param {string} props.id - id
-	 * @memberof VideoListComponent
-	 */
 	constructor(props) {
 		super(props);
 		this.state = {
 			over: -1
 		}
+	}
+	componentDidMount() {
+		console.log(this.props);
 	}
 	dragStart(event , index) {
 		console.log('drag start');
@@ -55,8 +61,8 @@ class VideoListComponent extends Component {
 						</button>
 					}
 					<div className={
-							(this.props.highlightIndex == index ? 'Highlight ' : ' ') + 
-							(this.state.over == index ? 'Over ' : ' ') + 
+							(this.props.highlightIndex == index ? 'Highlight ' : '') + 
+							(this.state.over == index ? 'Over ' : '') + 
 							'HasTooltip'
 						}
 						draggable={this.props.changePosition? true : false}
@@ -67,18 +73,10 @@ class VideoListComponent extends Component {
 						onClick={(event)=>this.props.click(event, index)}
 						data-toggle="tooltip"
 						data-placement={this.props.horizontal ? 'bottom' : 'left'}
-						title={item.title + ' - ' + item.author}
+						title={item.title + ' - ' + item.authorName}
 					>
-						{/*<VideoComponent
-							title={item.title}
-							description={item.description}
-							thumbnail={item.thumbnail}
-							length={item.length}
-							author={item.author}
-							showDescription={false}
-						/>*/}
 						<VideoComponent
-							{...item}
+							video={item}
 							showDescription={false}
 						/>
 					</div>
@@ -97,7 +95,10 @@ class VideoListComponent extends Component {
 VideoListComponent.defaultProps  = {
 	horizontal: false,
 	highlightIndex: -1,
-	click() { }
+	click() {},
+	changePosition() {},
+	removeVideoPlaylist() {},
+
 }
 
 export default VideoListComponent;
