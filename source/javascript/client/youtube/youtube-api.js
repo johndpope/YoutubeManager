@@ -13,13 +13,13 @@ const youtubeAPI = {
 	listPlaylistVideos(playlistId, pageToken=undefined) {
 		const request = gapi.client.youtube.playlistItems.list({
 			part: 'snippet',
-			channelId: channelId,
+			playlistId: playlistId,
 			pageToken: pageToken,
 			maxResults: 50
 		})
 		return request.then( (response) => {
 			const videos = [];
-			response.result.itens.forEach( (element) => {
+			response.result.items.forEach( (element) => {
 				const video = new Video(
 					element.snippet.resourceId.videoId,
 					element.snippet.title,

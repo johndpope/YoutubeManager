@@ -2,6 +2,8 @@ import youtubeAPI from './youtube-api';
 import cacheService from 'cache/cache-service';
 import config from 'config';
 
+console.log(config);
+
 const youtubeService = {
 	/**
 	 * Requests channel if not in cache.
@@ -103,11 +105,11 @@ const youtubeService = {
 				if(subscribedList == undefined) {
 					let pageToken = undefined;
 					function loadSubscribedChannels() {
-						youtubeAPI.listSubscribedChannels(userChannelId, pageToken).then( (response) => {
+						youtubeAPI.listSubscribedChannels(config.userId, pageToken).then( (response) => {
 							pageToken = response.nextPageToken;
 							response.result.forEach( (element, index, array) => {
 								cacheService.save('channel', element.id, element);
-								this.listchannelUploads(element.id).then( (channelUploads) => {
+								this.listChannelUploads(element.id).then( (channelUploads) => {
 									videoList.push.apply(videoList, channelUploads);
 									if(pageToken == undefined && index == array.length - 1) {
 										resolve(videoList);
@@ -115,11 +117,11 @@ const youtubeService = {
 								});
 							});
 							if(pageToken !== undefined) {
-								loadSubscribedChannels();
+								loadSubscribedChannels.apply(this);
 							}
 						})
 					};
-					loadSubscribedChannels();
+					loadSubscribedChannels.apply(this);
 				}else {
 					subscribedList.forEach( (element, index, array) => {
 						this.listChannelUploads(element).then( (channelUploads) => {

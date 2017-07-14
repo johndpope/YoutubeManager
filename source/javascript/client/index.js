@@ -29,6 +29,7 @@ var gapiPromise = new Promise(function(resolve,reject){
 
 var apiOnLoad = function(){
 	console.log('gapi loaded');
+	gapi.client.setApiKey(require('config').apiKey);
 	gapi.client.load('youtube', 'v3').then(function(){
 		console.log('gapi youtube loaded');
 		resolveGApiPromise();

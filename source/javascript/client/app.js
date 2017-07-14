@@ -53,6 +53,7 @@ import React from 'react';
 import LoadingErrorPage from 'view/page/loading-error-page';
 import LoadingPage from 'view/page/loading-page';
 import PlayerPage from 'view/page/player-page';
+import SubscriptionsVideosPage from 'view/page/subscriptions-videos-page';
 
 import Video from 'structure/Video';
 
@@ -73,7 +74,8 @@ const app = {
 		const videos = [
 			video
 		];
-		ReactDOM.render(<PlayerPage videos={videos} />, document.getElementById('content'));
+		// ReactDOM.render(<PlayerPage videos={videos} />, document.getElementById('content'));
+		ReactDOM.render(<SubscriptionsVideosPage videoList={videos} />, document.getElementById('content'));
 	},
 	apiErrorLoaded() {
 		ReactDOM.render(<LoadingErrorPage/>, document.getElementById('content'))
