@@ -141,7 +141,7 @@ const youtubeAPI = {
 	 * 
 	 * @param {any} channelId 
 	 * @param {any} pageToken 
-	 * @returns 
+	 * @returns {Promise<{result: Map<string,Video>}>}
 	 */
 	listSubscribedChannels(channelId, pageToken) {
 		const request = gapi.client.youtube.subscriptions.list({

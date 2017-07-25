@@ -25,9 +25,6 @@ class VideoListComponent extends Component {
 			over: -1
 		}
 	}
-	componentDidMount() {
-		console.log(this.props);
-	}
 	dragStart(event , index) {
 		console.log('drag start');
 		//this.item = index;

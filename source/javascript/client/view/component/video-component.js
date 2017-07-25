@@ -14,9 +14,6 @@ import Video from 'structure/Video';
  * @augments {Component<VideoComponentProps, {}>}
  */
 class VideoComponent extends Component {
-	componentDidMount() {
-		console.log(this.props);
-	}
 	render() {
 		return (
 			<div className="YoutubeItem">

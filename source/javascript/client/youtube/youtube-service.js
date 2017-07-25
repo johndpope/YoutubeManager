@@ -1,8 +1,7 @@
 import youtubeAPI from './youtube-api';
 import cacheService from 'cache/cache-service';
 import config from 'config';
-
-console.log(config);
+import Video from 'structure/Video';
 
 const youtubeService = {
 	/**
@@ -84,7 +83,7 @@ const youtubeService = {
 	 * 
 	 * @param {string} channelId 
 	 * @param {string} [pageToken=undefined] 
-	 * @returns {Promise<Videos[]|string>} resolves list of videos or rejects string error message.
+	 * @returns {Promise<Video[]>} resolves list of videos or rejects string error message.
 	 */
 	listChannelUploads(channelId, pageToken=undefined) {
 		const uploadPlaylistId = "UU".concat(channelId.slice(2))
@@ -104,20 +103,23 @@ const youtubeService = {
 				const subscribedList = cacheService.load('channelIdList', 'subscribedList');
 				if(subscribedList == undefined) {
 					let pageToken = undefined;
+					const promises = [];
 					function loadSubscribedChannels() {
 						youtubeAPI.listSubscribedChannels(config.userId, pageToken).then( (response) => {
 							pageToken = response.nextPageToken;
-							response.result.forEach( (element, index, array) => {
+							response.result.forEach( (element, key, map) => {
 								cacheService.save('channel', element.id, element);
-								this.listChannelUploads(element.id).then( (channelUploads) => {
-									videoList.push.apply(videoList, channelUploads);
-									if(pageToken == undefined && index == array.length - 1) {
-										resolve(videoList);
-									}
+								const promise = this.listChannelUploads(element.id).then( (channelUploads) => {
+									videoList.push.apply(videoList, channelUploads.result);
 								});
+								promises.push(promise);
 							});
 							if(pageToken !== undefined) {
 								loadSubscribedChannels.apply(this);
+							} else {
+								Promise.all(promises).then( () => {
+									resolve(videoList);
+								})
 							}
 						})
 					};
@@ -134,9 +136,10 @@ const youtubeService = {
 				}
 			}).then( (videoList) => {
 				videoList.sort( (element1, element2) => {
-
+					return element2.uploadDate - element1.uploadDate;
 				})
 				cacheService.save('playlist', 'lastSubscribedVideos', videoList);
+				return videoList;
 			})
 		}else {
 			promise = Promise.resolve(videoList);
@@ -148,7 +151,7 @@ const youtubeService = {
 	 * 
 	 * @param {string} playlistId 
 	 * @param {string} [pageToken=undefined] 
-	 * @returns {Promise<Videos[]|string>} resolves with list of videos or rejects with string error message.
+	 * @returns {Promise<Video[]|string>} resolves with list of videos or rejects with string error message.
 	 */
 	getPlaylist(playlistId, pageToken=undefined){
 		let playlist;

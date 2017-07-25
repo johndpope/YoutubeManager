@@ -23,8 +23,9 @@ class SubscriptionsVideosPage extends Component {
 		};
 	}
 	componentDidMount() {
+		this.isMountedz = true;
 		youtubeService.listLastSubscribedVideos().then( (videoList) => {
-			if(this.isMounted) {
+			if(this.isMountedz) {
 				this.setState({
 					subscriptionsVideos: videoList,
 					loadingSubscription: false
@@ -33,7 +34,7 @@ class SubscriptionsVideosPage extends Component {
 		})
 	}
 	componentWillUnmount() {
-		this.isMounted = false;
+		this.isMountedz = false;
 	}
 	addVideoToList (index, event) {
 		event.preventDefault();
