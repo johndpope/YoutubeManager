@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Video from 'structure/Video';
 
+import { app } from 'app';
+
 import VideoListComponent from 'view/component/video-list-component';
 
 /**
@@ -10,6 +12,8 @@ import VideoListComponent from 'view/component/video-list-component';
 class PlayerPage extends Component {
 	constructor(props) {
 		super(props);
+		this.wheelControl = this.wheelControl.bind(this);
+		this.keyboardControl = this.keyboardControl.bind(this);
 		this.state = {
 			playingIndex: 0
 		};
@@ -28,8 +32,8 @@ class PlayerPage extends Component {
 				onStateChange: this.videoStateChange
 			}
 		});
-		document.addEventListener('keydown', this.keyboardControl.bind(this));
-		document.addEventListener('wheel', this.wheelControl.bind(this), {passive: true});
+		document.addEventListener('keydown', this.keyboardControl);
+		document.addEventListener('wheel', this.wheelControl, {passive: true});
 	}
 	componentWillUpdate(nextProps, nextState) {
 		if( nextState.playingIndex != this.state.playingIndex ) {
@@ -41,8 +45,8 @@ class PlayerPage extends Component {
 	}
 	componentWillUnmount() {
 		this.player.destroy();
-		document.removeEventListener('keydown', this);
-		document.removeEventListener('wheel', this, {passive: true});
+		document.removeEventListener('keydown', this.keyboardControl);
+		document.removeEventListener('wheel', this.wheelControl);
 	}
 	videoStateChange(event) {
 		// Fim do Video
@@ -59,6 +63,9 @@ class PlayerPage extends Component {
 		if(index >= 0 && index < this.props.videos.length) {
 			this.setState({ playingIndex: index });
 		}
+	}
+	stopPlaying() {
+		app.stopPlaying(this.props.videos.slice(this.state.playingIndex + 1, this.props.videos.length));
 	}
 	keyboardControl(event) {
 		const keyCode = event.keyCode;
@@ -94,7 +101,7 @@ class PlayerPage extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick={()=>this.props.fimVideo(this.props.videos.slice(this.state.playingIndex + 1, this.props.videos.length))} >
+				<button onClick={()=>this.stopPlaying()} >
 					<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
 					<span className="TextAfterIcon">Close</span>
 				</button>

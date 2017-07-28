@@ -94,8 +94,7 @@ VideoListComponent.defaultProps  = {
 	highlightIndex: -1,
 	click() {},
 	changePosition() {},
-	removeVideoPlaylist() {},
-
+	removeVideoPlaylist() {}
 }
 
 export default VideoListComponent;

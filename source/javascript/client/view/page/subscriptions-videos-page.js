@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Video from 'structure/Video';
 
 import youtubeService from 'youtube/youtube-service';
+import { app } from 'app';
 
 import VideoListComponent from 'view/component/video-list-component';
 import VideoComponent from 'view/component/video-component';
@@ -62,7 +63,7 @@ class SubscriptionsVideosPage extends Component {
 		this.setState({videoList: videoList});
 	}
 	playVideoList () {
-		console.log('start player');
+		app.playVideos(this.state.videoList);
 	}
 	render() {
 		const subscriptionsVideos = this.state.subscriptionsVideos.slice(0, 16).map( (video, index) => {
@@ -95,7 +96,7 @@ class SubscriptionsVideosPage extends Component {
 					</div>
 				</div>
 				<div className="Side">
-					<button onClick={this.play}>
+					<button onClick={() => this.playVideoList()}>
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
 					</button>
@@ -104,6 +105,10 @@ class SubscriptionsVideosPage extends Component {
 			</div>
 		)
 	}
+}
+
+SubscriptionsVideosPage.defaultProps  = {
+	videoList: []
 }
 
 export default SubscriptionsVideosPage;

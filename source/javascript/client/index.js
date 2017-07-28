@@ -49,11 +49,11 @@ var onYouTubeIframeAPIReady = function() {
 }
 
 Promise.all([gapiPromise,youtubeIframePromise]).then(function(){
-	require('app').default.apiLoaded();
+	require('app').app.apiLoaded();
 }).catch(function(e){
 	console.log('error');
 	console.log(e);
-	require('app').default.apiErrorLoaded();
+	require('app').app.apiErrorLoaded();
 });
 
 requirejs(['https://apis.google.com/js/client.js?onload=apiOnLoad', 'https://www.youtube.com/iframe_api', './app'], function(gapi, YT, app) {
