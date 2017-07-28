@@ -6,36 +6,36 @@ var serverConfig = require('../server-config');
 var PlaylistAPI = {
     /**
      * Methot that saves the JSON of a playlist in a new file on playlistDirectory by Promise
-     * @param {String} playlistTitle String to be used as playlist title (playlist filename)
      * @param {JSON} playlistJSON JSON to be saved as playlist
      * @returns {Promise<JSON|Error>} Promise that returns saved JSON or rejects with error
      */
-    createPlaylist(playlistTitle, playlistJSON) {
+    createPlaylist(playlistJSON) {
         return new Promise( (resolve, reject) => {
             /* check playlist title */
-            var baseTitle = playlistTitle;
+            var baseTitle = playlistJSON.title;
             if(!baseTitle) {
                 baseTitle = 'playlist';
             }
             this.getPlaylistsTitleList().then( (playlistTitles) => {
                 var number = 1;
-                var title = baseTitle + '.json';
+                var title = baseTitle;
                 while(playlistTitles.indexOf(title) !== -1) {
-                    title = baseTitle + '-' + number + '.json';
+                    title = baseTitle + '-' + number;
                     number ++;
                 }
                 /* check playlist title */
 
                 /* save playlist */
+                delete playlistJSON.title;
                 var playlistDataString = JSON.stringify(playlistJSON, null, '\t');
                 var options = {
                     flag: 'wx'
                 };
-                fs.writeFile(path.join(serverConfig.playlistDirectory, title), playlistDataString, options, (error, data) => {
+                fs.writeFile(path.join(serverConfig.playlistDirectory, title + '.json'), playlistDataString, options, (error, data) => {
                     if(error) {
                         reject(error);
                     } else {
-                        playlistJSON.title = path.basename(title, '.json');
+                        playlistJSON.title = title;
                         resolve(playlistJSON);
                     }
                 });

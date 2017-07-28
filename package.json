@@ -1,6 +1,6 @@
 {
   "name": "youtube-manager",
-  "main" : "./start-server.js",
+  "main": "./start-server.js",
   "version": "0.0.0",
   "dependencies": {
     "babel-plugin-transform-react-jsx": "^6.5.0",
@@ -13,16 +13,17 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-watch": "^1.0.0",
+    "jest": "^20.0.3",
     "jquery": "^1.9.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "requirejs": "^2.1.22"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "build": "grunt build",
     "server": "node start-server.js",
-    "start": "npm run build && npm run server"
+    "start": "npm run build && npm run server",
+    "test": "jest"
   }
 }

@@ -32,7 +32,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'source/javascript',
-            src: ['**/*.js' , '!React/**/*.js'],
+            src: ['**/*.js' , '!React/**/*.js', !'**/*.test.js'],
             dest: 'build/javascript/'
           },
           { 'build/index.html' : 'source/index.html'},
