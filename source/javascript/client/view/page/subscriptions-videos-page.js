@@ -5,6 +5,7 @@ import youtubeService from 'youtube/youtube-service';
 import { app } from 'app';
 
 import VideoListComponent from 'view/component/video-list-component';
+import VideoWallComponent from 'view/component/video-wall-component';
 import VideoComponent from 'view/component/video-component';
 
 /**
@@ -37,18 +38,19 @@ class SubscriptionsVideosPage extends Component {
 	componentWillUnmount() {
 		this.isMountedz = false;
 	}
-	addVideoToList (index, event) {
-		event.preventDefault();
-		if(event.button == 0) {
+	// addVideoToList (index, event) {
+	addVideoToList (video) {
+		// event.preventDefault();
+		// if(event.button == 0) {
 			const videoList = this.state.videoList;
-			const video = this.state.subscriptionsVideos[index];
+			// const video = this.state.subscriptionsVideos[index];
 			if(videoList.indexOf(video) === -1) {
 				videoList.push(video);
 				this.setState({videoList: videoList});
 			}else {
 				console.log('video já na lista');
 			}
-		}
+		// }
 	}
 	removeVideoFromList (index) {
 		const videoList = this.state.videoList;
@@ -91,7 +93,8 @@ class SubscriptionsVideosPage extends Component {
 				<div className="Center" >
 					<div className="content" >
 						<div className="Items" >
-							{subscriptionsVideos}
+							{/* {subscriptionsVideos} */}
+							<VideoWallComponent videos={this.state.subscriptionsVideos} click={this.addVideoToList} />
 						</div>
 					</div>
 				</div>

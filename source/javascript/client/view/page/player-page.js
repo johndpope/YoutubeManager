@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Video from 'structure/Video';
 
 import { app } from 'app';
@@ -7,7 +7,7 @@ import VideoListComponent from 'view/component/video-list-component';
 
 /**
  * @class PlayerPage
- * @augments {Component<{videos: Video[], fimVideo: function}, {}>}
+ * @augments {Component<{videos: Video[]},{}>}
  */
 class PlayerPage extends Component {
 	constructor(props) {
@@ -55,7 +55,7 @@ class PlayerPage extends Component {
 			if(this.props.videos[next]){
 				this.changeVideo(next);
 			}else {
-				this.props.fimVideo([]);
+				this.stopPlaying();
 			}
 		}
 	}
@@ -86,7 +86,7 @@ class PlayerPage extends Component {
 				break;
 			case 8: //BackSpace
 				event.preventDefault();
-				this.props.fimVideo(this.props.video.slice(this.state.playingIndex + 1, this.props.videos.length));
+				this.stopPlaying();
 				break;
 		}
 	}
