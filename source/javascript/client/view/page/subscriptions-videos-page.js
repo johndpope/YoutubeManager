@@ -38,26 +38,22 @@ class SubscriptionsVideosPage extends Component {
 	componentWillUnmount() {
 		this.isMountedz = false;
 	}
-	// addVideoToList (index, event) {
 	addVideoToList (video) {
-		// event.preventDefault();
-		// if(event.button == 0) {
-			const videoList = this.state.videoList;
-			// const video = this.state.subscriptionsVideos[index];
-			if(videoList.indexOf(video) === -1) {
-				videoList.push(video);
-				this.setState({videoList: videoList});
-			}else {
-				console.log('video já na lista');
-			}
-		// }
-	}
-	removeVideoFromList (index) {
 		const videoList = this.state.videoList;
+		if(videoList.indexOf(video) === -1) {
+			videoList.push(video);
+			this.setState({videoList: videoList});
+		}else {
+			console.log('video já na lista');
+		}
+	}
+	removeVideoFromList (video) {
+		const videoList = this.state.videoList;
+		const index = videoList.indexOf(video);
 		videoList.splice(index, 1);
 		this.setState({videoList: videoList});
 	}
-	changeVideoPosition (fromPosition, toPosition) {
+	changeVideoPositionOnList (fromPosition, toPosition) {
 		const videoList = this.state.videoList;
 		const video = videoList[fromPosition];
 		videoList.splice(fromPosition, 1);
@@ -68,17 +64,6 @@ class SubscriptionsVideosPage extends Component {
 		app.playVideos(this.state.videoList);
 	}
 	render() {
-		const subscriptionsVideos = this.state.subscriptionsVideos.slice(0, 16).map( (video, index) => {
-			return (
-				<div
-					key={video.id}
-					className="Item"
-					onClick={(event)=>this.addVideoToList(index, event)}
-				>
-					<VideoComponent video={video} />
-				</div>
-			)
-		})
 		return (
 			<div className="YoutubeContent">
 				{this.state.loadingSubscription?
@@ -93,8 +78,7 @@ class SubscriptionsVideosPage extends Component {
 				<div className="Center" >
 					<div className="content" >
 						<div className="Items" >
-							{/* {subscriptionsVideos} */}
-							<VideoWallComponent videos={this.state.subscriptionsVideos} click={this.addVideoToList} />
+							<VideoWallComponent videos={this.state.subscriptionsVideos} click={this.addVideoToList.bind(this)} />
 						</div>
 					</div>
 				</div>
@@ -103,7 +87,7 @@ class SubscriptionsVideosPage extends Component {
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
 					</button>
-					<VideoListComponent videos={this.state.videoList} changePosition={this.changePosition} removeVideoPlaylist={this.removeVideoPlaylist} />
+					<VideoListComponent videos={this.state.videoList} changePosition={this.changeVideoPositionOnList.bind(this)} removeVideoPlaylist={this.removeVideoFromList.bind(this)} />
 				</div>
 			</div>
 		)
