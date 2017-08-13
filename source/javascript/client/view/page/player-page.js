@@ -110,7 +110,7 @@ class PlayerPage extends Component {
 					</div>
 				</div>
 				<div>
-					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={this.changeVideo} />
+					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={(index)=>{this.changeVideo(index)}} />
 				</div>
 			</div>
 		)
