@@ -71,7 +71,7 @@ class VideoWallComponent extends Component{
 VideoWallComponent.defaultProps = {
 	videos: [],
 	pageSize: 16,
-	click() {}
+	click(video) {}
 }
 
 export default VideoWallComponent;

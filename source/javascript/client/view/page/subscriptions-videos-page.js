@@ -78,7 +78,10 @@ class SubscriptionsVideosPage extends Component {
 				<div className="Center" >
 					<div className="content" >
 						<div className="Items" >
-							<VideoWallComponent videos={this.state.subscriptionsVideos} click={this.addVideoToList.bind(this)} />
+							<VideoWallComponent
+								videos={this.state.subscriptionsVideos}
+								click={(video)=>this.addVideoToList(video)}
+							/>
 						</div>
 					</div>
 				</div>
@@ -87,7 +90,11 @@ class SubscriptionsVideosPage extends Component {
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
 					</button>
-					<VideoListComponent videos={this.state.videoList} changePosition={this.changeVideoPositionOnList.bind(this)} removeVideoPlaylist={this.removeVideoFromList.bind(this)} />
+					<VideoListComponent
+						videos={this.state.videoList}
+						changePosition={(fromPosition,toPosition)=>this.changeVideoPositionOnList(fromPosition,toPosition)}
+						removeVideoPlaylist={(video)=>this.removeVideoFromList(video)}
+					/>
 				</div>
 			</div>
 		)

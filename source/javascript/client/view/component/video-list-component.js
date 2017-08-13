@@ -9,7 +9,7 @@ import VideoComponent from 'view/component/video-component';
  * @property {Video[]} videos
  * @property {boolean} horizontal
  * @property {number} highlightIndex
- * @property {function} click
+ * @property {function} [click]
  * @property {function} [changePosition]
  * @property {function} [removeVideoPlaylist]
  */
@@ -35,7 +35,7 @@ class VideoListComponent extends Component {
 	}
 	dragEnter(event , index) {
 		console.log('drag enter')
-		//this.setState({over: index});
+		// this.setState({over: index});
 	}
 	drop(event , index) {
 		console.log('drop');
@@ -61,11 +61,12 @@ class VideoListComponent extends Component {
 							(this.state.over == index ? 'Over ' : '') + 
 							'HasTooltip'
 						}
-						draggable={this.props.changePosition? true : false}
+						draggable={this.props.click? false : true}
 						onDragEnter={(event)=>this.dragEnter(event , index)}
 						onDragStart={(event)=>this.dragStart(event , index)}
 						onDragOver={this.dragOver}
 						onDrop={(event)=>this.drop(event , index)}
+						onClick={(event)=>this.props.click(index)}
 						data-toggle="tooltip"
 						data-placement={this.props.horizontal ? 'bottom' : 'left'}
 						title={item.title + ' - ' + item.authorName}
@@ -90,8 +91,9 @@ class VideoListComponent extends Component {
 VideoListComponent.defaultProps  = {
 	horizontal: false,
 	highlightIndex: -1,
-	changePosition() {},
-	removeVideoPlaylist(video) {}
+	changePosition(fromPosition, toPosition) {},
+	removeVideoPlaylist(video) {},
+	click(video) {}
 }
 
 export default VideoListComponent;
