@@ -28,7 +28,8 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'source/javascript/',
             // src: ['**/*.js'],
-            src: ['structure/*.js'],
+            src: ['structure/*.js', '!structure/*.test.js'],
+            // src: ['structure/*.js'],
             dest: 'build/client/javascript/'
           }
         ]
