@@ -9,9 +9,9 @@ import VideoComponent from 'view/component/video-component';
  * @property {Video[]} videos
  * @property {boolean} horizontal
  * @property {number} highlightIndex
+ * @property {function} [removeVideoPlaylist]
  * @property {function} [click]
  * @property {function} [changePosition]
- * @property {function} [removeVideoPlaylist]
  */
 /**
  * @class VideoListComponent
@@ -25,48 +25,42 @@ class VideoListComponent extends Component {
 			over: -1
 		}
 	}
-	dragStart(event , index) {
-		console.log('drag start');
-		this.item = index;
+	dragStart(index) {
+		this.draggedElementIndex = index;
 	}
 	dragOver(event) {
-		console.log('drag over');
 		event.preventDefault();
 	}
-	dragEnter(event , index) {
-		console.log('drag enter')
+	dragEnter(index) {
 		// this.setState({over: index});
 	}
-	drop(event , index) {
-		console.log('drop');
-		this.props.changePosition(this.item,index);
+	drop(index) {
+		this.props.changePosition(this.draggedElementIndex, index);
 		//this.setState({over : -1});
-	}
-	removeVideo(video) {
-		this.props.removeVideoPlaylist(video);
 	}
 	render() {
 		const videos = this.props.videos.map( (item, index) => {
 			return (
 				<div key={item.id} className={(this.props.horizontal ? 'Horizontal ' : 'Vertical ')} >
 					{
-						this.props.horizontal ?
-						null :
-						<button type='button' className='RemoveButton' onClick={()=>this.removeVideo(item)} >
-							<span className='glyphicon glyphicon-remove' aria-hidden={true}></span>
-						</button>
+						this.props.removeVideoPlaylist ?
+							<button type='button' className='RemoveButton' onClick={()=>this.props.removeVideoPlaylist(item, index)} >
+								<span className='glyphicon glyphicon-remove' aria-hidden={true}></span>
+							</button>
+						:
+							null
 					}
 					<div className={
 							(this.props.highlightIndex == index ? 'Highlight ' : '') + 
 							(this.state.over == index ? 'Over ' : '') + 
 							'HasTooltip'
 						}
-						draggable={this.props.click? false : true}
-						onDragEnter={(event)=>this.dragEnter(event , index)}
-						onDragStart={(event)=>this.dragStart(event , index)}
-						onDragOver={this.dragOver}
-						onDrop={(event)=>this.drop(event , index)}
-						onClick={(event)=>this.props.click(index)}
+						draggable={this.props.changePosition? true : false}
+						onDragEnter={()=>this.dragEnter(index)}
+						onDragStart={()=>this.dragStart(index)}
+						onDragOver={(event)=>this.dragOver(event)}
+						onDrop={()=>this.drop(index)}
+						onClick={()=>this.props.click(item, index)}
 						data-toggle="tooltip"
 						data-placement={this.props.horizontal ? 'bottom' : 'left'}
 						title={item.title + ' - ' + item.authorName}
@@ -91,9 +85,8 @@ class VideoListComponent extends Component {
 VideoListComponent.defaultProps  = {
 	horizontal: false,
 	highlightIndex: -1,
-	changePosition(fromPosition, toPosition) {},
-	removeVideoPlaylist(video) {},
-	click(video) {}
+	removeVideoPlaylist(video, index) {},
+	click(video, index) {}
 }
 
 export default VideoListComponent;

@@ -14,6 +14,7 @@ class PlayerPage extends Component {
 		super(props);
 		this.wheelControl = this.wheelControl.bind(this);
 		this.keyboardControl = this.keyboardControl.bind(this);
+		this.videoStateChange = this.videoStateChange.bind(this);
 		this.state = {
 			playingIndex: 0
 		};
@@ -38,7 +39,7 @@ class PlayerPage extends Component {
 	componentWillUpdate(nextProps, nextState) {
 		if( nextState.playingIndex != this.state.playingIndex ) {
 			this.player.loadVideoById({
-				id: this.props.videos[this.state.playingIndex].id,
+				videoId: this.props.videos[nextState.playingIndex].id,
 				suggestedQuality: 'hd1080'
 			});
 		}
@@ -110,7 +111,7 @@ class PlayerPage extends Component {
 					</div>
 				</div>
 				<div>
-					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={(index)=>{this.changeVideo(index)}} />
+					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={(video, index)=>{this.changeVideo(index)}} />
 				</div>
 			</div>
 		)

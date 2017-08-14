@@ -92,7 +92,7 @@ class SubscriptionsVideosPage extends Component {
 					</button>
 					<VideoListComponent
 						videos={this.state.videoList}
-						changePosition={(fromPosition,toPosition)=>this.changeVideoPositionOnList(fromPosition,toPosition)}
+						changePosition={(fromPosition, toPosition)=>this.changeVideoPositionOnList(fromPosition, toPosition)}
 						removeVideoPlaylist={(video)=>this.removeVideoFromList(video)}
 					/>
 				</div>
