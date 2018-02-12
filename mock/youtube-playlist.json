@@ -1,0 +1,2262 @@
+{
+	"kind": "youtube#playlistItemListResponse",
+	"etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/fDF3epAdLU_DifHNk0ZvsHnIuko\"",
+	"nextPageToken": "CDIQAA",
+	"pageInfo": {
+	 "totalResults": 784,
+	 "resultsPerPage": 50
+	},
+	"items": [
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/348XbiMCZMp_tlaQs6FzXPxji0I\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjJUd2UyRHRRS1lF",
+	  "snippet": {
+	   "publishedAt": "2017-08-13T19:17:43.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "The Grand Dongus",
+	   "description": "My spells now\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBulldog Rubick dota 2",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 0,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "2Twe2DtQKYE"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/IRkyHEWsF-vGFiCjAjsqmL-8Afk\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmxBMUFIOEJ5MVBv",
+	  "snippet": {
+	   "publishedAt": "2017-08-12T12:14:53.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Jebaiting With Ursa",
+	   "description": "Bulldog Ursa with the next level baits\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/lA1AH8By1Po/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/lA1AH8By1Po/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/lA1AH8By1Po/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/lA1AH8By1Po/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/lA1AH8By1Po/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 1,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "lA1AH8By1Po"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/YcH3gtYSCuBfmcWxCoiqksPT0HQ\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjYydWR0YTFiN09R",
+	  "snippet": {
+	   "publishedAt": "2017-08-11T14:18:12.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog Is Back With A Storm",
+	   "description": "Bulldog badooshing with Storm Spirit\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/62udta1b7OQ/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/62udta1b7OQ/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/62udta1b7OQ/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/62udta1b7OQ/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/62udta1b7OQ/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 2,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "62udta1b7OQ"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/CeRkDpONmK2PdH6du_Ki12BQjuk\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjByQ29sRGFRU3Fj",
+	  "snippet": {
+	   "publishedAt": "2017-08-01T20:22:18.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Can't Beat Double Attack!",
+	   "description": "Bulldog Gyro goes Aghanim Basher build to see if it's actually good\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/0rColDaQSqc/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/0rColDaQSqc/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/0rColDaQSqc/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/0rColDaQSqc/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/0rColDaQSqc/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 3,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "0rColDaQSqc"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/1FAXtvJ0Qf7g7duVQEEIbBU3Ak4\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmRsNXZjYjctRXhR",
+	  "snippet": {
+	   "publishedAt": "2017-07-31T15:37:47.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Team TriHard Going Hard In The Battlecup",
+	   "description": "Team TriHard is back with new gang members (Synderen,Sinned,Tucker and Ar1se)\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/dl5vcb7-ExQ/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/dl5vcb7-ExQ/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/dl5vcb7-ExQ/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/dl5vcb7-ExQ/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/dl5vcb7-ExQ/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 4,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "dl5vcb7-ExQ"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/QN8xGogz7_uMc7UEOsKuMLkUWyY\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLm1OSklHajBPeGlv",
+	  "snippet": {
+	   "publishedAt": "2017-07-30T10:05:11.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "AdmiralBulldog TI7 Compendium Predictions",
+	   "description": "Bulldog gives his TI winning insight\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/mNJIGj0Oxio/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/mNJIGj0Oxio/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/mNJIGj0Oxio/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/mNJIGj0Oxio/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/mNJIGj0Oxio/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 5,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "mNJIGj0Oxio"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/kdWRNiuQpoo7QXunT9AGXKanswg\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLkd6aWR4WnZ1bVpr",
+	  "snippet": {
+	   "publishedAt": "2017-07-30T09:41:58.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "From The Frozen Hero Pool, I Carry",
+	   "description": "Bulldog has some fun with his Lich carry build\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/GzidxZvumZk/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/GzidxZvumZk/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/GzidxZvumZk/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/GzidxZvumZk/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/GzidxZvumZk/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 6,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "GzidxZvumZk"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/vWBsf7Qxl3NKw0iPV3p85Bbke4k\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnE5RUZmUllCTjJ3",
+	  "snippet": {
+	   "publishedAt": "2017-07-29T13:19:23.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Do Not Underestimate The Machinegun Of Hell",
+	   "description": "You've been eliminated\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/q9EFfRYBN2w/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/q9EFfRYBN2w/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/q9EFfRYBN2w/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/q9EFfRYBN2w/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/q9EFfRYBN2w/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 7,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "q9EFfRYBN2w"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/S5cwOFutD78L1H0lP5mpRTlrG2Q\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmNBVTYzMkNTU0Mw",
+	  "snippet": {
+	   "publishedAt": "2017-07-28T14:39:08.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Go Ahead,Yahoo Bulldog QOP",
+	   "description": "Bulldog QOP is growing more powerful with each waking hour\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/cAU632CSSC0/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/cAU632CSSC0/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/cAU632CSSC0/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/cAU632CSSC0/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/cAU632CSSC0/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 8,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "cAU632CSSC0"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/Vu3zDhTtWj_RrOWeYGDaTT6HlZs\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLktIRVdQTHlISVhB",
+	  "snippet": {
+	   "publishedAt": "2017-07-27T20:37:38.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Magic Resistance Aura Activate!",
+	   "description": "Bulldog Chen 10/10\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/KHEWPLyHIXA/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/KHEWPLyHIXA/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/KHEWPLyHIXA/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/KHEWPLyHIXA/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/KHEWPLyHIXA/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 9,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "KHEWPLyHIXA"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/uYhrp66efhcgS18MeBxeceKnm_Q\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmVuOUZNd29Tejc0",
+	  "snippet": {
+	   "publishedAt": "2017-07-27T10:21:59.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "The Mighty Donger Puck",
+	   "description": "Bulldog Puck in a close intense dota 2 game\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/en9FMwoSz74/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/en9FMwoSz74/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/en9FMwoSz74/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/en9FMwoSz74/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/en9FMwoSz74/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 10,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "en9FMwoSz74"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/2tnUPfnDwol2QkMWYkHIJ0t3xZ8\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLkhXZzNvMVYwS09Z",
+	  "snippet": {
+	   "publishedAt": "2017-07-26T08:42:32.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog Has An Announcement To Make",
+	   "description": "Bulldog plays Jugger carry and announces something at the end Jebaited\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/HWg3o1V0KOY/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/HWg3o1V0KOY/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/HWg3o1V0KOY/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/HWg3o1V0KOY/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/HWg3o1V0KOY/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 11,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "HWg3o1V0KOY"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/7yWEWMf-RpRKO2tfWLp6hc_5Ebw\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmVjeW13ZTFzcUc0",
+	  "snippet": {
+	   "publishedAt": "2017-07-25T20:50:36.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "DongTales 4",
+	   "description": "AdmiralBulldog stream highlights and donations\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/ecymwe1sqG4/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/ecymwe1sqG4/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/ecymwe1sqG4/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/ecymwe1sqG4/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/ecymwe1sqG4/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 12,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "ecymwe1sqG4"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/-nwQQozktqEox3axfTSy8qhgaic\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmRKb0Z2aVEwMG1n",
+	  "snippet": {
+	   "publishedAt": "2017-07-25T16:17:19.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Saving The BKB For Max Value",
+	   "description": "Bulldog Sven is being patient with his BKB\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/dJoFviQ00mg/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/dJoFviQ00mg/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/dJoFviQ00mg/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/dJoFviQ00mg/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/dJoFviQ00mg/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 13,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "dJoFviQ00mg"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/FmsJYRG-XdZWKI7zQPp2y3-xHDY\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmNUaF9HZmlKUnQw",
+	  "snippet": {
+	   "publishedAt": "2017-07-24T21:32:54.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog plays Drawful 2 with Synderen",
+	   "description": "Drawful 2 with syndereN and twitch chat\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/cTh_GfiJRt0/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/cTh_GfiJRt0/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/cTh_GfiJRt0/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/cTh_GfiJRt0/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/cTh_GfiJRt0/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 14,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "cTh_GfiJRt0"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/5dl5KettscjcQfcx_1WAJmKvLRg\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnZsSU1aQXFoWm1r",
+	  "snippet": {
+	   "publishedAt": "2017-07-23T17:50:34.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Defending Against The Rat Plague",
+	   "description": "Bulldog Juggernaut tries to fend of the rats with Juggernaut\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/vlIMZAqhZmk/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/vlIMZAqhZmk/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/vlIMZAqhZmk/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/vlIMZAqhZmk/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/vlIMZAqhZmk/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 15,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "vlIMZAqhZmk"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/hpYnWDAwERennkqqurxkMtssFnI\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjNIS0NSVkhXMzB3",
+	  "snippet": {
+	   "publishedAt": "2017-07-22T19:58:59.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "TI Winner Going For The Chicken Dinner",
+	   "description": "Bulldog implementing weSmart strats while he shoots for the 1st place\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBulldog plays Monkey King against syndereN invoker",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/3HKCRVHW30w/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/3HKCRVHW30w/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/3HKCRVHW30w/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/3HKCRVHW30w/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/3HKCRVHW30w/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 16,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "3HKCRVHW30w"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/nkKYoUz-ZY5-ClNHq-meEtUdDL8\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnQ0VWRvZ0d1LVhr",
+	  "snippet": {
+	   "publishedAt": "2017-07-22T12:02:37.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Beat The Legends BO3 - GAME 3 (REVERSE CM)  Highlights",
+	   "description": "'Beat the Legends!' is a show match featuring syndereN and AdmiralBulldog teaming up with dota 2 fans\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBulldog plays Monkey King against syndereN invoker",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/t4UdogGu-Xk/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/t4UdogGu-Xk/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/t4UdogGu-Xk/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/t4UdogGu-Xk/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/t4UdogGu-Xk/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 17,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "t4UdogGu-Xk"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/7GdK0IGIBVliBQxxKNSbe4QID8s\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmxXWGZkNTVPM1lN",
+	  "snippet": {
+	   "publishedAt": "2017-07-21T21:45:16.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Beat The Legends BO3 - GAME 2 Highlights",
+	   "description": "'Beat the Legends!' is a show match featuring syndereN and AdmiralBulldog teaming up with dota 2 fans\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBulldog plays roaming Chen against Synd clockwerk",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/lWXfd55O3YM/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/lWXfd55O3YM/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/lWXfd55O3YM/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/lWXfd55O3YM/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/lWXfd55O3YM/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 18,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "lWXfd55O3YM"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/El6nAMcihT0ZHhmcV0vXQOtBZ3k\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLk9DMXJybzl6WmE4",
+	  "snippet": {
+	   "publishedAt": "2017-07-21T13:31:23.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Beat The Legends BO3 - GAME 1 Highlights",
+	   "description": "'Beat the Legends!' is a show match featuring syndereN and AdmiralBulldog teaming up with dota 2 fans\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/OC1rro9zZa8/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/OC1rro9zZa8/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/OC1rro9zZa8/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/OC1rro9zZa8/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/OC1rro9zZa8/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 19,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "OC1rro9zZa8"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/t7EgwRYawZXWnsgsS2ZgSDmMeTQ\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlZZMm1nZXdzTzJj",
+	  "snippet": {
+	   "publishedAt": "2017-07-21T09:21:59.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Salty Weaver Turns Sugary",
+	   "description": "Angry Weaver slowly realizes he's playing with a TI winner duuuh\n---Mistakes were made---\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nAdmiralBulldog plays Rubick with Xyclopz Oracle",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/VY2mgewsO2c/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/VY2mgewsO2c/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/VY2mgewsO2c/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/VY2mgewsO2c/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/VY2mgewsO2c/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 20,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "VY2mgewsO2c"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/uJsLhwj76UyXg3s-YJYZlMR_V-8\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmxUTGcyX0dvQjVv",
+	  "snippet": {
+	   "publishedAt": "2017-07-20T09:15:27.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Rip Life,I Have Enjoyed It",
+	   "description": "AdmiralBulldog plays Nature's Prophet\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/lTLg2_GoB5o/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/lTLg2_GoB5o/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/lTLg2_GoB5o/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/lTLg2_GoB5o/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/lTLg2_GoB5o/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 21,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "lTLg2_GoB5o"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/lKpZqobw0vwG3elKbxA1ZmZPqTM\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjh3VVdMMnAtTzZF",
+	  "snippet": {
+	   "publishedAt": "2017-07-19T09:38:21.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "PUBG Moments - Going Bonkers",
+	   "description": "AdmiralBulldog PUBG highlights with Sinned,Forsen and Nani\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/8wUWL2p-O6E/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/8wUWL2p-O6E/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/8wUWL2p-O6E/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/8wUWL2p-O6E/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/8wUWL2p-O6E/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 22,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "8wUWL2p-O6E"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/qd7YiBGswqqG05lDFeaM-ZmT2x4\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmY4Q2lKVndmd3FJ",
+	  "snippet": {
+	   "publishedAt": "2017-07-18T09:20:28.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "You Are Now Watching The Throw",
+	   "description": "Never underestimate the throws and a guy who goes 1v9\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/f8CiJVwfwqI/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/f8CiJVwfwqI/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/f8CiJVwfwqI/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/f8CiJVwfwqI/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/f8CiJVwfwqI/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 23,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "f8CiJVwfwqI"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/CPAF1XUa5ZtiFKEa6gzsDPi40Aw\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmhaN0JVUGJCZnZj",
+	  "snippet": {
+	   "publishedAt": "2017-07-17T18:06:46.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Grade A Terrorblade",
+	   "description": "Bulldog shows why he's D best Terrorblade\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/hZ7BUPbBfvc/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/hZ7BUPbBfvc/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/hZ7BUPbBfvc/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/hZ7BUPbBfvc/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/hZ7BUPbBfvc/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 24,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "hZ7BUPbBfvc"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/7R36HfFCnA7dmL0libCQFZjNAFc\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmtuTmVCakd0SGtj",
+	  "snippet": {
+	   "publishedAt": "2017-07-17T08:50:21.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "PUBG Squad with Sinnedd,Forsen and Nani",
+	   "description": "Bulldog and Forsen with their grills form a silly squad in PUBG\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/knNeBjGtHkc/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/knNeBjGtHkc/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/knNeBjGtHkc/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/knNeBjGtHkc/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/knNeBjGtHkc/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 25,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "knNeBjGtHkc"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/Eyq1LFM1IxwcC50UV4POsh6F5Bc\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLldqbDdIb3dNblNv",
+	  "snippet": {
+	   "publishedAt": "2017-07-16T05:14:55.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Going Out Of The Meta",
+	   "description": "Bulldog plays Venge carry with GH\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/Wjl7HowMnSo/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/Wjl7HowMnSo/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/Wjl7HowMnSo/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/Wjl7HowMnSo/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/Wjl7HowMnSo/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 26,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "Wjl7HowMnSo"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/H8O29swKyuUzAa-dJMPbagb1Hjs\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlduRUplMGdvQjFV",
+	  "snippet": {
+	   "publishedAt": "2017-07-15T20:29:33.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Immortal Treasure III Opening And Testing Items In Game",
+	   "description": "Gaben Is Always Watching\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/WnEJe0goB1U/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/WnEJe0goB1U/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/WnEJe0goB1U/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/WnEJe0goB1U/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/WnEJe0goB1U/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 27,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "WnEJe0goB1U"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/KtLqKVHrdTRQp60a-IWHOHwehwg\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlY2aWNUMW1nUWNz",
+	  "snippet": {
+	   "publishedAt": "2017-07-15T02:00:31.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Coaching Sinneddonut-How To Timber",
+	   "description": "AdmiralBulldog teaches Sinned the importance of ranged creep\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/V6icT1mgQcs/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/V6icT1mgQcs/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/V6icT1mgQcs/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/V6icT1mgQcs/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/V6icT1mgQcs/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 28,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "V6icT1mgQcs"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/0IhUa1KswhKMvDlUbKc5RxO30w4\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLm1lOHNKVjdOaUtZ",
+	  "snippet": {
+	   "publishedAt": "2017-07-13T21:45:20.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Making Zero Mistakes",
+	   "description": "AdmiralBulldog plays Necro carry with cancel \nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/me8sJV7NiKY/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/me8sJV7NiKY/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/me8sJV7NiKY/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/me8sJV7NiKY/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/me8sJV7NiKY/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 29,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "me8sJV7NiKY"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/RWl-p0cxDwu7g7Br8P-Fy84NbDg\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjBHc2RYNEJlYi13",
+	  "snippet": {
+	   "publishedAt": "2017-07-13T10:28:55.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "AdmiralBulldog Plays House Party",
+	   "description": "House Party gameplay with twitch chat\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/0GsdX4Beb-w/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/0GsdX4Beb-w/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/0GsdX4Beb-w/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/0GsdX4Beb-w/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/0GsdX4Beb-w/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 30,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "0GsdX4Beb-w"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/8YPEhE1LS-HId9OlPxnhqvxDXWs\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjFYR2JnLXZkYl9z",
+	  "snippet": {
+	   "publishedAt": "2017-07-12T19:58:24.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Indirect Carry",
+	   "description": "AdmiralBulldog plays Luna carry with cancel\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/1XGbg-vdb_s/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/1XGbg-vdb_s/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/1XGbg-vdb_s/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/1XGbg-vdb_s/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/1XGbg-vdb_s/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 31,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "1XGbg-vdb_s"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/h7xWSNgQKLl0iwi3Mzt37Yag9ek\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlJFQU5YcWRiYl9r",
+	  "snippet": {
+	   "publishedAt": "2017-07-11T22:31:27.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Time For A 3 Hero Pool",
+	   "description": "AdmiralBulldog expands his hero pool \nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/REANXqdbb_k/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/REANXqdbb_k/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/REANXqdbb_k/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/REANXqdbb_k/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/REANXqdbb_k/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 32,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "REANXqdbb_k"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/X6mX-C3EmQaHQvb3VewHZtvPjaI\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjFyV25TemEzbElr",
+	  "snippet": {
+	   "publishedAt": "2017-07-10T11:11:39.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Feels Good To Be A Rat",
+	   "description": "Bulldog Prophet is making some rat plays\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/1rWnSza3lIk/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/1rWnSza3lIk/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/1rWnSza3lIk/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/1rWnSza3lIk/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/1rWnSza3lIk/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 33,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "1rWnSza3lIk"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/SRfLRIxFz3L0SAIAw0Yb3-Ys62Q\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnE2ZUE2cFl2aXlJ",
+	  "snippet": {
+	   "publishedAt": "2017-07-09T23:37:52.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog Plays Google Feud",
+	   "description": "AdmiralBulldog tries to guess what people google\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/q6eA6pYviyI/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/q6eA6pYviyI/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/q6eA6pYviyI/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/q6eA6pYviyI/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/q6eA6pYviyI/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 34,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "q6eA6pYviyI"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/WGy6rhCcimfxPPfj2mNl3mBCXic\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlNvUUJpQm1uMnkw",
+	  "snippet": {
+	   "publishedAt": "2017-07-09T08:44:27.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog Stack VS Miracle Stack In Battlecup",
+	   "description": "Weebs Of Hell (Bdawg,Bububu,Sinned,Tucker,LL) vs Team Liquid\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/SoQBiBmn2y0/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/SoQBiBmn2y0/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/SoQBiBmn2y0/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/SoQBiBmn2y0/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/SoQBiBmn2y0/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 35,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "SoQBiBmn2y0"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/CA1ur218dKlAC9f_1gedzRpwdnQ\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmQwZktCVE5kRHVR",
+	  "snippet": {
+	   "publishedAt": "2017-07-09T13:23:58.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Bulldog Brew Is On The Move",
+	   "description": "Bulldog plays Brewmaster safelane\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/d0fKBTNdDuQ/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/d0fKBTNdDuQ/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/d0fKBTNdDuQ/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/d0fKBTNdDuQ/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/d0fKBTNdDuQ/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 36,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "d0fKBTNdDuQ"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/ifvMcDbQl8QYismNg_lOaQHHUO4\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLkFXS1h2Rk5zMmFB",
+	  "snippet": {
+	   "publishedAt": "2017-07-06T16:46:10.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Dont Bing Bulldog QOP",
+	   "description": "AdmiralBulldog tries playing Queen Of Pain again\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/AWKXvFNs2aA/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/AWKXvFNs2aA/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/AWKXvFNs2aA/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/AWKXvFNs2aA/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/AWKXvFNs2aA/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 37,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "AWKXvFNs2aA"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/rqCeGmLu0q4-WxFnZYJJYWQgJ_E\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnhOSlU1TS1iTjA0",
+	  "snippet": {
+	   "publishedAt": "2017-07-05T11:28:43.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "DongTales 3 - Bulldog Is Ready For It",
+	   "description": "AdmiralBulldog stream highlights and donations\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/xNJU5M-bN04/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/xNJU5M-bN04/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/xNJU5M-bN04/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/xNJU5M-bN04/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/xNJU5M-bN04/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 38,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "xNJU5M-bN04"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/7Aet_yUfb1wvngeULtEhkUJF66g\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLnViNTZqMklNLUp3",
+	  "snippet": {
+	   "publishedAt": "2017-07-04T19:31:54.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "I'm In Love With The Pudding",
+	   "description": "Bulldog Prophet on his road to 8k\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/ub56j2IM-Jw/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/ub56j2IM-Jw/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/ub56j2IM-Jw/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/ub56j2IM-Jw/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/ub56j2IM-Jw/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 39,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "ub56j2IM-Jw"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/WbKhWVFlRgD6X7ui2EjEP3CSArw\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmdmUDBsVzJMT1Fn",
+	  "snippet": {
+	   "publishedAt": "2017-07-03T20:06:32.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Having A Field Day",
+	   "description": "Bulldog Disruptor support plays\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/gfP0lW2LOQg/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/gfP0lW2LOQg/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/gfP0lW2LOQg/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/gfP0lW2LOQg/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/gfP0lW2LOQg/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 40,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "gfP0lW2LOQg"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/6KzyKXnZdgaGfE1qtRkeAP2NTYw\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLllIcV9qcUs1SjIw",
+	  "snippet": {
+	   "publishedAt": "2017-07-03T11:29:19.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "PUBG With Dota 2 Personalities (Teams Of 2)",
+	   "description": "Bulldog teams up with Sinnedd in the Moonduck PUBG tourney\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nFunny PUBG moments 2017",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/YHq_jqK5J20/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/YHq_jqK5J20/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/YHq_jqK5J20/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/YHq_jqK5J20/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/YHq_jqK5J20/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 41,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "YHq_jqK5J20"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/twim4J1NVdL4JO6MIdEc6WrvnRg\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLk1GSkNHV2FOUHhV",
+	  "snippet": {
+	   "publishedAt": "2017-07-02T13:33:01.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Pest Control In Action",
+	   "description": "Bulldog has to deal with a pesty Clinkz\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/MFJCGWaNPxU/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/MFJCGWaNPxU/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/MFJCGWaNPxU/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/MFJCGWaNPxU/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/MFJCGWaNPxU/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 42,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "MFJCGWaNPxU"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/JcD7rIcFvQxzIyl06KrOkGY_-k0\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLlhORTNwd1NQeDZR",
+	  "snippet": {
+	   "publishedAt": "2017-07-01T17:16:46.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "You're In My Realm Of Hell",
+	   "description": "Bulldog Necro carry gameplay\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/XNE3pwSPx6Q/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/XNE3pwSPx6Q/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/XNE3pwSPx6Q/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/XNE3pwSPx6Q/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/XNE3pwSPx6Q/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 43,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "XNE3pwSPx6Q"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/XdHc6p5HvGYL2ezXXvP_CHyFb04\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLkRWcExrRUNHRlNJ",
+	  "snippet": {
+	   "publishedAt": "2017-06-30T21:06:45.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Push It To The Limit",
+	   "description": "What It Means To Be A TI Winner\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/DVpLkECGFSI/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/DVpLkECGFSI/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/DVpLkECGFSI/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/DVpLkECGFSI/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/DVpLkECGFSI/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 44,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "DVpLkECGFSI"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/4oMdU0DaKU28wec3vJ8yOuz2cCQ\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLl9kYXVGbllHbDFV",
+	  "snippet": {
+	   "publishedAt": "2017-06-29T20:01:32.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Dont Google Bulldog QOP",
+	   "description": "Bulldog plays Queen Of Pain offlane\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/_dauFnYGl1U/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/_dauFnYGl1U/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/_dauFnYGl1U/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/_dauFnYGl1U/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/_dauFnYGl1U/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 45,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "_dauFnYGl1U"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/T9BMZ54NGSwoBEb_QH_tHGXaxCs\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLkdDbGxEbGZLdGNV",
+	  "snippet": {
+	   "publishedAt": "2017-06-28T23:41:00.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Dead Dong Drifting",
+	   "description": "Bulldog Lich support in action\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/GCllDlfKtcU/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/GCllDlfKtcU/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/GCllDlfKtcU/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/GCllDlfKtcU/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/GCllDlfKtcU/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 46,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "GCllDlfKtcU"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/bGPeKMZNPWqJMaTPN4gOcBdlT3M\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLmdjNHdpSzRBMUVv",
+	  "snippet": {
+	   "publishedAt": "2017-06-27T11:57:06.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Donger Wells Up From Within",
+	   "description": "Bulldog Prophet is thinking about doubling down\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/gc4wiK4A1Eo/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/gc4wiK4A1Eo/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/gc4wiK4A1Eo/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/gc4wiK4A1Eo/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/gc4wiK4A1Eo/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 47,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "gc4wiK4A1Eo"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/1BVbhrIkN0ZdttClztjH2DewNIs\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjFXYWFocDl1WUtZ",
+	  "snippet": {
+	   "publishedAt": "2017-06-26T18:22:20.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "AdmiralBulldog Keeping Tabs On Bububu",
+	   "description": "Bulldog checking if Bububu is a good girl\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBarry Allen Bloodseeker donation dota 2",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/1Waahp9uYKY/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/1Waahp9uYKY/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/1Waahp9uYKY/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/1Waahp9uYKY/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/1Waahp9uYKY/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 48,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "1Waahp9uYKY"
+	   }
+	  }
+	 },
+	 {
+	  "kind": "youtube#playlistItem",
+	  "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/fXUlpXQjA5-mmjSDR3GF4f4_paM\"",
+	  "id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjhnZnphQ1Y2YkJr",
+	  "snippet": {
+	   "publishedAt": "2017-06-26T08:39:20.000Z",
+	   "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "title": "Team DingDong Journey Ends",
+	   "description": "Too many emotions in the end\nhttps://www.twitch.tv/admiralbulldog\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena",
+	   "thumbnails": {
+		"default": {
+		 "url": "https://i.ytimg.com/vi/8gfzaCV6bBk/default.jpg",
+		 "width": 120,
+		 "height": 90
+		},
+		"medium": {
+		 "url": "https://i.ytimg.com/vi/8gfzaCV6bBk/mqdefault.jpg",
+		 "width": 320,
+		 "height": 180
+		},
+		"high": {
+		 "url": "https://i.ytimg.com/vi/8gfzaCV6bBk/hqdefault.jpg",
+		 "width": 480,
+		 "height": 360
+		},
+		"standard": {
+		 "url": "https://i.ytimg.com/vi/8gfzaCV6bBk/sddefault.jpg",
+		 "width": 640,
+		 "height": 480
+		},
+		"maxres": {
+		 "url": "https://i.ytimg.com/vi/8gfzaCV6bBk/maxresdefault.jpg",
+		 "width": 1280,
+		 "height": 720
+		}
+	   },
+	   "channelTitle": "AdmiralBulldog",
+	   "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	   "position": 49,
+	   "resourceId": {
+		"kind": "youtube#video",
+		"videoId": "8gfzaCV6bBk"
+	   }
+	  }
+	 }
+	]
+   }
+   

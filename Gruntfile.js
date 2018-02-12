@@ -7,21 +7,30 @@ module.exports = function(grunt) {
     less: {
       development: {
         files: {
-          'build/css/index.css' : 'source/less/index.less'
+          'build/client/css/index.css' : 'source/less/index.less'
         }
       }
     },
     babel: {
       options: {
-        plugins: ["transform-react-jsx"]
+        plugins: ["transform-react-jsx", "transform-es2015-modules-amd"]
       },
       dist: {
         files: [
           {
               expand: true,
-              cwd: 'source/javascript/React/',
-              src: ['**/*.js'],
-              dest: 'build/javascript/React/'
+              cwd: 'source/javascript/client/',
+              // src: ['**/*.js'],
+              src: ['app.js', 'view/page/*.js', 'view/component/*.js', 'youtube/youtube-api.js', 'youtube/youtube-service.js', 'series/*.js', 'cache/*.js'],
+              dest: 'build/client/javascript/'
+          },
+          {
+            expand: true,
+            cwd: 'source/javascript/',
+            // src: ['**/*.js'],
+            src: ['structure/*.js', '!structure/*.test.js'],
+            // src: ['structure/*.js'],
+            dest: 'build/client/javascript/'
           }
         ]
       }
@@ -31,33 +40,34 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'source/javascript',
-            src: ['**/*.js' , '!React/**/*.js', !'**/*.test.js'],
-            dest: 'build/javascript/'
+            cwd: 'source/javascript/server/',
+            src: ['**/*.js' , '!**/*.test.js'],
+            dest: 'build/server/javascript/'
           },
-          { 'build/index.html' : 'source/index.html'},
-          { 'build/javascript/config.js' : 'config.js'}
+          { 'build/client/index.html' : 'source/index.html'},
+          { 'build/client/javascript/config.js' : 'config.js'},
+          { 'build/client/javascript/index.js' : 'source/javascript/client/index.js'}
         ]
       },
       libs:{
         files: [
           //Javascript libs
-          { 'build/javascript/libs/react/react.js' : 'node_modules/react/dist/react.js'},
-          { 'build/javascript/libs/react/react-dom.js' : 'node_modules/react-dom/dist/react-dom.js'},
-          { 'build/javascript/libs/jquery/jquery.js' : 'node_modules/jquery/dist/jquery.js'},
-          { 'build/javascript/libs/bootstrap/bootstrap.js' : 'node_modules/bootstrap/dist/js/bootstrap.js'},
-          { 'build/javascript/libs/requirejs/require.js' : 'node_modules/requirejs/require.js'},
+          { 'build/client/javascript/libs/react/react.js' : 'node_modules/react/dist/react.js'},
+          { 'build/client/javascript/libs/react/react-dom.js' : 'node_modules/react-dom/dist/react-dom.js'},
+          { 'build/client/javascript/libs/jquery/jquery.js' : 'node_modules/jquery/dist/jquery.js'},
+          { 'build/client/javascript/libs/bootstrap/bootstrap.js' : 'node_modules/bootstrap/dist/js/bootstrap.js'},
+          { 'build/client/javascript/libs/requirejs/require.js' : 'node_modules/requirejs/require.js'},
 
           //CSS libs
-          { 'build/css/libs/bootstrap/css/bootstrap.css' : 'node_modules/bootstrap/dist/css/bootstrap.css'},
-          { 'build/css/libs/bootstrap/css/bootstrap.css.map' : 'node_modules/bootstrap/dist/css/bootstrap.css.map'},
+          { 'build/client/css/libs/bootstrap/css/bootstrap.css' : 'node_modules/bootstrap/dist/css/bootstrap.css'},
+          { 'build/client/css/libs/bootstrap/css/bootstrap.css.map' : 'node_modules/bootstrap/dist/css/bootstrap.css.map'},
 
           //Fonts libs
-          { 'build/css/libs/bootstrap/fonts/glyphicons-halflings-regular.eot' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot'},
-          { 'build/css/libs/bootstrap/fonts/glyphicons-halflings-regular.svg' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg'},
-          { 'build/css/libs/bootstrap/fonts/glyphicons-halflings-regular.ttf' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf'},
-          { 'build/css/libs/bootstrap/fonts/glyphicons-halflings-regular.woff' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff'},
-          { 'build/css/libs/bootstrap/fonts/glyphicons-halflings-regular.woff2' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'}
+          { 'build/client/css/libs/bootstrap/fonts/glyphicons-halflings-regular.eot' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot'},
+          { 'build/client/css/libs/bootstrap/fonts/glyphicons-halflings-regular.svg' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg'},
+          { 'build/client/css/libs/bootstrap/fonts/glyphicons-halflings-regular.ttf' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf'},
+          { 'build/client/css/libs/bootstrap/fonts/glyphicons-halflings-regular.woff' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff'},
+          { 'build/client/css/libs/bootstrap/fonts/glyphicons-halflings-regular.woff2' : 'node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'}
         ]
       },
       assets:{
@@ -66,7 +76,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'assets',
             src: ['*'],
-            dest: 'build/assets/'
+            dest: 'build/client/assets/'
           }
         ]
       }
@@ -74,7 +84,7 @@ module.exports = function(grunt) {
     watch: {
       react: {
         tasks: ['babel'],
-        files: ['source/javascript/React/**/*.js'],
+        files: ['source/**/*'],
         options: {
           interrupt: true
         }

@@ -1,9 +1,7 @@
 var scopes = 'https://www.googleapis.com/auth/youtube.readonly';
 var apiKey = require('config').apiKey;
 var oAuthID = require('config').oAuthID;
-var userId = require('config').userId
-
-
+var userId = require('config').userId;
 
 var apiOnLoad = function(){
 	gapi.client.setApiKey(apiKey);
@@ -39,7 +37,7 @@ function handleAuthResult( authResult , callBack ) {
 }
 
 define("YoutubeService",
-		['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , '../structure/Channel' , '../structure/Video'],function(t , $ , Channel , Video) {
+		['https://apis.google.com/js/client.js?onload=apiOnLoad', 'jquery' , '../structure/Channel', '../structure/Video'],function(t , $ , Channel, Video) {
 			var YoutubeService = {
 				subscriptions: {}, //channels by Id
 				subscriptionsVideos: [], //videos by uploadDate
@@ -58,8 +56,7 @@ define("YoutubeService",
 						request.then(function(response){
 							var k;
 							for(k in response.result.items){
-								var video = new Video()
-								video = new Video( response.result.items[k].id , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId);
+								video = new Video( response.result.items[k].id , response.result.items[k].snippet.title , response.result.items[k].snippet.description , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle, response.result.items[k].snippet.channelId,  new Date(response.result.items[k].snippet.publishedAt));
 								videos.push(video);
 							}
 							resolve(videos);
@@ -106,7 +103,7 @@ define("YoutubeService",
 							var video;
 							for(var v in videos){
 								if(videos[v].id.kind == 'youtube#video'){
-									video = new Video( videos[v].id.videoId , videos[v].snippet.title , videos[v].snippet.description , new Date(videos[v].snippet.publishedAt) , videos[v].snippet.thumbnails.medium.url , videos[v].snippet.channelTitle , videos[v].snippet.channelId);
+									video = new Video( videos[v].id.videoId , videos[v].snippet.title , videos[v].snippet.description , videos[v].snippet.thumbnails.medium.url , videos[v].snippet.channelTitle , videos[v].snippet.channelId , new Date(videos[v].snippet.publishedAt));
 									newVideos.push(video);
 								}
 							}
@@ -152,8 +149,8 @@ define("YoutubeService",
 						request.then(function(response){
 							var k;
 							for(k in response.result.items){
-								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.resourceId.channelId.slice(2) , [] , response.result.items[k].snippet.description );
-								channel.uploadId = "UU".concat(channel.uploadId);
+								var channel = new Channel ( response.result.items[k].snippet.resourceId.channelId , response.result.items[k].snippet.title , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.description );
+								//channel.uploadId = "UU".concat(channel.uploadId);
 								channels[channel.id] = channel;
 							}
 
@@ -185,7 +182,7 @@ define("YoutubeService",
 						request.then(function(response){
 							var y;
 							for(y in response.result.items){
-								var video =  new Video( response.result.items[y].snippet.resourceId.videoId , response.result.items[y].snippet.title , response.result.items[y].snippet.description , new Date(response.result.items[y].snippet.publishedAt ) , response.result.items[y].snippet.thumbnails.medium.url , response.result.items[y].snippet.channelTitle , response.result.items[y].snippet.channelId );
+								var video =  new Video( response.result.items[y].snippet.resourceId.videoId , response.result.items[y].snippet.title , response.result.items[y].snippet.description , response.result.items[y].snippet.thumbnails.medium.url , response.result.items[y].snippet.channelTitle , response.result.items[y].snippet.channelId  , new Date(response.result.items[y].snippet.publishedAt ));
 								videos.push(video)
 							}
 							resolve( { videos : videos , nextPageToken : response.result.nextPageToken , total : response.result.pageInfo.totalResults } );
@@ -206,8 +203,8 @@ define("YoutubeService",
 					var promise = new Promise(function(resolve , reject){
 						request.then(function(response){
 							if(response.result.items.length > 0 ){
-								var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.medium.url , response.result.items[0].id.slice(2) , [] , response.result.items[0].snippet.description );
-								channel.uploadId = "UU".concat(channel.uploadId);
+								var channel = new Channel ( response.result.items[0].id , response.result.items[0].snippet.title , response.result.items[0].snippet.thumbnails.medium.url, response.result.items[0].snippet.description );
+								//channel.uploadId = "UU".concat(channel.uploadId);
 								if(loadVideos){
 									var videosRequest = YoutubeService.playlistItems(channel.uploadId);
 									videosRequest.then(function(response){
@@ -270,14 +267,14 @@ define("YoutubeService",
 							var k;
 							for(k in response.result.items){
 								if(response.result.items[k].snippet.type == "recommendation"){
-									var video = new Video( response.result.items[k].contentDetails.recommendation.resourceId.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
+									var video = new Video( response.result.items[k].contentDetails.recommendation.resourceId.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId  , new Date(response.result.items[k].snippet.publishedAt ));
 									videos.push(video);
 									if(response.result.items[k].contentDetails.recommendation.reason != "videoWatched"){
 										console.log(response);
 									}
 								}
 								if(response.result.items[k].snippet.type == "upload"){
-									var video = new Video( response.result.items[k].contentDetails.upload.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , new Date(response.result.items[k].snippet.publishedAt ) , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId );
+									var video = new Video( response.result.items[k].contentDetails.upload.videoId , response.result.items[k].snippet.title , response.result.items[k].snippet.description , response.result.items[k].snippet.thumbnails.medium.url , response.result.items[k].snippet.channelTitle , response.result.items[k].snippet.channelId , new Date(response.result.items[k].snippet.publishedAt ));
 									videos.push(video);
 								}
 							}
@@ -307,7 +304,7 @@ define("YoutubeService",
 					gapi.auth.authorize({client_id: oAuthID, scope: scopes, immediate: false}, handle );
 				},
 				loadExtra: function(){
-					var request = $.get("http://localhost:8082/youtubeExtra");
+					var request = $.get("http://localhost:8082/series");
 					var promise = new Promise(function(resolve, reject){
 						request.done(function(data){
 							var k;
@@ -345,7 +342,7 @@ define("YoutubeService",
 				},
 				saveSeries : function(series){
 					// YoutubeService.series = series;
-					var request = $.post('http://localhost:8082/youtubeExtra', { subscriptions : series});
+					var request = $.post('http://localhost:8082/series', { subscriptions : series});
 					request.done(function(response){
 						YoutubeService.series = response.subscriptions;
 					});

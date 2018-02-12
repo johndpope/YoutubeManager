@@ -1,0 +1,31 @@
+@color1: #fff;
+@color2: #ddd;
+
+@colors: color1, color2;
+
+@color: color;
+@bg: background-color;
+@border: border-color;
+
+@properties: color, bg, border-color;
+
+.define-properties(@cor) {
+	.define-classes(@propertyIndex: length(@properties)) when (@propertyIndex > 0) {
+		@property: extract(@properties, @propertyIndex);
+		@val: @@property;
+
+		&.@{property}-@{cor} {
+			@{val}: @@cor;
+		};
+		.define-classes(@propertyIndex - 1);
+	};
+	.define-classes;
+};
+
+.define-colors(@colorIndex: length(@colors)) when (@colorIndex > 0) {
+	@color: extract(@colors, @colorIndex);
+	.define-properties(@color);
+	.define-colors((@colorIndex - 1));
+};
+
+.define-colors();

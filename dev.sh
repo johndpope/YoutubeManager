@@ -14,4 +14,4 @@ function_less(){
 }
 
 trap 'kill %1;' SIGINT;
-grunt build && (npm run server & grunt watch)
+./node_modules/.bin/grunt build && (npm run server & ./node_modules/.bin/grunt watch)

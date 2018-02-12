@@ -1,0 +1,45 @@
+{
+	"kind": "youtube#playlistItem",
+	"etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/348XbiMCZMp_tlaQs6FzXPxji0I\"",
+	"id": "VVVrOFpJTUp4U085LXBVZzd4eXJuYUZRLjJUd2UyRHRRS1lF",
+	"snippet": {
+	 "publishedAt": "2017-08-13T19:17:43.000Z",
+	 "channelId": "UCk8ZIMJxSO9-pUg7xyrnaFQ",
+	 "title": "The Grand Dongus",
+	 "description": "My spells now\n\nSocial media:\nhttps://twitter.com/admiralbulldog\nhttps://www.facebook.com/AdmiralBulldog\n\nEdited by Elaitoh\nhttps://twitter.com/elaitoh\n\nIntro made by Verrk\nhttps://twitter.com/_Verrk\n\nOutro song:\nVenice Beach - Topher Mohr and Alex Elena\n\nBulldog Rubick dota 2",
+	 "thumbnails": {
+	  "default": {
+	   "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/default.jpg",
+	   "width": 120,
+	   "height": 90
+	  },
+	  "medium": {
+	   "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/mqdefault.jpg",
+	   "width": 320,
+	   "height": 180
+	  },
+	  "high": {
+	   "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/hqdefault.jpg",
+	   "width": 480,
+	   "height": 360
+	  },
+	  "standard": {
+	   "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/sddefault.jpg",
+	   "width": 640,
+	   "height": 480
+	  },
+	  "maxres": {
+	   "url": "https://i.ytimg.com/vi/2Twe2DtQKYE/maxresdefault.jpg",
+	   "width": 1280,
+	   "height": 720
+	  }
+	 },
+	 "channelTitle": "AdmiralBulldog",
+	 "playlistId": "UUk8ZIMJxSO9-pUg7xyrnaFQ",
+	 "position": 0,
+	 "resourceId": {
+	  "kind": "youtube#video",
+	  "videoId": "2Twe2DtQKYE"
+	 }
+	}
+   }
