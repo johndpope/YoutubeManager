@@ -139,7 +139,7 @@ define('YoutubeContent', [ 'react' , 'jquery' , 'YoutubeService' , 'Navigation' 
 			var videos = this.state.videos.slice( this.state.first , (this.state.first + 16) ).map(function(item, index){
 				return(
 				<div key={item.id} onClick={this.addVideoToPlaylist.bind(this, index)} className="Item" >
-					<YoutubeItem title={item.title} author={item.author} length={item.length} description={item.description} thumbnail={item.thumbnail} />
+					<YoutubeItem title={item.title} author={item.authorName} length={item.length} description={item.description} thumbnail={item.thumbnail} />
 				</div>
 				)
 			}, this);
