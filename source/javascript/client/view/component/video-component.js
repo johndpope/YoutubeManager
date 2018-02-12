@@ -16,18 +16,20 @@ import Video from 'structure/Video';
 class VideoComponent extends Component {
 	render() {
 		return (
-			<div className="YoutubeItem">
-				<img
-					src={this.props.video.thumbnail}
-					className="Thumbnail"
-					draggable="false"
-				/>
+			<div className="video-component">
+				<div className="text-center">
+					<img
+						src={this.props.video.thumbnail}
+						draggable="false"
+						className="video-thumbnail"
+					/>
+				</div>
 				{ this.props.showDescription ?
-					<div className="Text">
-						<div className="Title" >
+					<div className="video-text">
+						<div className="video-title" >
 							{this.props.video.title + ' -- ' +  this.props.video.authorName}
 						</div>
-						<div className="Description" >{this.props.video.description}</div>
+						<div className="video-description" >{this.props.video.description}</div>
 					</div>
 				:
 					null

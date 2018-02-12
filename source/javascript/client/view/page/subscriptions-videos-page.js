@@ -65,7 +65,7 @@ class SubscriptionsVideosPage extends Component {
 	}
 	render() {
 		return (
-			<div className="YoutubeContent">
+			<div className="YoutubeContent subscriptions-videos-page">
 				{this.state.loadingSubscription?
 					<div className="Loading">
 						<div className="LoadingContent">
@@ -75,17 +75,7 @@ class SubscriptionsVideosPage extends Component {
 					:
 					null
 				}
-				<div className="Center" >
-					<div className="content" >
-						<div className="Items" >
-							<VideoWallComponent
-								videos={this.state.subscriptionsVideos}
-								click={(video)=>this.addVideoToList(video)}
-							/>
-						</div>
-					</div>
-				</div>
-				<div className="Side">
+				<div className="Side sidebar">
 					<button onClick={() => this.playVideoList()}>
 						Play
 						<span className="glyphicon glyphicon-play" aria-hidden={true}></span>
@@ -95,6 +85,16 @@ class SubscriptionsVideosPage extends Component {
 						changePosition={(fromPosition, toPosition)=>this.changeVideoPositionOnList(fromPosition, toPosition)}
 						removeVideoPlaylist={(video)=>this.removeVideoFromList(video)}
 					/>
+				</div>
+				<div className="Center main-content" >
+					<div className="content" >
+						<div className="Items" >
+							<VideoWallComponent
+								videos={this.state.subscriptionsVideos}
+								click={(video)=>this.addVideoToList(video)}
+							/>
+						</div>
+					</div>
 				</div>
 			</div>
 		)

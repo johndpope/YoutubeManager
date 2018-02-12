@@ -41,10 +41,10 @@ class VideoListComponent extends Component {
 	render() {
 		const videos = this.props.videos.map( (item, index) => {
 			return (
-				<div key={item.id} className={(this.props.horizontal ? 'Horizontal ' : 'Vertical ')} >
+				<div key={item.id} className={'video-list-item ' + (this.props.horizontal ? 'horizontal ' : 'vertical ')} >
 					{
 						this.props.removeVideoPlaylist ?
-							<button type='button' className='RemoveButton' onClick={()=>this.props.removeVideoPlaylist(item, index)} >
+							<button type='button' className='remove-button' onClick={()=>this.props.removeVideoPlaylist(item, index)} >
 								<span className='glyphicon glyphicon-remove' aria-hidden={true}></span>
 							</button>
 						:
@@ -74,7 +74,7 @@ class VideoListComponent extends Component {
 			)
 		});
 		return (
-			<div calssName='YoutubePlaylist' >
+			<div className='video-list-component' >
 				{videos}
 			</div>
 		)

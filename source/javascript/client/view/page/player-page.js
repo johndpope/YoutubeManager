@@ -101,17 +101,19 @@ class PlayerPage extends Component {
 	}
 	render() {
 		return (
-			<div>
-				<button onClick={()=>this.stopPlaying()} >
-					<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
-					<span className="TextAfterIcon">Close</span>
-				</button>
-				<div className="YoutubePlayer">
+			<div className="player-page" >
+				<div className="text-right">
+					<button onClick={()=>this.stopPlaying()} >
+						<span className="glyphicon glyphicon-remove" aria-hidden={true}></span>
+						<span className="TextAfterIcon">Close</span>
+					</button>
+				</div>
+				<div className="text-center">
 					<div id="player">
 					</div>
 				</div>
 				<div>
-					<VideoListComponent videos={this.props.videos} horizontal highlightIndex={this.state.playingIndex} click={(video, index)=>{this.changeVideo(index)}} />
+					<VideoListComponent videos={this.props.videos} horizontal removeVideoPlaylist highlightIndex={this.state.playingIndex} click={(video, index)=>{this.changeVideo(index)}} />
 				</div>
 			</div>
 		)
